@@ -16,7 +16,15 @@ namespace orabs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+
+            DatabaseOperation.OpenConnection();
+
+            frmLogin frmLoginEntity = new frmLogin();
+            frmLoginEntity.ShowDialog();
+            if (frmLoginEntity.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new frmMain());
+            }
         }
     }
 }

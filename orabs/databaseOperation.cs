@@ -12,8 +12,7 @@ namespace orabs
 {
     class DatabaseOperation
     {
-        private static string CONNECT_STRING = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
-        private static MySqlConnection mySqlConnection = new MySqlConnection(CONNECT_STRING);
+        private static MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
         private static MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
         private static DataTable dataTable;
         private static MySqlCommand mySqlCommand;
