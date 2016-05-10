@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using orabs.Doctor;
 
 namespace orabs
 {
@@ -8,6 +9,11 @@ namespace orabs
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -21,9 +27,10 @@ namespace orabs
             frmDoctorControlEntity.Show();
         }
 
-        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        private void doctorGroupControlToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            frmDoctorGroupControl frmDoctorGroupControlEntity = new frmDoctorGroupControl();
+            frmDoctorGroupControlEntity.Show();
         }
     }
 }

@@ -37,13 +37,13 @@ namespace orabs
             }
 
             string queryString = "select * from User where Name='" + txtUserName.Text.ToLower() + "' and Password='" + txtPassword.Text + "'";
-            DataTable dataTable = DatabaseOperation.GetDataTableByQuery(queryString, "User");
+            DataTable dataTable = DatabaseOperation.GetDataTableByQuery(queryString);
 
             if (dataTable.Rows.Count > 0)
             {
                 GlobalStatus.login = true;
-                GlobalStatus.userId = int.Parse(dataTable.Rows[0]["User_ID"].ToString());
-                GlobalStatus.userName = dataTable.Rows[0]["Name"].ToString();
+                GlobalStatus.userId = (int)dataTable.Rows[0]["User_ID"];
+                GlobalStatus.userName = (string)dataTable.Rows[0]["Name"];
                 this.Close();
             }
             else

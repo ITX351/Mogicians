@@ -38,7 +38,7 @@ namespace orabs.Doctor
         private void frmDoctorUpdate_Load(object sender, EventArgs e)
         {
             string queryStr = "select * from Doctor where Doctor_ID = " + Doctor_ID.ToString();
-            DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr, "Doctor");
+            DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
 
             DataRow dr = dt.Rows[0];
             txtName.Text = (string)dr["Name"];

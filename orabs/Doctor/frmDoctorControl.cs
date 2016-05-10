@@ -37,7 +37,7 @@ namespace orabs
                 " and (Department_ID = " + department.ToString() + " or " + department.ToString() + " = -1)" +
                 " and Description like '" + GlobalStatus.AppendPercent(description) + "'";
 
-            showTable = DatabaseOperation.GetDataTableByQuery(queryStr, "Doctor");
+            showTable = DatabaseOperation.GetDataTableByQuery(queryStr);
             dgvDoctor.DataSource = showTable;
         }
 
@@ -59,7 +59,8 @@ namespace orabs
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmDoctorUpdate frmDoctorUpdateEntity = new frmDoctorUpdate((int)showTable.Rows[dgvDoctor.CurrentRow.Index]["Doctor_ID"]);
+            frmDoctorUpdate frmDoctorUpdateEntity = new frmDoctorUpdate(
+                (int)showTable.Rows[dgvDoctor.CurrentRow.Index]["Doctor_ID"]);
             frmDoctorUpdateEntity.ShowDialog();
 
             if (frmDoctorUpdateEntity.DialogResult == DialogResult.OK)

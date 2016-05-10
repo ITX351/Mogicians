@@ -35,9 +35,9 @@ namespace orabs
             }
         }
 
-        public static DataTable GetDataTableByQuery(string queryString, string tableName)
+        public static DataTable GetDataTableByQuery(string queryString)
         {
-            dataTable = new DataTable(tableName);
+            dataTable = new DataTable();
             dataTable.Clear();
 
             try

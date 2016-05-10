@@ -76,7 +76,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             // 
             // doctorToolStripMenuItem
@@ -93,6 +93,7 @@
             this.doctorGroupControlToolStripMenuItem.Name = "doctorGroupControlToolStripMenuItem";
             this.doctorGroupControlToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.doctorGroupControlToolStripMenuItem.Text = "Doctor &Group Control";
+            this.doctorGroupControlToolStripMenuItem.Click += new System.EventHandler(this.doctorGroupControlToolStripMenuItem_Click);
             // 
             // doctorControlToolStripMenuItem
             // 
@@ -112,7 +113,7 @@
             // userControlToolStripMenuItem
             // 
             this.userControlToolStripMenuItem.Name = "userControlToolStripMenuItem";
-            this.userControlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.userControlToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.userControlToolStripMenuItem.Text = "&User Control";
             // 
             // patientToolStripMenuItem
