@@ -47,6 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseOperation.cs" />
+    <Compile Include="Doctor\frmDoctorControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\frmDoctorControl.Designer.cs">
+      <DependentUpon>frmDoctorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\frmDoctorQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\frmDoctorQuery.Designer.cs">
+      <DependentUpon>frmDoctorQuery.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +74,12 @@
     <Compile Include="GlobalStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Doctor\frmDoctorControl.resx">
+      <DependentUpon>frmDoctorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\frmDoctorQuery.resx">
+      <DependentUpon>frmDoctorQuery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

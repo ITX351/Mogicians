@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace orabs
@@ -50,8 +44,6 @@ namespace orabs
                 GlobalStatus.login = true;
                 GlobalStatus.userId = int.Parse(dataTable.Rows[0]["User_ID"].ToString());
                 GlobalStatus.userName = dataTable.Rows[0]["Name"].ToString();
-
-                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
