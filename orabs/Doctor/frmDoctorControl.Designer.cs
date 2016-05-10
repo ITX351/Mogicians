@@ -42,7 +42,7 @@
             this.dgvDoctor.AllowUserToResizeRows = false;
             this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDoctor.Location = new System.Drawing.Point(21, 12);
+            this.dgvDoctor.Location = new System.Drawing.Point(12, 12);
             this.dgvDoctor.Name = "dgvDoctor";
             this.dgvDoctor.ReadOnly = true;
             this.dgvDoctor.RowTemplate.Height = 23;

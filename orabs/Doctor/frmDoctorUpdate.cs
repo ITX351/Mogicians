@@ -7,6 +7,7 @@ namespace orabs.Doctor
     public partial class frmDoctorUpdate : Form
     {
         private int Doctor_ID;
+        private DataTable DoctorGroupTable, DepartmentTable;
 
         public frmDoctorUpdate(int Doctor_ID)
         {
@@ -37,6 +38,9 @@ namespace orabs.Doctor
 
         private void frmDoctorUpdate_Load(object sender, EventArgs e)
         {
+            DoctorGroupTable = GlobalStatus.setComboAndDataTableByTableName("DoctorGroup", cboGroup);
+            DepartmentTable = GlobalStatus.setComboAndDataTableByTableName("Department", cboDepartment);
+
             string queryStr = "select * from Doctor where Doctor_ID = " + Doctor_ID.ToString();
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
 
