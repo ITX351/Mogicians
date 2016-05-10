@@ -53,6 +53,12 @@
     <Compile Include="Doctor\frmDoctorControl.Designer.cs">
       <DependentUpon>frmDoctorControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\frmDoctorUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\frmDoctorUpdate.Designer.cs">
+      <DependentUpon>frmDoctorUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\frmDoctorQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Doctor\frmDoctorControl.resx">
       <DependentUpon>frmDoctorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\frmDoctorUpdate.resx">
+      <DependentUpon>frmDoctorUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorQuery.resx">
       <DependentUpon>frmDoctorQuery.cs</DependentUpon>
