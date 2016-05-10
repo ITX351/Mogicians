@@ -47,6 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseOperation.cs" />
+    <Compile Include="Department\frmDepartmentAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\frmDepartmentAdd.Designer.cs">
+      <DependentUpon>frmDepartmentAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department\frmDepartmentControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\frmDepartmentControl.Designer.cs">
+      <DependentUpon>frmDepartmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department\frmDepartmentUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\frmDepartmentUpdate.Designer.cs">
+      <DependentUpon>frmDepartmentUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\frmDoctorControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +116,15 @@
     <Compile Include="GlobalStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Department\frmDepartmentAdd.resx">
+      <DependentUpon>frmDepartmentAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department\frmDepartmentControl.resx">
+      <DependentUpon>frmDepartmentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department\frmDepartmentUpdate.resx">
+      <DependentUpon>frmDepartmentUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorControl.resx">
       <DependentUpon>frmDoctorControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +171,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

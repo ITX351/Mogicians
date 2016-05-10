@@ -40,6 +40,8 @@
             this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmentControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +60,8 @@
             this.mainMenuToolStripMenuItem,
             this.doctorToolStripMenuItem,
             this.userToolStripMenuItem,
-            this.patientToolStripMenuItem});
+            this.patientToolStripMenuItem,
+            this.departmentToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(746, 25);
@@ -137,6 +140,21 @@
             this.personalInformationToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.personalInformationToolStripMenuItem.Text = "&Personal Information";
             // 
+            // departmentToolStripMenuItem
+            // 
+            this.departmentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.departmentControlToolStripMenuItem});
+            this.departmentToolStripMenuItem.Name = "departmentToolStripMenuItem";
+            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
+            this.departmentToolStripMenuItem.Text = "D&epartment";
+            // 
+            // departmentControlToolStripMenuItem
+            // 
+            this.departmentControlToolStripMenuItem.Name = "departmentControlToolStripMenuItem";
+            this.departmentControlToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.departmentControlToolStripMenuItem.Text = "&Department Control";
+            this.departmentControlToolStripMenuItem.Click += new System.EventHandler(this.departmentControlToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -170,5 +188,7 @@
         private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patientControlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personalInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departmentControlToolStripMenuItem;
     }
 }

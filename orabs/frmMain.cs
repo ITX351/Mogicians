@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using orabs.Doctor;
+using orabs.Department;
 
 namespace orabs
 {
@@ -31,6 +32,12 @@ namespace orabs
         {
             frmDoctorGroupControl frmDoctorGroupControlEntity = new frmDoctorGroupControl();
             frmDoctorGroupControlEntity.Show();
+        }
+
+        private void departmentControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDepartmentControl frmDepartmentControlEntity = new frmDepartmentControl();
+            frmDepartmentControlEntity.Show();
         }
     }
 }
