@@ -30,6 +30,7 @@ namespace orabs.Doctor
             if (success > 0)
             {
                 MessageBox.Show("Update succeeded.");
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

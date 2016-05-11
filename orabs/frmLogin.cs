@@ -33,7 +33,7 @@ namespace orabs
 
             string queryString = "select * from User where" + 
                 " Name='" + Global.EscapeSingleQuotes(txtUserName.Text.ToLower()) + "'" +
-                " and Password='" + Global.EscapeSingleQuotes(txtPassword.Text) + "'";
+                " and Password='" + Global.SHA1(txtPassword.Text) + "'";
             DataTable dataTable = DatabaseOperation.GetDataTableByQuery(queryString);
 
             if (dataTable.Rows.Count > 0)
@@ -41,6 +41,7 @@ namespace orabs
                 Global.login = true;
                 Global.userId = (int)dataTable.Rows[0]["User_ID"];
                 Global.userName = (string)dataTable.Rows[0]["Name"];
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

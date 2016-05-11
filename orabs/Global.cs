@@ -1,4 +1,6 @@
 ﻿using System.Data;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace orabs
@@ -40,6 +42,19 @@ namespace orabs
             {
                 comboBox.SelectedValue = -1;
             }
+        }
+
+        public static string SHA1(string text)
+        {
+            byte[] cleanBytes = Encoding.Default.GetBytes(text);
+            byte[] hashedBytes = System.Security.Cryptography.SHA1.Create().ComputeHash(cleanBytes);
+            return System.BitConverter.ToString(hashedBytes).Replace("-", "");
+        }
+
+        public static bool IsNum(string pstr)
+        {
+            Regex rgx = new Regex(@"^(\d+)$");
+            return rgx.IsMatch(pstr);
         }
     }
 }

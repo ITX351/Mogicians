@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using orabs.Department;
 using orabs.Doctor;
-using orabs.Department;
+using System;
+using System.Windows.Forms;
 
 namespace orabs
 {
