@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using orabs.User;
 
 namespace orabs
 {
@@ -54,6 +55,12 @@ namespace orabs
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmRegister frmRegisterEntity = new frmRegister();
+            frmRegisterEntity.ShowDialog();
         }
     }
 }

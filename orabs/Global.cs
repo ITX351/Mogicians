@@ -51,10 +51,15 @@ namespace orabs
             return System.BitConverter.ToString(hashedBytes).Replace("-", "");
         }
 
+        public static bool testRegax(string str, string regax)
+        {
+            Regex rgx = new Regex(regax);
+            return rgx.IsMatch(str);
+        }
+
         public static bool IsNum(string pstr)
         {
-            Regex rgx = new Regex(@"^(\d+)$");
-            return rgx.IsMatch(pstr);
+            return testRegax(pstr, @"^(\d+)$");
         }
     }
 }

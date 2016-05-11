@@ -34,6 +34,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOK
@@ -92,6 +93,16 @@
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "sa";
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(15, 172);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(77, 38);
+            this.btnRegister.TabIndex = 4;
+            this.btnRegister.Text = "&Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnOK;
@@ -100,6 +111,7 @@
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(457, 225);
             this.ControlBox = false;
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblPassword);
@@ -124,6 +136,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
 
