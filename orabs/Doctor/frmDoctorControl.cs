@@ -78,5 +78,10 @@ namespace orabs
         { // Double click on cell calls update
             btnUpdate_Click(sender, e);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -39,5 +39,10 @@ namespace orabs
             frmDepartmentControl frmDepartmentControlEntity = new frmDepartmentControl();
             frmDepartmentControlEntity.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
