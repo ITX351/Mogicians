@@ -27,9 +27,21 @@ namespace orabs.Doctor
             {
                 return txtName.Text;
             }
-            set
+        }
+
+        public int Department_ID
+        {
+            get
             {
-                txtName.Text = value;
+                return (int)cboDepartment.SelectedValue;
+            }
+        }
+
+        public int DoctorGroup_ID
+        {
+            get
+            {
+                return (int)cboGroup.SelectedValue;
             }
         }
 
@@ -39,10 +51,12 @@ namespace orabs.Doctor
             {
                 return txtDescription.Text;
             }
-            set
-            {
-                txtDescription.Text = value;
-            }
+        }
+
+        private void frmDoctorQuery_Load(object sender, EventArgs e)
+        {
+            Global.setComboBoxByTableName("DoctorGroup", cboGroup, true);
+            Global.setComboBoxByTableName("Department", cboDepartment, true);
         }
     }
 }

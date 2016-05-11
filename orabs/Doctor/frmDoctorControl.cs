@@ -52,7 +52,8 @@ namespace orabs
 
             if (frmDoctorQueryEntity.DialogResult == DialogResult.OK)
             {
-                doQuery(frmDoctorQueryEntity.DoctorName, -1, -1, frmDoctorQueryEntity.Description);
+                doQuery(frmDoctorQueryEntity.DoctorName, frmDoctorQueryEntity.DoctorGroup_ID, 
+                    frmDoctorQueryEntity.Department_ID, frmDoctorQueryEntity.Description);
             }
         }
 

@@ -19,14 +19,27 @@ namespace orabs
             return str.ToString().Replace("'", "''");
         }
 
-        public static void setComboAndDataTableByTableName(string TableName, ComboBox comboBox)
+        public static void setComboBoxByTableName(string TableName, ComboBox comboBox, bool hasNull)
         {
-            string queryStr = "select * from " + TableName;
+            string queryStr = "select " + TableName + "_ID, Name from " + TableName;
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
+
+            if (hasNull)
+            {
+                DataRow dr = dt.NewRow();
+                dr["Name"] = "Not Required.";
+                dr[TableName + "_ID"] = -1;
+                dt.Rows.Add(dr);
+            }
 
             comboBox.DisplayMember = "Name";
             comboBox.ValueMember = TableName + "_ID";
             comboBox.DataSource = dt;
+
+            if (hasNull)
+            {
+                comboBox.SelectedValue = -1;
+            }
         }
     }
 }

@@ -40,8 +40,8 @@ namespace orabs.Doctor
 
         private void frmDoctorUpdate_Load(object sender, EventArgs e)
         {
-            Global.setComboAndDataTableByTableName("DoctorGroup", cboGroup);
-            Global.setComboAndDataTableByTableName("Department", cboDepartment);
+            Global.setComboBoxByTableName("DoctorGroup", cboGroup, false);
+            Global.setComboBoxByTableName("Department", cboDepartment, false);
 
             string queryStr = "select * from Doctor where Doctor_ID = " + Doctor_ID.ToString();
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);

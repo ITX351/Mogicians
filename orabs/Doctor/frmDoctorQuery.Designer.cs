@@ -150,6 +150,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "frmDoctorQuery";
             this.Text = "Doctor Query";
+            this.Load += new System.EventHandler(this.frmDoctorQuery_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
