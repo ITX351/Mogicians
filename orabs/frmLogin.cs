@@ -30,20 +30,17 @@ namespace orabs
                 txtPassword.Focus();
                 return;
             }
-            if (txtUserName.Text.Contains("'") || txtPassword.Text.Contains("'"))
-            {
-                MessageBox.Show("User Name or Password Textbox contains single quote.");
-                return;
-            }
 
-            string queryString = "select * from User where Name='" + txtUserName.Text.ToLower() + "' and Password='" + txtPassword.Text + "'";
+            string queryString = "select * from User where" + 
+                " Name='" + Global.EscapeSingleQuotes(txtUserName.Text.ToLower()) + "'" +
+                " and Password='" + Global.EscapeSingleQuotes(txtPassword.Text) + "'";
             DataTable dataTable = DatabaseOperation.GetDataTableByQuery(queryString);
 
             if (dataTable.Rows.Count > 0)
             {
-                GlobalStatus.login = true;
-                GlobalStatus.userId = (int)dataTable.Rows[0]["User_ID"];
-                GlobalStatus.userName = (string)dataTable.Rows[0]["Name"];
+                Global.login = true;
+                Global.userId = (int)dataTable.Rows[0]["User_ID"];
+                Global.userName = (string)dataTable.Rows[0]["Name"];
                 this.Close();
             }
             else

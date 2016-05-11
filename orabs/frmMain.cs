@@ -19,7 +19,7 @@ namespace orabs
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblUserName.Text = "User: " + GlobalStatus.userName;
+            lblUserName.Text = "User: " + Global.userName;
         }
 
         private void doctorControlToolStripMenuItem_Click(object sender, EventArgs e)

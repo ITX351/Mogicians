@@ -36,7 +36,9 @@ namespace orabs.Doctor
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string exeStr = "update DoctorGroup set Name = '" + txtGroupName.Text + "', Charge = " + txtCharge.Text + 
+            string exeStr = "update DoctorGroup set" + 
+                " Name = '" + Global.EscapeSingleQuotes(txtGroupName.Text) + "'," + 
+                " Charge = " + Global.EscapeSingleQuotes(txtCharge.Text) + 
                 " where DoctorGroup_ID = " + DoctorGroup_ID.ToString();
             int ret = DatabaseOperation.ExecuteSQLQuery(exeStr);
             if (ret > 0)

@@ -85,6 +85,7 @@
             // 
             // cboGroup
             // 
+            this.cboGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGroup.FormattingEnabled = true;
             this.cboGroup.Location = new System.Drawing.Point(140, 71);
             this.cboGroup.Name = "cboGroup";
@@ -93,6 +94,7 @@
             // 
             // cboDepartment
             // 
+            this.cboDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDepartment.FormattingEnabled = true;
             this.cboDepartment.Location = new System.Drawing.Point(140, 116);
             this.cboDepartment.Name = "cboDepartment";

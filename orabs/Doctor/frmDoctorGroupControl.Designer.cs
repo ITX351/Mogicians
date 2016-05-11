@@ -41,6 +41,7 @@
             this.dgvDoctorGroup.AllowUserToAddRows = false;
             this.dgvDoctorGroup.AllowUserToDeleteRows = false;
             this.dgvDoctorGroup.AllowUserToResizeRows = false;
+            this.dgvDoctorGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDoctorGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoctorGroup.Location = new System.Drawing.Point(39, 38);
             this.dgvDoctorGroup.Name = "dgvDoctorGroup";

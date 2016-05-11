@@ -24,7 +24,9 @@ namespace orabs.Doctor
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string exeStr = "insert into DoctorGroup(Name, Charge) values('" + txtGroupName.Text + "', " + txtCharge.Text + ")";
+            string exeStr = "insert into DoctorGroup(Name, Charge) values('" + 
+                Global.EscapeSingleQuotes(txtGroupName.Text) + "', " + 
+                Global.EscapeSingleQuotes(txtCharge.Text) + ")";
             int ret = DatabaseOperation.ExecuteSQLQuery(exeStr);
             if (ret > 0)
             {

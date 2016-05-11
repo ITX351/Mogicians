@@ -7,7 +7,6 @@ namespace orabs.Doctor
     public partial class frmDoctorUpdate : Form
     {
         private int Doctor_ID;
-        private DataTable DoctorGroupTable, DepartmentTable;
 
         public frmDoctorUpdate(int Doctor_ID)
         {
@@ -22,8 +21,11 @@ namespace orabs.Doctor
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string exeStr = "update Doctor set Name = '" + txtName.Text + "', Description = '" + 
-                txtDescription.Text + "' where Doctor_ID = " + Doctor_ID.ToString();
+            string exeStr = "update Doctor set Name = '" + Global.EscapeSingleQuotes(txtName.Text) + "'," + 
+                " Department_ID = " + cboDepartment.SelectedValue.ToString() + "," + 
+                " DoctorGroup_ID = " + cboGroup.SelectedValue.ToString() + "," +
+                " Description = '" + Global.EscapeSingleQuotes(txtDescription.Text) + "'" + 
+                " where Doctor_ID = " + Doctor_ID.ToString();
             int success = DatabaseOperation.ExecuteSQLQuery(exeStr);
             if (success > 0)
             {
@@ -38,14 +40,16 @@ namespace orabs.Doctor
 
         private void frmDoctorUpdate_Load(object sender, EventArgs e)
         {
-            DoctorGroupTable = GlobalStatus.setComboAndDataTableByTableName("DoctorGroup", cboGroup);
-            DepartmentTable = GlobalStatus.setComboAndDataTableByTableName("Department", cboDepartment);
+            Global.setComboAndDataTableByTableName("DoctorGroup", cboGroup);
+            Global.setComboAndDataTableByTableName("Department", cboDepartment);
 
             string queryStr = "select * from Doctor where Doctor_ID = " + Doctor_ID.ToString();
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
 
             DataRow dr = dt.Rows[0];
             txtName.Text = (string)dr["Name"];
+            cboDepartment.SelectedValue = (int)dr["Department_ID"];
+            cboGroup.SelectedValue = (int)dr["DoctorGroup_ID"];
             txtDescription.Text = (string)dr["Description"];
         }
     }

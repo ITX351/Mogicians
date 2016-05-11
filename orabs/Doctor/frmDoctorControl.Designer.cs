@@ -40,19 +40,19 @@
             this.dgvDoctor.AllowUserToAddRows = false;
             this.dgvDoctor.AllowUserToDeleteRows = false;
             this.dgvDoctor.AllowUserToResizeRows = false;
-            this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoctor.Location = new System.Drawing.Point(12, 12);
             this.dgvDoctor.Name = "dgvDoctor";
             this.dgvDoctor.ReadOnly = true;
             this.dgvDoctor.RowTemplate.Height = 23;
-            this.dgvDoctor.Size = new System.Drawing.Size(580, 355);
+            this.dgvDoctor.Size = new System.Drawing.Size(719, 355);
             this.dgvDoctor.TabIndex = 0;
             this.dgvDoctor.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDoctor_CellMouseDoubleClick);
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(607, 12);
+            this.btnQuery.Location = new System.Drawing.Point(755, 12);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(83, 36);
             this.btnQuery.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(696, 12);
+            this.btnShowAll.Location = new System.Drawing.Point(844, 12);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(82, 36);
             this.btnShowAll.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(607, 115);
+            this.btnUpdate.Location = new System.Drawing.Point(757, 122);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(83, 38);
             this.btnUpdate.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 399);
+            this.ClientSize = new System.Drawing.Size(940, 399);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnQuery);

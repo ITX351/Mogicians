@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace orabs
 {
-    class GlobalStatus
+    class Global
     {
         public static bool login = false;
         public static string userName = "";
@@ -11,18 +11,22 @@ namespace orabs
 
         public static string AppendPercent(string str)
         {
-            return "%" + str + "%";
+            return "%" + EscapeSingleQuotes(str) + "%";
         }
 
-        public static DataTable setComboAndDataTableByTableName(string TableName, ComboBox comboBox)
+        public static string EscapeSingleQuotes(object str)
+        {
+            return str.ToString().Replace("'", "''");
+        }
+
+        public static void setComboAndDataTableByTableName(string TableName, ComboBox comboBox)
         {
             string queryStr = "select * from " + TableName;
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
 
-            if (comboBox != null)
-                foreach (DataRow dr in dt.Rows)
-                    comboBox.Items.Add((string)dr["Name"]);
-            return dt;
+            comboBox.DisplayMember = "Name";
+            comboBox.ValueMember = TableName + "_ID";
+            comboBox.DataSource = dt;
         }
     }
 }

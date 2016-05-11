@@ -35,7 +35,7 @@ namespace orabs.Department
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string exeStr = "update Department set Name = '" + txtDepartmentName.Text + 
+            string exeStr = "update Department set Name = '" + Global.EscapeSingleQuotes(txtDepartmentName.Text) + 
                 "' where Department_ID = " + Department_ID.ToString();
             if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
             {

@@ -24,7 +24,7 @@ namespace orabs.Department
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string exeStr = "insert into Department(Name) values('" + txtDepartmentName.Text + "')";
+            string exeStr = "insert into Department(Name) values('" + Global.EscapeSingleQuotes(txtDepartmentName.Text) + "')";
             if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
             {
                 MessageBox.Show("Department Add successfully.");

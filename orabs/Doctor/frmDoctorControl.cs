@@ -32,10 +32,14 @@ namespace orabs
 
         private void showQuery() // show records fitting parameters
         {
-            string queryStr = "select * from Doctor where Name like '" + GlobalStatus.AppendPercent(name) + "'" +
-                " and (DoctorGroup_ID = " + group.ToString() + " or " + group.ToString() + " = -1)" +
-                " and (Department_ID = " + department.ToString() + " or " + department.ToString() + " = -1)" +
-                " and Description like '" + GlobalStatus.AppendPercent(description) + "'";
+            string queryStr = "select Doctor.Doctor_ID, Doctor.Name, DoctorGroup.Name as DoctorGroupName," + 
+                " Department.Name as DepartmentName, Doctor.Description from Doctor" + 
+                " join DoctorGroup on Doctor.DoctorGroup_ID = DoctorGroup.DoctorGroup_ID" + 
+                " join Department on Doctor.Department_ID = Department.Department_ID" + 
+                " where Doctor.Name like '" + Global.AppendPercent(name) + "'" +
+                " and (Doctor.DoctorGroup_ID = " + group.ToString() + " or " + group.ToString() + " = -1)" +
+                " and (Doctor.Department_ID = " + department.ToString() + " or " + department.ToString() + " = -1)" +
+                " and Doctor.Description like '" + Global.AppendPercent(description) + "'";
 
             showTable = DatabaseOperation.GetDataTableByQuery(queryStr);
             dgvDoctor.DataSource = showTable;
