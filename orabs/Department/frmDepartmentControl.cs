@@ -66,7 +66,7 @@ namespace orabs.Department
                 if (remainDoctors > 0)
                 {
                     MessageBox.Show(remainDoctors.ToString() +
-                        " remaining doctors belong to this Department. The delete operation has been interrupted.");
+                        "Remaining doctors belong to this Department. The delete operation has been interrupted.");
                     return;
                 }
 
@@ -86,6 +86,11 @@ namespace orabs.Department
         private void dgvDepartment_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btnUpdate_Click(sender, e);
+        }
+
+        private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }

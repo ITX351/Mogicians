@@ -39,7 +39,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(225, 165);
+            this.btnCancel.Location = new System.Drawing.Point(187, 165);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 11;
@@ -49,7 +49,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(114, 165);
+            this.btnOK.Location = new System.Drawing.Point(66, 165);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 10;
@@ -59,16 +59,16 @@
             // 
             // txtCharge
             // 
-            this.txtCharge.Location = new System.Drawing.Point(133, 103);
+            this.txtCharge.Location = new System.Drawing.Point(149, 102);
             this.txtCharge.Name = "txtCharge";
-            this.txtCharge.Size = new System.Drawing.Size(100, 21);
+            this.txtCharge.Size = new System.Drawing.Size(113, 21);
             this.txtCharge.TabIndex = 9;
             // 
             // txtGroupName
             // 
-            this.txtGroupName.Location = new System.Drawing.Point(133, 63);
+            this.txtGroupName.Location = new System.Drawing.Point(149, 63);
             this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(100, 21);
+            this.txtGroupName.Size = new System.Drawing.Size(113, 21);
             this.txtGroupName.TabIndex = 8;
             // 
             // lblCharge

@@ -105,6 +105,7 @@
             this.Controls.Add(this.lblGroupName);
             this.Name = "frmDoctorGroupAdd";
             this.Text = "Doctor Group Add";
+            this.Load += new System.EventHandler(this.frmDoctorGroupAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

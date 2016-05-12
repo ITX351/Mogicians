@@ -17,6 +17,11 @@ namespace orabs.Department
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (txtDepartmentName.Text.Length == 0)
+            {
+                MessageBox.Show("Department Name can not be empty.");
+                return;
+            }
             string exeStr = "insert into Department(Name) values('" + Global.EscapeSingleQuotes(txtDepartmentName.Text) + "')";
             if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
             {
@@ -28,6 +33,11 @@ namespace orabs.Department
             {
                 MessageBox.Show("Some error has occurred when adding.");
             }
+        }
+
+        private void frmDepartmentAdd_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

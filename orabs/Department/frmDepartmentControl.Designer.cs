@@ -43,11 +43,13 @@
             this.dgvDepartment.AllowUserToResizeRows = false;
             this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartment.GridColor = System.Drawing.Color.DarkGray;
             this.dgvDepartment.Location = new System.Drawing.Point(29, 38);
             this.dgvDepartment.Name = "dgvDepartment";
             this.dgvDepartment.RowTemplate.Height = 23;
             this.dgvDepartment.Size = new System.Drawing.Size(402, 269);
             this.dgvDepartment.TabIndex = 0;
+            this.dgvDepartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentClick);
             this.dgvDepartment.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentDoubleClick);
             // 
             // btnAdd

@@ -17,6 +17,11 @@ namespace orabs.Doctor
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (txtGroupName.Text.Length == 0 || txtCharge.Text.Length == 0)
+            {
+                MessageBox.Show("Doctor Group Name and Charge can not be empty.");
+                return;
+            }
             string exeStr = "insert into DoctorGroup(Name, Charge) values('" + 
                 Global.EscapeSingleQuotes(txtGroupName.Text) + "', " + 
                 Global.EscapeSingleQuotes(txtCharge.Text) + ")";
@@ -31,6 +36,11 @@ namespace orabs.Doctor
             {
                 MessageBox.Show("Some error has occurred when adding.");
             }
+        }
+
+        private void frmDoctorGroupAdd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,14 +45,14 @@
             // 
             // txtDepartmentName
             // 
-            this.txtDepartmentName.Location = new System.Drawing.Point(142, 41);
+            this.txtDepartmentName.Location = new System.Drawing.Point(159, 41);
             this.txtDepartmentName.Name = "txtDepartmentName";
             this.txtDepartmentName.Size = new System.Drawing.Size(100, 21);
             this.txtDepartmentName.TabIndex = 1;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(167, 96);
+            this.btnOK.Location = new System.Drawing.Point(130, 96);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 2;
@@ -63,7 +63,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(257, 96);
+            this.btnCancel.Location = new System.Drawing.Point(232, 96);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -85,6 +85,7 @@
             this.Controls.Add(this.lblDepartmentName);
             this.Name = "frmDepartmentAdd";
             this.Text = "Department Add";
+            this.Load += new System.EventHandler(this.frmDepartmentAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

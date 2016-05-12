@@ -10,8 +10,8 @@ namespace orabs
         private DataTable showTable;
 
         private string name;
-        private int group;
-        private int department;
+        private int group_ID;
+        private int department_ID;
         private string description;
 
         public frmDoctorControl()
@@ -26,7 +26,7 @@ namespace orabs
 
         private void doQuery(string name, int group, int department, string description) // change query parameters
         {
-            this.name = name; this.group = group; this.department = department; this.description = description;
+            this.name = name; this.group_ID = group; this.department_ID = department; this.description = description;
             showQuery();
         }
 
@@ -37,8 +37,8 @@ namespace orabs
                 " join DoctorGroup on Doctor.DoctorGroup_ID = DoctorGroup.DoctorGroup_ID" + 
                 " join Department on Doctor.Department_ID = Department.Department_ID" + 
                 " where Doctor.Name like '" + Global.AppendPercent(name) + "'" +
-                " and (Doctor.DoctorGroup_ID = " + group.ToString() + " or " + group.ToString() + " = -1)" +
-                " and (Doctor.Department_ID = " + department.ToString() + " or " + department.ToString() + " = -1)" +
+                " and (Doctor.DoctorGroup_ID = " + group_ID.ToString() + " or " + group_ID.ToString() + " = -1)" +
+                " and (Doctor.Department_ID = " + department_ID.ToString() + " or " + department_ID.ToString() + " = -1)" +
                 " and Doctor.Description like '" + Global.AppendPercent(description) + "'";
 
             showTable = DatabaseOperation.GetDataTableByQuery(queryStr);
@@ -82,6 +82,26 @@ namespace orabs
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmDoctorAdd frmDoctorAddEntity = new frmDoctorAdd();
+            frmDoctorAddEntity.ShowDialog();
+            if (frmDoctorAddEntity.DialogResult == DialogResult.OK)
+            {
+                showQuery();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

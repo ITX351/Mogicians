@@ -65,28 +65,34 @@
     <Compile Include="Department\frmDepartmentUpdate.Designer.cs">
       <DependentUpon>frmDepartmentUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\frmDoctorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\frmDoctorAdd.Designer.cs">
+      <DependentUpon>frmDoctorAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\frmDoctorControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Doctor\frmDoctorControl.Designer.cs">
       <DependentUpon>frmDoctorControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\frmDoctorGroupAdd.cs">
+    <Compile Include="DoctorGroup\frmDoctorGroupAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctor\frmDoctorGroupAdd.Designer.cs">
+    <Compile Include="DoctorGroup\frmDoctorGroupAdd.Designer.cs">
       <DependentUpon>frmDoctorGroupAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\frmDoctorGroupControl.cs">
+    <Compile Include="DoctorGroup\frmDoctorGroupControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctor\frmDoctorGroupControl.Designer.cs">
+    <Compile Include="DoctorGroup\frmDoctorGroupControl.Designer.cs">
       <DependentUpon>frmDoctorGroupControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\frmDoctorGroupUpdate.cs">
+    <Compile Include="DoctorGroup\frmDoctorGroupUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctor\frmDoctorGroupUpdate.Designer.cs">
+    <Compile Include="DoctorGroup\frmDoctorGroupUpdate.Designer.cs">
       <DependentUpon>frmDoctorGroupUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctor\frmDoctorUpdate.cs">
@@ -131,16 +137,19 @@
     <EmbeddedResource Include="Department\frmDepartmentUpdate.resx">
       <DependentUpon>frmDepartmentUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\frmDoctorAdd.resx">
+      <DependentUpon>frmDoctorAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorControl.resx">
       <DependentUpon>frmDoctorControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\frmDoctorGroupAdd.resx">
+    <EmbeddedResource Include="DoctorGroup\frmDoctorGroupAdd.resx">
       <DependentUpon>frmDoctorGroupAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\frmDoctorGroupControl.resx">
+    <EmbeddedResource Include="DoctorGroup\frmDoctorGroupControl.resx">
       <DependentUpon>frmDoctorGroupControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\frmDoctorGroupUpdate.resx">
+    <EmbeddedResource Include="DoctorGroup\frmDoctorGroupUpdate.resx">
       <DependentUpon>frmDoctorGroupUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorUpdate.resx">
@@ -180,7 +189,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Patient\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

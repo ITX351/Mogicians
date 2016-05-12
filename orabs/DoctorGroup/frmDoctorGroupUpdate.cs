@@ -30,6 +30,11 @@ namespace orabs.Doctor
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (txtGroupName.Text.Length == 0 || txtCharge.Text.Length == 0)
+            {
+                MessageBox.Show("Doctor Group Name and Charge can not be empty.");
+                return;
+            }
             string exeStr = "update DoctorGroup set" + 
                 " Name = '" + Global.EscapeSingleQuotes(txtGroupName.Text) + "'," + 
                 " Charge = " + Global.EscapeSingleQuotes(txtCharge.Text) + 

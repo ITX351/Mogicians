@@ -77,5 +77,10 @@ namespace orabs.User
                 MessageBox.Show("Some error has occurred when registrating.");
             }
         }
+
+        private void frmRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
