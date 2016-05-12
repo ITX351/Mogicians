@@ -120,6 +120,30 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Patient\frmPatientAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\frmPatientAdd.Designer.cs">
+      <DependentUpon>frmPatientAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\frmPatientControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\frmPatientControl.Designer.cs">
+      <DependentUpon>frmPatientControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\frmPatientQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\frmPatientQuery.Designer.cs">
+      <DependentUpon>frmPatientQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\frmPatientUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\frmPatientUpdate.Designer.cs">
+      <DependentUpon>frmPatientUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\frmRegister.cs">
@@ -164,6 +188,18 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Patient\frmPatientAdd.resx">
+      <DependentUpon>frmPatientAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\frmPatientControl.resx">
+      <DependentUpon>frmPatientControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\frmPatientQuery.resx">
+      <DependentUpon>frmPatientQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\frmPatientUpdate.resx">
+      <DependentUpon>frmPatientUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -189,9 +225,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Patient\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

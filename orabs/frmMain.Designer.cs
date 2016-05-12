@@ -64,7 +64,7 @@
             this.departmentToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(746, 25);
+            this.menuStripMain.Size = new System.Drawing.Size(746, 24);
             this.menuStripMain.TabIndex = 1;
             this.menuStripMain.Text = "menuStripMain";
             // 
@@ -73,7 +73,7 @@
             this.mainMenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(82, 21);
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.mainMenuToolStripMenuItem.Text = "&MainMenu";
             // 
             // exitToolStripMenuItem
@@ -89,20 +89,20 @@
             this.doctorGroupControlToolStripMenuItem,
             this.doctorControlToolStripMenuItem});
             this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
-            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
+            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.doctorToolStripMenuItem.Text = "&Doctor";
             // 
             // doctorGroupControlToolStripMenuItem
             // 
             this.doctorGroupControlToolStripMenuItem.Name = "doctorGroupControlToolStripMenuItem";
-            this.doctorGroupControlToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.doctorGroupControlToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.doctorGroupControlToolStripMenuItem.Text = "Doctor &Group Control";
             this.doctorGroupControlToolStripMenuItem.Click += new System.EventHandler(this.doctorGroupControlToolStripMenuItem_Click);
             // 
             // doctorControlToolStripMenuItem
             // 
             this.doctorControlToolStripMenuItem.Name = "doctorControlToolStripMenuItem";
-            this.doctorControlToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.doctorControlToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.doctorControlToolStripMenuItem.Text = "&Doctor Control";
             this.doctorControlToolStripMenuItem.Click += new System.EventHandler(this.doctorControlToolStripMenuItem_Click);
             // 
@@ -111,13 +111,13 @@
             this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userControlToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.userToolStripMenuItem.Text = "&User";
             // 
             // userControlToolStripMenuItem
             // 
             this.userControlToolStripMenuItem.Name = "userControlToolStripMenuItem";
-            this.userControlToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.userControlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.userControlToolStripMenuItem.Text = "&User Control";
             // 
             // patientToolStripMenuItem
@@ -126,19 +126,20 @@
             this.patientControlToolStripMenuItem,
             this.personalInformationToolStripMenuItem});
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
-            this.patientToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.patientToolStripMenuItem.Text = "&Patient";
             // 
             // patientControlToolStripMenuItem
             // 
             this.patientControlToolStripMenuItem.Name = "patientControlToolStripMenuItem";
-            this.patientControlToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.patientControlToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.patientControlToolStripMenuItem.Text = "P&atient Control";
+            this.patientControlToolStripMenuItem.Click += new System.EventHandler(this.patientControlToolStripMenuItem_Click);
             // 
             // personalInformationToolStripMenuItem
             // 
             this.personalInformationToolStripMenuItem.Name = "personalInformationToolStripMenuItem";
-            this.personalInformationToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.personalInformationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.personalInformationToolStripMenuItem.Text = "&Personal Information";
             // 
             // departmentToolStripMenuItem
@@ -146,13 +147,13 @@
             this.departmentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.departmentControlToolStripMenuItem});
             this.departmentToolStripMenuItem.Name = "departmentToolStripMenuItem";
-            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
+            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.departmentToolStripMenuItem.Text = "D&epartment";
             // 
             // departmentControlToolStripMenuItem
             // 
             this.departmentControlToolStripMenuItem.Name = "departmentControlToolStripMenuItem";
-            this.departmentControlToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.departmentControlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.departmentControlToolStripMenuItem.Text = "&Department Control";
             this.departmentControlToolStripMenuItem.Click += new System.EventHandler(this.departmentControlToolStripMenuItem_Click);
             // 

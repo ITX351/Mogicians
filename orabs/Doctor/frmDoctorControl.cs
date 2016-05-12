@@ -24,6 +24,11 @@ namespace orabs
             btnShowAll_Click(sender, e); // Default show all records.
         }
 
+        private int getDoctorID()
+        {
+            return (int)showTable.Rows[dgvDoctor.CurrentRow.Index]["Doctor_ID"];
+        }
+
         private void doQuery(string name, int group, int department, string description) // change query parameters
         {
             this.name = name; this.group_ID = group; this.department_ID = department; this.description = description;
@@ -101,7 +106,21 @@ namespace orabs
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Confirm delete this doctor?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int doctor_id = getDoctorID();
 
+                string exeStr = "delete from Doctor where Doctor_ID = " + doctor_id.ToString();
+                if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
+                {
+                    MessageBox.Show("Doctor has been deleted.");
+                    btnShowAll_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Some error has occurred while deleting.");
+                }
+            }
         }
     }
 }

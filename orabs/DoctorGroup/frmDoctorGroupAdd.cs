@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace orabs.Doctor
+namespace orabs.DoctorGroup
 {
     public partial class frmDoctorGroupAdd : Form
     {

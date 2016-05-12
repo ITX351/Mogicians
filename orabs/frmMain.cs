@@ -1,5 +1,8 @@
 ﻿using orabs.Department;
+using orabs.DoctorGroup;
 using orabs.Doctor;
+using orabs.Patient;
+
 using System;
 using System.Windows.Forms;
 
@@ -43,6 +46,12 @@ namespace orabs
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void patientControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPatientControl frmPatientControlEntity = new frmPatientControl();
+            frmPatientControlEntity.Show();
         }
     }
 }

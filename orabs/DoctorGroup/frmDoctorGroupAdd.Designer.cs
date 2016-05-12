@@ -1,4 +1,4 @@
-﻿namespace orabs.Doctor
+﻿namespace orabs.DoctorGroup
 {
     partial class frmDoctorGroupAdd
     {
