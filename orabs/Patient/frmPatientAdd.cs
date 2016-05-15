@@ -31,7 +31,7 @@ namespace orabs.Patient
             }
             //Check length of Indentity Number == 18 ? 371323 ........ .... (18)
 
-            if (!Global.testRegax(txtPhone.Text, @"^([0-9\-]+)$"))
+            if (!Global.testRegax(txtPhone.Text, @"^([0-9\-]*)$"))
             {
                 MessageBox.Show("Phone Number can only contain digit and dash.");
                 txtPhone.Focus();
@@ -58,7 +58,7 @@ namespace orabs.Patient
 
         private void frmPatientAdd_Load(object sender, EventArgs e)
         {
-            cboSex.DataSource = Global.dtSex;
+            cboSex.DataSource = Global.initDataTableSex();
             cboSex.DisplayMember = "SexStr";
             cboSex.ValueMember = "SexCode";
         }

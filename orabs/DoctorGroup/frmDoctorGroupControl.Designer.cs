@@ -41,7 +41,7 @@
             this.dgvDoctorGroup.AllowUserToAddRows = false;
             this.dgvDoctorGroup.AllowUserToDeleteRows = false;
             this.dgvDoctorGroup.AllowUserToResizeRows = false;
-            this.dgvDoctorGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDoctorGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDoctorGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoctorGroup.Location = new System.Drawing.Point(39, 38);
             this.dgvDoctorGroup.Name = "dgvDoctorGroup";
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(797, 488);
+            this.ClientSize = new System.Drawing.Size(789, 475);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

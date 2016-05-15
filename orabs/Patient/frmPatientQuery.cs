@@ -12,14 +12,23 @@ namespace orabs.Patient
 {
     public partial class frmPatientQuery : Form
     {
+        private DataTable dataTable;
         public frmPatientQuery()
         {
             InitializeComponent();
         }
 
         private void frmPatientQuery_Load(object sender, EventArgs e)
-        {
-            // Add not required field in cboSex, cboSex cannot be null now -> Bug
+        {     
+            //should use deep copy, i.e, modify here won't affect Global.dtSex
+            dataTable = Global.initDataTableSex();
+            DataRow dr = dataTable.NewRow();
+            dr["SexCode"] = -1;
+            dr["SexStr"] = "Not required";
+            dataTable.Rows.Add(dr);
+            cboSex.DataSource = dataTable;
+            cboSex.DisplayMember = "SexStr";
+            cboSex.ValueMember = "SexCode";
         }
 
         public string PatientName
@@ -30,11 +39,11 @@ namespace orabs.Patient
             }
         }
 
-        public int Sex
+        public SByte Sex
         {
             get
             {
-                return (int)cboSex.SelectedValue;
+                return (SByte)cboSex.SelectedValue;
             }
         }
 

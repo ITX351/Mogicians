@@ -14,7 +14,7 @@ namespace orabs.Patient
     public partial class frmPatientControl : Form
     {
         private string name;
-        private int sex;
+        private SByte sex;
         private string phone;
         private string address;
         private string identityNumber;
@@ -32,7 +32,7 @@ namespace orabs.Patient
             return (int)showTable.Rows[dgvPatient.CurrentRow.Index]["Patient_ID"];
         }
 
-        private void doQuery(string name, int sex, string phone, string address, string identityNumber)
+        private void doQuery(string name, SByte sex, string phone, string address, string identityNumber)
         {
             this.name = name;
             this.sex = sex;
@@ -61,9 +61,9 @@ namespace orabs.Patient
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!Global.canBePatient())      
+            if (!Global.isDoctor())      
             {
-                MessageBox.Show("Admin or Doctor has no authority to complement patient information");
+                MessageBox.Show("Doctor has no authority to complement patient information");
                 return;
             }
 
@@ -95,7 +95,7 @@ namespace orabs.Patient
 
         private void dgvPatient_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Sex:male/female is showedd by checkbox now, maybe need to change to string?
+            // Todo: Sex:male/female is showed by checkbox now, maybe need to change to string
         }
 
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,17 +105,45 @@ namespace orabs.Patient
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!Global.isPatient())
+            //Todo: check patient can only modify his info
+            if (Global.isAdmin() || Global.isPatient())   
+            {
+                frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(getPatientID());
+                frmPatientUpdateEntity.ShowDialog();
+
+                if (frmPatientUpdateEntity.DialogResult == DialogResult.OK)
+                {
+                    btnShowAll_Click(sender, e);
+                }
+            }
+            else
             {
                 MessageBox.Show("You have no permission to do this");
                 return;
             }
-            frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(getPatientID());
-            frmPatientUpdateEntity.ShowDialog();
+        }
 
-            if (frmPatientUpdateEntity.DialogResult == DialogResult.OK)
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (!Global.isDoctor())
             {
-                btnShowAll_Click(sender, e);
+                MessageBox.Show("You have no permission to do this");
+                return;
+            }
+            if (MessageBox.Show("Confirm delete ?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int patient_id = getPatientID();
+
+                string exeStr = "delete from Patient where Patient_ID = " + patient_id.ToString();
+                if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
+                {
+                    MessageBox.Show("Deleted successfully.");
+                    btnShowAll_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Some error has occurred while deleting.");
+                }
             }
         }
     }

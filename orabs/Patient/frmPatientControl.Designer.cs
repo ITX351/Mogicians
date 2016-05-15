@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.btnQuery = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -48,8 +48,8 @@
             this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatient.Location = new System.Drawing.Point(12, 27);
             this.dgvPatient.Name = "dgvPatient";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvPatient.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvPatient.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatient.RowTemplate.Height = 23;
             this.dgvPatient.Size = new System.Drawing.Size(458, 179);
             this.dgvPatient.TabIndex = 0;
@@ -93,6 +93,7 @@
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShowAll
             // 

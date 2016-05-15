@@ -43,7 +43,7 @@
             this.dgvDoctor.AllowUserToAddRows = false;
             this.dgvDoctor.AllowUserToDeleteRows = false;
             this.dgvDoctor.AllowUserToResizeRows = false;
-            this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoctor.Location = new System.Drawing.Point(12, 12);
             this.dgvDoctor.Name = "dgvDoctor";

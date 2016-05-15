@@ -41,7 +41,7 @@
             this.dgvDepartment.AllowUserToAddRows = false;
             this.dgvDepartment.AllowUserToDeleteRows = false;
             this.dgvDepartment.AllowUserToResizeRows = false;
-            this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDepartment.GridColor = System.Drawing.Color.DarkGray;
             this.dgvDepartment.Location = new System.Drawing.Point(29, 38);

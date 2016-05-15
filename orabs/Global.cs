@@ -116,9 +116,21 @@ namespace orabs
                 return false;
         }
 
-        public static void initDataTableSex()
+        public static bool isAdmin()
         {
-            dtSex.Columns.Add("SexCode",System.Type.GetType("System.Boolean"));
+            getUserIdentity();
+            if (userIdentityMap["isAdmin"] == "True")
+                return true;
+            else
+                return false;
+        }
+
+        public static DataTable initDataTableSex()
+        {
+            DataTable dtSex = new DataTable();
+            dtSex.Columns.Add("SexCode",System.Type.GetType("System.SByte"));   
+                   //System.Sbyte : signed byte -128 ~ 127, 
+                   //corresponding to tinyint in MySQL, to which bool and Boolean will be converted 
             dtSex.Columns.Add("SexStr", System.Type.GetType("System.String"));
 
             DataRow dr0 = dtSex.NewRow();
@@ -129,7 +141,8 @@ namespace orabs
             DataRow dr1 = dtSex.NewRow();
             dr1["SexCode"] = 1;
             dr1["SexStr"] = "Female";   // 1 - Female
-            dtSex.Rows.Add(dr1);     
+            dtSex.Rows.Add(dr1);
+            return dtSex;
         }
     }
 }
