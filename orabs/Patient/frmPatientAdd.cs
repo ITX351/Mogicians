@@ -31,9 +31,9 @@ namespace orabs.Patient
             }
             //Check length of Indentity Number == 18 ? 371323 ........ .... (18)
 
-            if (!Global.testRegax(txtPhone.Text, @"^([0-9\-]*)$"))
+            if (!Global.testRegax(txtPhone.Text, @"^([0-9\-+]*)$"))
             {
-                MessageBox.Show("Phone Number can only contain digit and dash.");
+                MessageBox.Show("Phone Number can only contain digit, plus sign and dash.");
                 txtPhone.Focus();
                 return;
             }

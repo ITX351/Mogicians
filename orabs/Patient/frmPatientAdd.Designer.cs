@@ -93,28 +93,28 @@
             this.txtName.Location = new System.Drawing.Point(248, 47);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 21);
-            this.txtName.TabIndex = 5;
+            this.txtName.TabIndex = 0;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(248, 131);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(121, 21);
-            this.txtPhone.TabIndex = 6;
+            this.txtPhone.TabIndex = 2;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(248, 171);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(121, 21);
-            this.txtAddress.TabIndex = 7;
+            this.txtAddress.TabIndex = 3;
             // 
             // txtIdentityNumber
             // 
             this.txtIdentityNumber.Location = new System.Drawing.Point(248, 216);
             this.txtIdentityNumber.Name = "txtIdentityNumber";
             this.txtIdentityNumber.Size = new System.Drawing.Size(121, 21);
-            this.txtIdentityNumber.TabIndex = 8;
+            this.txtIdentityNumber.TabIndex = 4;
             // 
             // cboSex
             // 
@@ -123,33 +123,37 @@
             this.cboSex.Location = new System.Drawing.Point(248, 92);
             this.cboSex.Name = "cboSex";
             this.cboSex.Size = new System.Drawing.Size(121, 20);
-            this.cboSex.TabIndex = 9;
+            this.cboSex.TabIndex = 1;
             // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(162, 280);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 10;
+            this.btnOK.TabIndex = 5;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(281, 280);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmPatientAdd
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(507, 348);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cboSex);

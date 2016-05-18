@@ -24,6 +24,18 @@ namespace orabs
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblUserName.Text = "User: " + Global.userName;
+            switch (Global.authority)
+            {
+                case Global.Identity.Admin:
+                    lblIdentity.Text += "Admin";
+                    break;
+                case Global.Identity.Doctor:
+                    lblIdentity.Text += "Doctor";
+                    break;
+                default:
+                    lblIdentity.Text += "Patient";
+                    break;
+            }
         }
 
         private void doctorControlToolStripMenuItem_Click(object sender, EventArgs e)
