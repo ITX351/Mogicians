@@ -2,6 +2,7 @@
 using orabs.DoctorGroup;
 using orabs.Doctor;
 using orabs.Patient;
+using orabs.Meeting;
 
 using System;
 using System.Windows.Forms;
@@ -52,6 +53,18 @@ namespace orabs
         {
             frmPatientControl frmPatientControlEntity = new frmPatientControl();
             frmPatientControlEntity.Show();
+        }
+
+        private void meetingRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMeetingRegister frmMeetingRegisterEntity = new frmMeetingRegister();
+            frmMeetingRegisterEntity.Show();
+        }
+
+        private void meetingControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMeetingControl frmMeetingControlEntity = new frmMeetingControl();
+            frmMeetingControlEntity.Show();
         }
     }
 }

@@ -42,6 +42,9 @@
             this.personalInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmentControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meetingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meetingRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meetingControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +64,8 @@
             this.doctorToolStripMenuItem,
             this.userToolStripMenuItem,
             this.patientToolStripMenuItem,
-            this.departmentToolStripMenuItem});
+            this.departmentToolStripMenuItem,
+            this.meetingToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(746, 24);
@@ -79,7 +83,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -117,7 +121,7 @@
             // userControlToolStripMenuItem
             // 
             this.userControlToolStripMenuItem.Name = "userControlToolStripMenuItem";
-            this.userControlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.userControlToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.userControlToolStripMenuItem.Text = "&User Control";
             // 
             // patientToolStripMenuItem
@@ -157,6 +161,29 @@
             this.departmentControlToolStripMenuItem.Text = "&Department Control";
             this.departmentControlToolStripMenuItem.Click += new System.EventHandler(this.departmentControlToolStripMenuItem_Click);
             // 
+            // meetingToolStripMenuItem
+            // 
+            this.meetingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.meetingRegisterToolStripMenuItem,
+            this.meetingControlToolStripMenuItem});
+            this.meetingToolStripMenuItem.Name = "meetingToolStripMenuItem";
+            this.meetingToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.meetingToolStripMenuItem.Text = "Mee&ting";
+            // 
+            // meetingRegisterToolStripMenuItem
+            // 
+            this.meetingRegisterToolStripMenuItem.Name = "meetingRegisterToolStripMenuItem";
+            this.meetingRegisterToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.meetingRegisterToolStripMenuItem.Text = "Meeting Register";
+            this.meetingRegisterToolStripMenuItem.Click += new System.EventHandler(this.meetingRegisterToolStripMenuItem_Click);
+            // 
+            // meetingControlToolStripMenuItem
+            // 
+            this.meetingControlToolStripMenuItem.Name = "meetingControlToolStripMenuItem";
+            this.meetingControlToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.meetingControlToolStripMenuItem.Text = "Meeting Control";
+            this.meetingControlToolStripMenuItem.Click += new System.EventHandler(this.meetingControlToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -192,5 +219,8 @@
         private System.Windows.Forms.ToolStripMenuItem personalInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departmentControlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem meetingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem meetingRegisterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem meetingControlToolStripMenuItem;
     }
 }

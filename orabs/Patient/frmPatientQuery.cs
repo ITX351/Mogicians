@@ -20,7 +20,6 @@ namespace orabs.Patient
 
         private void frmPatientQuery_Load(object sender, EventArgs e)
         {     
-            //should use deep copy, i.e, modify here won't affect Global.dtSex
             dataTable = Global.initDataTableSex();
             DataRow dr = dataTable.NewRow();
             dr["SexCode"] = -1;
@@ -29,6 +28,7 @@ namespace orabs.Patient
             cboSex.DataSource = dataTable;
             cboSex.DisplayMember = "SexStr";
             cboSex.ValueMember = "SexCode";
+            cboSex.SelectedValue = -1;
         }
 
         public string PatientName

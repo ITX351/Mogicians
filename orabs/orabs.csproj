@@ -120,6 +120,24 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Meeting\frmMeetingControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meeting\frmMeetingControl.Designer.cs">
+      <DependentUpon>frmMeetingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meeting\frmMeetingDoctorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meeting\frmMeetingDoctorView.Designer.cs">
+      <DependentUpon>frmMeetingDoctorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meeting\frmMeetingQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meeting\frmMeetingQuery.Designer.cs">
+      <DependentUpon>frmMeetingQuery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Meeting\frmMeetingRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +212,15 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Meeting\frmMeetingControl.resx">
+      <DependentUpon>frmMeetingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meeting\frmMeetingDoctorView.resx">
+      <DependentUpon>frmMeetingDoctorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meeting\frmMeetingQuery.resx">
+      <DependentUpon>frmMeetingQuery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Meeting\frmMeetingRegister.resx">
       <DependentUpon>frmMeetingRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,7 +261,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Diagnose\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

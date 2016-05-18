@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
+using System.Windows.Forms;
 
 namespace orabs
 {
@@ -19,7 +20,7 @@ namespace orabs
             }
             catch(MySqlException e)
             {
-                throw e;
+                MessageBox.Show("Unable to connect to database");
             }
         }
 
@@ -31,7 +32,7 @@ namespace orabs
             }
             catch (MySqlException e)
             {
-                throw e;
+                MessageBox.Show("Closing database connection error");
             }
         }
 

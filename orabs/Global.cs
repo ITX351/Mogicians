@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,6 +25,10 @@ namespace orabs
             return str.ToString().Replace("'", "''");
         }
 
+        public static string FormatDateTime(DateTime dateTime)
+        {
+            return String.Format("yyyy-MM-dd hh:mm:ss", dateTime);
+        }
         public static void setComboBoxByTableName(string TableName, ComboBox comboBox, bool hasNull)
         {
             string queryStr = "select " + TableName + "_ID, Name from " + TableName;
@@ -46,7 +51,6 @@ namespace orabs
                 comboBox.SelectedValue = -1;
             }
         }
-
 
         public static string SHA1(string text)
         {
