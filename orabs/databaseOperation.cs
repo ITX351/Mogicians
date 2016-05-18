@@ -20,7 +20,7 @@ namespace orabs
             }
             catch(MySqlException e)
             {
-                MessageBox.Show("Unable to connect to database");
+                MessageBox.Show("Unable to connect to database. " + e.ToString());
             }
         }
 
@@ -32,7 +32,7 @@ namespace orabs
             }
             catch (MySqlException e)
             {
-                MessageBox.Show("Closing database connection error");
+                MessageBox.Show("Closing database connection error." + e.ToString());
             }
         }
 

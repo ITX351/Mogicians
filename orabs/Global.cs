@@ -9,15 +9,30 @@ namespace orabs
 {
     class Global
     {
+        public enum Identity
+        {
+            Doctor, Patient, Admin
+        };
+
         public static bool login = false;
         public static string userName = "";
         public static int userId = -1;
-        public static Dictionary<string, string> userIdentityMap = new Dictionary<string,string>();
+        public static int patientId = -1;
+        public static int doctorId = -1;
+        public static Identity authority = Identity.Patient; // 0 for patient, 1 for doctor, 2 for admin
+
         public static DataTable dtSex = new DataTable();
 
         public static string AppendPercent(string str)
         {
             return "%" + EscapeSingleQuotes(str) + "%";
+        }
+
+        public static int StringToInt(object str)
+        {
+            if (str == null || str.ToString().Length == 0)
+                return -1;
+            return int.Parse(str.ToString());
         }
 
         public static string EscapeSingleQuotes(object str)
@@ -68,65 +83,6 @@ namespace orabs
         public static bool IsNum(string pstr)
         {
             return testRegax(pstr, @"^(\d+)$");
-        }
-
-        public static void getUserIdentity()
-        {
-            string fetchUserSQLStr = "select * from User where User_ID = " + Global.userId.ToString();
-            DataTable showTable = DatabaseOperation.GetDataTableByQuery(fetchUserSQLStr);
-            string isAdmin = showTable.Rows[0]["isAdmin"].ToString();        //return "True" if admin
-            string linkedDoctor_ID = showTable.Rows[0]["Doctor_ID"].ToString();
-            string linkedPatient_ID = showTable.Rows[0]["Patient_ID"].ToString();
-
-            userIdentityMap.Clear();
-            userIdentityMap.Add("isAdmin", isAdmin);
-            userIdentityMap.Add("Doctor_ID", linkedDoctor_ID);
-            userIdentityMap.Add("Patient_ID", linkedPatient_ID);
-        }
-
-        public static bool canBePatient()
-        {
-            getUserIdentity();
-            if (userIdentityMap["isAdmin"] == "True" || userIdentityMap["Doctor_ID"] != null)
-                return false;
-            else
-                return true;
-        }
-
-        public static bool canBeDoctor()
-        {
-            getUserIdentity();
-            if (userIdentityMap["isAdmin"] == "True" || userIdentityMap["Patient_ID"] != null)
-                return false;
-            else
-                return true;
-        }
-
-        public static bool isDoctor()
-        {
-            getUserIdentity();
-            if (userIdentityMap["Doctor_ID"] != null)
-                return true;
-            else
-                return false;
-        }
-
-        public static bool isPatient()
-        {
-            getUserIdentity();
-            if (userIdentityMap["Patient_ID"] != null)
-                return true;
-            else
-                return false;
-        }
-
-        public static bool isAdmin()
-        {
-            getUserIdentity();
-            if (userIdentityMap["isAdmin"] == "True")
-                return true;
-            else
-                return false;
         }
 
         public static DataTable initDataTableSex()

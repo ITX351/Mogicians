@@ -44,7 +44,7 @@ namespace orabs.Patient
 
         private void showQuery()
         {
-            string queryStr = "select Patient_ID, Name, Sex, Phone, Address, Identity_Number " +
+            string queryStr = "select Patient_ID, Name, sexToString(Sex) as Sex, Phone, Address, Identity_Number " +
                 " from Patient where Name like '" + Global.AppendPercent(name) + "'" +
                 " and (Sex = " + sex + " or " + sex + " = -1 )" +
                 " and Phone like '" + Global.AppendPercent(phone) + "'" +
@@ -61,7 +61,7 @@ namespace orabs.Patient
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!Global.isDoctor())      
+            if (Global.authority != Global.Identity.Doctor)
             {
                 MessageBox.Show("Doctor has no authority to complement patient information");
                 return;
@@ -106,7 +106,7 @@ namespace orabs.Patient
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //Todo: check patient can only modify his info
-            if (Global.isAdmin() || Global.isPatient())   
+            if (Global.authority != Global.Identity.Doctor) // not doctor   
             {
                 frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(getPatientID());
                 frmPatientUpdateEntity.ShowDialog();
@@ -125,7 +125,7 @@ namespace orabs.Patient
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!Global.isDoctor())
+            if (Global.authority != Global.Identity.Doctor)
             {
                 MessageBox.Show("You have no permission to do this");
                 return;

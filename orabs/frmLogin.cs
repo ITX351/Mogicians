@@ -42,6 +42,16 @@ namespace orabs
                 Global.login = true;
                 Global.userId = (int)dataTable.Rows[0]["User_ID"];
                 Global.userName = (string)dataTable.Rows[0]["Name"];
+                Global.doctorId = Global.StringToInt(dataTable.Rows[0]["Doctor_ID"]);
+                Global.patientId = Global.StringToInt(dataTable.Rows[0]["Patient_ID"]);
+
+                if ((bool)dataTable.Rows[0]["isAdmin"])
+                    Global.authority = Global.Identity.Admin; // admin
+                else if (Global.doctorId != -1)
+                    Global.authority = Global.Identity.Doctor; // doctor
+                else
+                    Global.authority = Global.Identity.Patient; // patient
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
