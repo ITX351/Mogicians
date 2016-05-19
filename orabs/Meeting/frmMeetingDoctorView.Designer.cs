@@ -51,13 +51,14 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
-            this.cboFilter = new System.Windows.Forms.ComboBox();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
             this.lblQueueLocationTitle = new System.Windows.Forms.Label();
             this.lblQueueLocation = new System.Windows.Forms.Label();
             this.btnSkip = new System.Windows.Forms.Button();
             this.btnHangUp = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnConsultation = new System.Windows.Forms.Button();
+            this.lblHint = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDoctor
@@ -262,19 +263,15 @@
             this.btnLast.UseVisualStyleBackColor = true;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
-            // cboFilter
+            // cboStatus
             // 
-            this.cboFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFilter.FormattingEnabled = true;
-            this.cboFilter.Items.AddRange(new object[] {
-            "Waiting",
-            "Hang Up",
-            "Waiting & Hang Up",
-            "All"});
-            this.cboFilter.Location = new System.Drawing.Point(336, 52);
-            this.cboFilter.Name = "cboFilter";
-            this.cboFilter.Size = new System.Drawing.Size(102, 20);
-            this.cboFilter.TabIndex = 23;
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(336, 52);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(102, 20);
+            this.cboStatus.TabIndex = 23;
+            this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cboStatus_SelectedIndexChanged);
             // 
             // lblQueueLocationTitle
             // 
@@ -333,19 +330,28 @@
             this.btnConsultation.Text = "&Make consultation";
             this.btnConsultation.UseVisualStyleBackColor = true;
             // 
+            // lblHint
+            // 
+            this.lblHint.AutoSize = true;
+            this.lblHint.Location = new System.Drawing.Point(83, 74);
+            this.lblHint.Name = "lblHint";
+            this.lblHint.Size = new System.Drawing.Size(0, 12);
+            this.lblHint.TabIndex = 30;
+            // 
             // frmMeetingDoctorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(636, 485);
+            this.Controls.Add(this.lblHint);
             this.Controls.Add(this.btnConsultation);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnHangUp);
             this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.lblQueueLocation);
             this.Controls.Add(this.lblQueueLocationTitle);
-            this.Controls.Add(this.cboFilter);
+            this.Controls.Add(this.cboStatus);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnNext);
@@ -402,12 +408,13 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.Button btnLast;
-        private System.Windows.Forms.ComboBox cboFilter;
+        private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label lblQueueLocationTitle;
         private System.Windows.Forms.Label lblQueueLocation;
         private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.Button btnHangUp;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnConsultation;
+        private System.Windows.Forms.Label lblHint;
     }
 }

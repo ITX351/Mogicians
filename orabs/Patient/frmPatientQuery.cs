@@ -12,15 +12,14 @@ namespace orabs.Patient
 {
     public partial class frmPatientQuery : Form
     {
-        private DataTable dataTable;
         public frmPatientQuery()
         {
             InitializeComponent();
         }
 
         private void frmPatientQuery_Load(object sender, EventArgs e)
-        {     
-            dataTable = Global.initDataTableSex();
+        {
+            DataTable dataTable = Global.initDataTableSex();
             DataRow dr = dataTable.NewRow();
             dr["SexCode"] = -1;
             dr["SexStr"] = "Not required";

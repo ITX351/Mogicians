@@ -24,7 +24,6 @@ namespace orabs.Patient
         public frmPatientControl()
         {
             InitializeComponent();
-            Global.initDataTableSex();
         }
 
         public int getPatientID()
@@ -61,9 +60,9 @@ namespace orabs.Patient
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (Global.authority != Global.Identity.Doctor)
+            if (Global.authority != Global.Identity.Admin)
             {
-                MessageBox.Show("Doctor has no authority to complement patient information");
+                MessageBox.Show("Patient or Doctor has no authority to complement patient information");
                 return;
             }
 
@@ -125,7 +124,7 @@ namespace orabs.Patient
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (Global.authority != Global.Identity.Doctor)
+            if (Global.authority != Global.Identity.Admin)
             {
                 MessageBox.Show("You have no permission to do this");
                 return;

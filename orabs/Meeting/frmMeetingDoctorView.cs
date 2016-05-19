@@ -12,12 +12,62 @@ namespace orabs.Meeting
 {
     public partial class frmMeetingDoctorView : Form
     {
-        DataTable MeetingPatientTable;
-        int now;
+        private DataTable MeetingPatientTable;
+        private int now;
+        private bool comboBox_load_over;
 
         public frmMeetingDoctorView()
         {
             InitializeComponent();
+        }
+
+        private void initComboBoxStatus()
+        {
+            DataTable dtStatus = new DataTable();
+            dtStatus.Columns.Add("StatusName", System.Type.GetType("System.String"));
+            dtStatus.Columns.Add("StatusChar", System.Type.GetType("System.String"));
+
+            DataRow dr;
+
+            dr = dtStatus.NewRow();
+            dr["StatusName"] = "Created";
+            dr["StatusChar"] = "C";
+            dtStatus.Rows.Add(dr);
+
+            dr = dtStatus.NewRow();
+            dr["StatusName"] = "Waiting";
+            dr["StatusChar"] = "W";
+            dtStatus.Rows.Add(dr);
+
+            dr = dtStatus.NewRow();
+            dr["StatusName"] = "Hang Up";
+            dr["StatusChar"] = "H";
+            dtStatus.Rows.Add(dr);
+
+            dr = dtStatus.NewRow();
+            dr["StatusName"] = "Waiting & Hang Up";
+            dr["StatusChar"] = "W,H";
+            dtStatus.Rows.Add(dr);
+
+            dr = dtStatus.NewRow();
+            dr["StatusName"] = "Finished";
+            dr["StatusChar"] = "F";
+            dtStatus.Rows.Add(dr);
+
+            dr = dtStatus.NewRow();
+            dr["StatusName"] = "Skipped";
+            dr["StatusChar"] = "S";
+            dtStatus.Rows.Add(dr);
+
+            dr = dtStatus.NewRow();
+            dr["StatusName"] = "All";
+            dr["StatusChar"] = "C,W,H,F,S";
+            dtStatus.Rows.Add(dr);
+
+            cboStatus.DataSource = dtStatus;
+            cboStatus.DisplayMember = "StatusName";
+            cboStatus.ValueMember = "StatusChar";
+            cboStatus.SelectedValue = "W";
         }
 
         private void frmMeetingDoctorView_Load(object sender, EventArgs e)
@@ -25,8 +75,12 @@ namespace orabs.Meeting
             // get Doctor Name
             DataRow dr = DatabaseOperation.GetDataRowByID("Doctor", Global.doctorId);
             lblDoctor.Text += (string)dr["Name"];
+            comboBox_load_over = false;
 
+            initComboBoxStatus();
             doQuery();
+
+            comboBox_load_over = true;
         }
 
         private void doQuery()
@@ -35,12 +89,14 @@ namespace orabs.Meeting
             string queryStr = "select Patient.Patient_ID, Patient.`Name`, sexToString(Patient.Sex) as Sex," +
                 " Patient.Phone, Patient.Address, Patient.Identity_Number, Meeting.Meeting_ID, Meeting.`Status`," + 
                 " Meeting.StatusAt, Meeting.CreatedAt from Meeting join Patient on Patient.Patient_ID = Meeting.Patient_ID" +
-                " where Meeting.Doctor_ID = " + Global.doctorId.ToString() + " order by Meeting.CreatedAt asc";
+                " where Meeting.Doctor_ID = " + Global.doctorId.ToString() + 
+                " and find_in_set(Meeting.`Status`, '" + cboStatus.SelectedValue.ToString() + "') > 0" +
+                " order by Meeting.CreatedAt asc";
             MeetingPatientTable = DatabaseOperation.GetDataTableByQuery(queryStr);
 
             if (MeetingPatientTable.Rows.Count == 0)
             {
-                MessageBox.Show("No meeting information found!");
+                lblHint.Text = "No meeting information found!";
                 lblPatientID.Text = "";
                 lblName.Text = "";
                 lblSex.Text = "";
@@ -51,6 +107,8 @@ namespace orabs.Meeting
                 lblCreatedAt.Text = "";
                 lblStatusAt.Text = "";
                 lblQueueLocation.Text = "0 / 0";
+                btnFirst.Enabled = btnPrev.Enabled = btnNext.Enabled = btnLast.Enabled =
+                    btnSkip.Enabled = btnHangUp.Enabled = btnConsultation.Enabled = false;
                 return;
             }
             
@@ -61,6 +119,7 @@ namespace orabs.Meeting
         private void showInformation()
         {
             DataRow dr = MeetingPatientTable.Rows[now];
+            lblHint.Text = "";
             lblPatientID.Text = dr["Patient_ID"].ToString();
             lblName.Text = dr["Name"].ToString();
             lblSex.Text = dr["Sex"].ToString();
@@ -70,24 +129,31 @@ namespace orabs.Meeting
             lblCreatedAt.Text = dr["CreatedAt"].ToString();
             lblStatusAt.Text = dr["StatusAt"].ToString();
             lblQueueLocation.Text = (now + 1).ToString() + "/" + MeetingPatientTable.Rows.Count.ToString();
+            btnFirst.Enabled = btnPrev.Enabled = btnNext.Enabled = btnLast.Enabled = true;
 
             string status = "ERROR";
             switch (dr["Status"].ToString())
             {
                 case "C":
                     status = "Created";
+                    btnSkip.Enabled = btnHangUp.Enabled = btnConsultation.Enabled = true;
                     break;
                 case "W":
                     status = "Waiting";
+                    btnSkip.Enabled = btnHangUp.Enabled = btnConsultation.Enabled = true;
                     break;
                 case "H":
                     status = "Hang Up";
+                    btnSkip.Enabled = btnConsultation.Enabled = true;
+                    btnHangUp.Enabled = false;
                     break;
                 case "F":
                     status = "Finished";
+                    btnSkip.Enabled = btnHangUp.Enabled = btnConsultation.Enabled = false;
                     break;
                 case "S":
                     status = "Skipped";
+                    btnSkip.Enabled = btnHangUp.Enabled = btnConsultation.Enabled = false;
                     break;
             }
             lblStatus.Text = status;
@@ -160,6 +226,12 @@ namespace orabs.Meeting
         private void btnHangUp_Click(object sender, EventArgs e)
         {
             setStatus("H", "Hang Up");
+        }
+
+        private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_load_over)
+                doQuery();
         }
     }
 }
