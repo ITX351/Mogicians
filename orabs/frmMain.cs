@@ -23,7 +23,7 @@ namespace orabs
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblUserName.Text = "User: " + Global.userName;
+            lblUserName.Text += Global.userName;
             switch (Global.authority)
             {
                 case Global.Identity.Admin:

@@ -22,18 +22,16 @@ namespace orabs.Patient
 
         private void frnPatientUpdate_Load(object sender, EventArgs e)
         {
-            string queryStr = "select Name, Sex, Phone, Address, Identity_Number from Patient " +
-                " where Patient_ID = " + Patient_ID.ToString();
-            DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
+            DataRow dr = DatabaseOperation.GetDataRowByID("Patient", Patient_ID);
 
-            txtName.Text = (string)dt.Rows[0]["Name"];
-            txtPhone.Text = (string)dt.Rows[0]["Phone"];
-            txtAddress.Text = (string)dt.Rows[0]["Address"];
-            txtIdentityNumber.Text = (string)dt.Rows[0]["Identity_Number"];
+            txtName.Text = (string)dr["Name"];
+            txtPhone.Text = (string)dr["Phone"];
+            txtAddress.Text = (string)dr["Address"];
+            txtIdentityNumber.Text = (string)dr["Identity_Number"];
             cboSex.DataSource = Global.dtSex;
             cboSex.ValueMember = "SexCode";
             cboSex.DisplayMember = "SexStr";
-            if (false == (bool)dt.Rows[0]["Sex"])
+            if (false == (bool)dr["Sex"])
                 cboSex.SelectedValue = 0;
             else
                 cboSex.SelectedValue = 1;

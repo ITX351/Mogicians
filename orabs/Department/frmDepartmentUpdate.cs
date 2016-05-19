@@ -16,10 +16,8 @@ namespace orabs.Department
 
         private void frmDepartmentUpdate_Load(object sender, EventArgs e)
         {
-            string queryStr = "select Name from Department where Department_ID = " + Department_ID.ToString();
-            DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
-
-            txtDepartmentName.Text = (string)dt.Rows[0]["Name"];
+            DataRow dr = DatabaseOperation.GetDataRowByID("Department", Department_ID);
+            txtDepartmentName.Text = (string)dr["Name"];
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

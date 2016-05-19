@@ -44,10 +44,7 @@ namespace orabs.Doctor
             Global.setComboBoxByTableName("DoctorGroup", cboGroup, false);
             Global.setComboBoxByTableName("Department", cboDepartment, false);
 
-            string queryStr = "select * from Doctor where Doctor_ID = " + Doctor_ID.ToString();
-            DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
-
-            DataRow dr = dt.Rows[0];
+            DataRow dr = DatabaseOperation.GetDataRowByID("Doctor", Doctor_ID);
             txtName.Text = (string)dr["Name"];
             cboDepartment.SelectedValue = (int)dr["Department_ID"];
             cboGroup.SelectedValue = (int)dr["DoctorGroup_ID"];

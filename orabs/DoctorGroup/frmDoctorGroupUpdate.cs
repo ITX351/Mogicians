@@ -16,11 +16,10 @@ namespace orabs.DoctorGroup
 
         private void frmDoctorGroupUpdate_Load(object sender, EventArgs e)
         {
-            string queryStr = "select Name, Charge from DoctorGroup where DoctorGroup_ID = " + DoctorGroup_ID.ToString();
-            DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
+            DataRow dr = DatabaseOperation.GetDataRowByID("DoctorGroup", DoctorGroup_ID);
 
-            txtGroupName.Text = (string)dt.Rows[0]["Name"];
-            txtCharge.Text = dt.Rows[0]["Charge"].ToString();
+            txtGroupName.Text = (string)dr["Name"];
+            txtCharge.Text = dr["Charge"].ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

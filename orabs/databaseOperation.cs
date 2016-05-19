@@ -66,5 +66,11 @@ namespace orabs
                 throw e;
             }
         }
+
+        public static DataRow GetDataRowByID(string tableName, int ID)
+        {
+            string queryStr = "select * from " + tableName + " where " + tableName + "_ID = " + ID.ToString();
+            return GetDataTableByQuery(queryStr).Rows[0];
+        }
     }
 }
