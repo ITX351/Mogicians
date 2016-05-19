@@ -78,5 +78,11 @@ namespace orabs
             frmMeetingControl frmMeetingControlEntity = new frmMeetingControl();
             frmMeetingControlEntity.Show();
         }
+
+        private void meetingHandleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMeetingDoctorView frmMeetingDoctorViewEntity = new frmMeetingDoctorView();
+            frmMeetingDoctorViewEntity.Show();
+        }
     }
 }

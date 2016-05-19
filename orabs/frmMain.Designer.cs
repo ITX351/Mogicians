@@ -46,6 +46,7 @@
             this.meetingRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meetingControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblIdentity = new System.Windows.Forms.Label();
+            this.meetingHandleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,7 +167,8 @@
             // 
             this.meetingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.meetingRegisterToolStripMenuItem,
-            this.meetingControlToolStripMenuItem});
+            this.meetingControlToolStripMenuItem,
+            this.meetingHandleToolStripMenuItem});
             this.meetingToolStripMenuItem.Name = "meetingToolStripMenuItem";
             this.meetingToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.meetingToolStripMenuItem.Text = "Mee&ting";
@@ -193,6 +195,13 @@
             this.lblIdentity.Size = new System.Drawing.Size(65, 12);
             this.lblIdentity.TabIndex = 2;
             this.lblIdentity.Text = "Identity: ";
+            // 
+            // meetingHandleToolStripMenuItem
+            // 
+            this.meetingHandleToolStripMenuItem.Name = "meetingHandleToolStripMenuItem";
+            this.meetingHandleToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.meetingHandleToolStripMenuItem.Text = "Meeting Handle";
+            this.meetingHandleToolStripMenuItem.Click += new System.EventHandler(this.meetingHandleToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -234,5 +243,6 @@
         private System.Windows.Forms.ToolStripMenuItem meetingRegisterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem meetingControlToolStripMenuItem;
         private System.Windows.Forms.Label lblIdentity;
+        private System.Windows.Forms.ToolStripMenuItem meetingHandleToolStripMenuItem;
     }
 }

@@ -37,6 +37,27 @@
             this.lblPatientIdentityNumberTitle = new System.Windows.Forms.Label();
             this.lblPatientID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.lblSex = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblIdentityNumber = new System.Windows.Forms.Label();
+            this.lblStatusTitle = new System.Windows.Forms.Label();
+            this.lblCreatedAtTitle = new System.Windows.Forms.Label();
+            this.lblStatusAtTitle = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblCreatedAt = new System.Windows.Forms.Label();
+            this.lblStatusAt = new System.Windows.Forms.Label();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.cboFilter = new System.Windows.Forms.ComboBox();
+            this.lblQueueLocationTitle = new System.Windows.Forms.Label();
+            this.lblQueueLocation = new System.Windows.Forms.Label();
+            this.btnSkip = new System.Windows.Forms.Button();
+            this.btnHangUp = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnConsultation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDoctor
@@ -118,11 +139,227 @@
             this.lblName.Size = new System.Drawing.Size(0, 12);
             this.lblName.TabIndex = 8;
             // 
+            // lblSex
+            // 
+            this.lblSex.AutoSize = true;
+            this.lblSex.Location = new System.Drawing.Point(161, 163);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(0, 12);
+            this.lblSex.TabIndex = 9;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(167, 190);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(0, 12);
+            this.lblPhone.TabIndex = 10;
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(153, 226);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(0, 12);
+            this.lblAddress.TabIndex = 11;
+            // 
+            // lblIdentityNumber
+            // 
+            this.lblIdentityNumber.AutoSize = true;
+            this.lblIdentityNumber.Location = new System.Drawing.Point(197, 268);
+            this.lblIdentityNumber.Name = "lblIdentityNumber";
+            this.lblIdentityNumber.Size = new System.Drawing.Size(0, 12);
+            this.lblIdentityNumber.TabIndex = 12;
+            // 
+            // lblStatusTitle
+            // 
+            this.lblStatusTitle.AutoSize = true;
+            this.lblStatusTitle.Location = new System.Drawing.Point(61, 300);
+            this.lblStatusTitle.Name = "lblStatusTitle";
+            this.lblStatusTitle.Size = new System.Drawing.Size(53, 12);
+            this.lblStatusTitle.TabIndex = 13;
+            this.lblStatusTitle.Text = "Status: ";
+            // 
+            // lblCreatedAtTitle
+            // 
+            this.lblCreatedAtTitle.AutoSize = true;
+            this.lblCreatedAtTitle.Location = new System.Drawing.Point(62, 325);
+            this.lblCreatedAtTitle.Name = "lblCreatedAtTitle";
+            this.lblCreatedAtTitle.Size = new System.Drawing.Size(113, 12);
+            this.lblCreatedAtTitle.TabIndex = 14;
+            this.lblCreatedAtTitle.Text = "Appointment Time: ";
+            // 
+            // lblStatusAtTitle
+            // 
+            this.lblStatusAtTitle.AutoSize = true;
+            this.lblStatusAtTitle.Location = new System.Drawing.Point(61, 358);
+            this.lblStatusAtTitle.Name = "lblStatusAtTitle";
+            this.lblStatusAtTitle.Size = new System.Drawing.Size(125, 12);
+            this.lblStatusAtTitle.TabIndex = 15;
+            this.lblStatusAtTitle.Text = "Status Change Time: ";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(187, 304);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 12);
+            this.lblStatus.TabIndex = 16;
+            // 
+            // lblCreatedAt
+            // 
+            this.lblCreatedAt.AutoSize = true;
+            this.lblCreatedAt.Location = new System.Drawing.Point(202, 328);
+            this.lblCreatedAt.Name = "lblCreatedAt";
+            this.lblCreatedAt.Size = new System.Drawing.Size(0, 12);
+            this.lblCreatedAt.TabIndex = 17;
+            // 
+            // lblStatusAt
+            // 
+            this.lblStatusAt.AutoSize = true;
+            this.lblStatusAt.Location = new System.Drawing.Point(197, 358);
+            this.lblStatusAt.Name = "lblStatusAt";
+            this.lblStatusAt.Size = new System.Drawing.Size(0, 12);
+            this.lblStatusAt.TabIndex = 18;
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.Location = new System.Drawing.Point(86, 423);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(75, 23);
+            this.btnPrev.TabIndex = 19;
+            this.btnPrev.Text = "< Pre&v";
+            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(167, 423);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 20;
+            this.btnNext.Text = "Ne&xt >";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Location = new System.Drawing.Point(39, 423);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(41, 23);
+            this.btnFirst.TabIndex = 21;
+            this.btnFirst.Text = "<<";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.Location = new System.Drawing.Point(248, 423);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(43, 23);
+            this.btnLast.TabIndex = 22;
+            this.btnLast.Text = ">>";
+            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // cboFilter
+            // 
+            this.cboFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFilter.FormattingEnabled = true;
+            this.cboFilter.Items.AddRange(new object[] {
+            "Waiting",
+            "Hang Up",
+            "Waiting & Hang Up",
+            "All"});
+            this.cboFilter.Location = new System.Drawing.Point(336, 52);
+            this.cboFilter.Name = "cboFilter";
+            this.cboFilter.Size = new System.Drawing.Size(102, 20);
+            this.cboFilter.TabIndex = 23;
+            // 
+            // lblQueueLocationTitle
+            // 
+            this.lblQueueLocationTitle.AutoSize = true;
+            this.lblQueueLocationTitle.Location = new System.Drawing.Point(59, 391);
+            this.lblQueueLocationTitle.Name = "lblQueueLocationTitle";
+            this.lblQueueLocationTitle.Size = new System.Drawing.Size(101, 12);
+            this.lblQueueLocationTitle.TabIndex = 24;
+            this.lblQueueLocationTitle.Text = "Queue Location: ";
+            // 
+            // lblQueueLocation
+            // 
+            this.lblQueueLocation.AutoSize = true;
+            this.lblQueueLocation.Location = new System.Drawing.Point(205, 383);
+            this.lblQueueLocation.Name = "lblQueueLocation";
+            this.lblQueueLocation.Size = new System.Drawing.Size(0, 12);
+            this.lblQueueLocation.TabIndex = 25;
+            // 
+            // btnSkip
+            // 
+            this.btnSkip.Location = new System.Drawing.Point(415, 154);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(75, 23);
+            this.btnSkip.TabIndex = 26;
+            this.btnSkip.Text = "&Skip";
+            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
+            // 
+            // btnHangUp
+            // 
+            this.btnHangUp.Location = new System.Drawing.Point(415, 196);
+            this.btnHangUp.Name = "btnHangUp";
+            this.btnHangUp.Size = new System.Drawing.Size(75, 23);
+            this.btnHangUp.TabIndex = 27;
+            this.btnHangUp.Text = "&Hang Up";
+            this.btnHangUp.UseVisualStyleBackColor = true;
+            this.btnHangUp.Click += new System.EventHandler(this.btnHangUp_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Location = new System.Drawing.Point(514, 415);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 28;
+            this.btnClose.Text = "&Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnConsultation
+            // 
+            this.btnConsultation.Location = new System.Drawing.Point(384, 247);
+            this.btnConsultation.Name = "btnConsultation";
+            this.btnConsultation.Size = new System.Drawing.Size(150, 23);
+            this.btnConsultation.TabIndex = 29;
+            this.btnConsultation.Text = "&Make consultation";
+            this.btnConsultation.UseVisualStyleBackColor = true;
+            // 
             // frmMeetingDoctorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 454);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(636, 485);
+            this.Controls.Add(this.btnConsultation);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnHangUp);
+            this.Controls.Add(this.btnSkip);
+            this.Controls.Add(this.lblQueueLocation);
+            this.Controls.Add(this.lblQueueLocationTitle);
+            this.Controls.Add(this.cboFilter);
+            this.Controls.Add(this.btnLast);
+            this.Controls.Add(this.btnFirst);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPrev);
+            this.Controls.Add(this.lblStatusAt);
+            this.Controls.Add(this.lblCreatedAt);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.lblStatusAtTitle);
+            this.Controls.Add(this.lblCreatedAtTitle);
+            this.Controls.Add(this.lblStatusTitle);
+            this.Controls.Add(this.lblIdentityNumber);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblPhone);
+            this.Controls.Add(this.lblSex);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.lblPatientIdentityNumberTitle);
@@ -151,5 +388,26 @@
         private System.Windows.Forms.Label lblPatientIdentityNumberTitle;
         private System.Windows.Forms.Label lblPatientID;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblIdentityNumber;
+        private System.Windows.Forms.Label lblStatusTitle;
+        private System.Windows.Forms.Label lblCreatedAtTitle;
+        private System.Windows.Forms.Label lblStatusAtTitle;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblCreatedAt;
+        private System.Windows.Forms.Label lblStatusAt;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.ComboBox cboFilter;
+        private System.Windows.Forms.Label lblQueueLocationTitle;
+        private System.Windows.Forms.Label lblQueueLocation;
+        private System.Windows.Forms.Button btnSkip;
+        private System.Windows.Forms.Button btnHangUp;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnConsultation;
     }
 }
