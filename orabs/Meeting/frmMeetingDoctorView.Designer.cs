@@ -60,6 +60,8 @@
             this.btnConsultation = new System.Windows.Forms.Button();
             this.lblHint = new System.Windows.Forms.Label();
             this.lblCboDescription = new System.Windows.Forms.Label();
+            this.pnlPatientInfo = new System.Windows.Forms.Panel();
+            this.pnlPatientInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDoctor
@@ -74,7 +76,7 @@
             // lblPatientIDTitle
             // 
             this.lblPatientIDTitle.AutoSize = true;
-            this.lblPatientIDTitle.Location = new System.Drawing.Point(60, 107);
+            this.lblPatientIDTitle.Location = new System.Drawing.Point(24, 29);
             this.lblPatientIDTitle.Name = "lblPatientIDTitle";
             this.lblPatientIDTitle.Size = new System.Drawing.Size(71, 12);
             this.lblPatientIDTitle.TabIndex = 1;
@@ -83,7 +85,7 @@
             // lblPatientNameTitle
             // 
             this.lblPatientNameTitle.AutoSize = true;
-            this.lblPatientNameTitle.Location = new System.Drawing.Point(59, 136);
+            this.lblPatientNameTitle.Location = new System.Drawing.Point(24, 59);
             this.lblPatientNameTitle.Name = "lblPatientNameTitle";
             this.lblPatientNameTitle.Size = new System.Drawing.Size(41, 12);
             this.lblPatientNameTitle.TabIndex = 2;
@@ -92,7 +94,7 @@
             // lblPatientSexTitle
             // 
             this.lblPatientSexTitle.AutoSize = true;
-            this.lblPatientSexTitle.Location = new System.Drawing.Point(60, 164);
+            this.lblPatientSexTitle.Location = new System.Drawing.Point(23, 85);
             this.lblPatientSexTitle.Name = "lblPatientSexTitle";
             this.lblPatientSexTitle.Size = new System.Drawing.Size(35, 12);
             this.lblPatientSexTitle.TabIndex = 3;
@@ -101,7 +103,7 @@
             // lblPatientPhoneTitle
             // 
             this.lblPatientPhoneTitle.AutoSize = true;
-            this.lblPatientPhoneTitle.Location = new System.Drawing.Point(62, 196);
+            this.lblPatientPhoneTitle.Location = new System.Drawing.Point(24, 113);
             this.lblPatientPhoneTitle.Name = "lblPatientPhoneTitle";
             this.lblPatientPhoneTitle.Size = new System.Drawing.Size(47, 12);
             this.lblPatientPhoneTitle.TabIndex = 4;
@@ -110,7 +112,7 @@
             // lblPatientAddressTitle
             // 
             this.lblPatientAddressTitle.AutoSize = true;
-            this.lblPatientAddressTitle.Location = new System.Drawing.Point(62, 226);
+            this.lblPatientAddressTitle.Location = new System.Drawing.Point(23, 139);
             this.lblPatientAddressTitle.Name = "lblPatientAddressTitle";
             this.lblPatientAddressTitle.Size = new System.Drawing.Size(59, 12);
             this.lblPatientAddressTitle.TabIndex = 5;
@@ -119,7 +121,7 @@
             // lblPatientIdentityNumberTitle
             // 
             this.lblPatientIdentityNumberTitle.AutoSize = true;
-            this.lblPatientIdentityNumberTitle.Location = new System.Drawing.Point(61, 268);
+            this.lblPatientIdentityNumberTitle.Location = new System.Drawing.Point(21, 169);
             this.lblPatientIdentityNumberTitle.Name = "lblPatientIdentityNumberTitle";
             this.lblPatientIdentityNumberTitle.Size = new System.Drawing.Size(107, 12);
             this.lblPatientIdentityNumberTitle.TabIndex = 6;
@@ -128,7 +130,7 @@
             // lblPatientID
             // 
             this.lblPatientID.AutoSize = true;
-            this.lblPatientID.Location = new System.Drawing.Point(184, 106);
+            this.lblPatientID.Location = new System.Drawing.Point(170, 29);
             this.lblPatientID.Name = "lblPatientID";
             this.lblPatientID.Size = new System.Drawing.Size(0, 12);
             this.lblPatientID.TabIndex = 7;
@@ -136,7 +138,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(181, 136);
+            this.lblName.Location = new System.Drawing.Point(170, 59);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(0, 12);
             this.lblName.TabIndex = 8;
@@ -144,7 +146,7 @@
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(161, 163);
+            this.lblSex.Location = new System.Drawing.Point(170, 85);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(0, 12);
             this.lblSex.TabIndex = 9;
@@ -152,7 +154,7 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(167, 190);
+            this.lblPhone.Location = new System.Drawing.Point(170, 112);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(0, 12);
             this.lblPhone.TabIndex = 10;
@@ -160,7 +162,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(153, 226);
+            this.lblAddress.Location = new System.Drawing.Point(170, 139);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(0, 12);
             this.lblAddress.TabIndex = 11;
@@ -168,7 +170,7 @@
             // lblIdentityNumber
             // 
             this.lblIdentityNumber.AutoSize = true;
-            this.lblIdentityNumber.Location = new System.Drawing.Point(197, 268);
+            this.lblIdentityNumber.Location = new System.Drawing.Point(170, 169);
             this.lblIdentityNumber.Name = "lblIdentityNumber";
             this.lblIdentityNumber.Size = new System.Drawing.Size(0, 12);
             this.lblIdentityNumber.TabIndex = 12;
@@ -176,7 +178,7 @@
             // lblStatusTitle
             // 
             this.lblStatusTitle.AutoSize = true;
-            this.lblStatusTitle.Location = new System.Drawing.Point(61, 300);
+            this.lblStatusTitle.Location = new System.Drawing.Point(24, 208);
             this.lblStatusTitle.Name = "lblStatusTitle";
             this.lblStatusTitle.Size = new System.Drawing.Size(53, 12);
             this.lblStatusTitle.TabIndex = 13;
@@ -185,7 +187,7 @@
             // lblCreatedAtTitle
             // 
             this.lblCreatedAtTitle.AutoSize = true;
-            this.lblCreatedAtTitle.Location = new System.Drawing.Point(62, 328);
+            this.lblCreatedAtTitle.Location = new System.Drawing.Point(24, 236);
             this.lblCreatedAtTitle.Name = "lblCreatedAtTitle";
             this.lblCreatedAtTitle.Size = new System.Drawing.Size(113, 12);
             this.lblCreatedAtTitle.TabIndex = 14;
@@ -194,7 +196,7 @@
             // lblStatusAtTitle
             // 
             this.lblStatusAtTitle.AutoSize = true;
-            this.lblStatusAtTitle.Location = new System.Drawing.Point(64, 358);
+            this.lblStatusAtTitle.Location = new System.Drawing.Point(23, 268);
             this.lblStatusAtTitle.Name = "lblStatusAtTitle";
             this.lblStatusAtTitle.Size = new System.Drawing.Size(125, 12);
             this.lblStatusAtTitle.TabIndex = 15;
@@ -203,7 +205,7 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(187, 304);
+            this.lblStatus.Location = new System.Drawing.Point(170, 208);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 12);
             this.lblStatus.TabIndex = 16;
@@ -211,7 +213,7 @@
             // lblCreatedAt
             // 
             this.lblCreatedAt.AutoSize = true;
-            this.lblCreatedAt.Location = new System.Drawing.Point(202, 328);
+            this.lblCreatedAt.Location = new System.Drawing.Point(170, 236);
             this.lblCreatedAt.Name = "lblCreatedAt";
             this.lblCreatedAt.Size = new System.Drawing.Size(0, 12);
             this.lblCreatedAt.TabIndex = 17;
@@ -219,47 +221,47 @@
             // lblStatusAt
             // 
             this.lblStatusAt.AutoSize = true;
-            this.lblStatusAt.Location = new System.Drawing.Point(197, 358);
+            this.lblStatusAt.Location = new System.Drawing.Point(170, 268);
             this.lblStatusAt.Name = "lblStatusAt";
             this.lblStatusAt.Size = new System.Drawing.Size(0, 12);
             this.lblStatusAt.TabIndex = 18;
             // 
             // btnPrev
             // 
-            this.btnPrev.Location = new System.Drawing.Point(86, 423);
+            this.btnPrev.Location = new System.Drawing.Point(115, 424);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(75, 23);
-            this.btnPrev.TabIndex = 19;
+            this.btnPrev.TabIndex = 6;
             this.btnPrev.Text = "< Pre&v";
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(167, 423);
+            this.btnNext.Location = new System.Drawing.Point(196, 424);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 20;
+            this.btnNext.TabIndex = 7;
             this.btnNext.Text = "Ne&xt >";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(39, 423);
+            this.btnFirst.Location = new System.Drawing.Point(68, 424);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(41, 23);
-            this.btnFirst.TabIndex = 21;
+            this.btnFirst.TabIndex = 5;
             this.btnFirst.Text = "<<";
             this.btnFirst.UseVisualStyleBackColor = true;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(248, 423);
+            this.btnLast.Location = new System.Drawing.Point(277, 424);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(43, 23);
-            this.btnLast.TabIndex = 22;
+            this.btnLast.TabIndex = 8;
             this.btnLast.Text = ">>";
             this.btnLast.UseVisualStyleBackColor = true;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
@@ -268,16 +270,16 @@
             // 
             this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(335, 52);
+            this.cboStatus.Location = new System.Drawing.Point(363, 52);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(102, 20);
-            this.cboStatus.TabIndex = 23;
+            this.cboStatus.TabIndex = 1;
             this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cboStatus_SelectedIndexChanged);
             // 
             // lblQueueLocationTitle
             // 
             this.lblQueueLocationTitle.AutoSize = true;
-            this.lblQueueLocationTitle.Location = new System.Drawing.Point(64, 395);
+            this.lblQueueLocationTitle.Location = new System.Drawing.Point(23, 295);
             this.lblQueueLocationTitle.Name = "lblQueueLocationTitle";
             this.lblQueueLocationTitle.Size = new System.Drawing.Size(101, 12);
             this.lblQueueLocationTitle.TabIndex = 24;
@@ -286,27 +288,27 @@
             // lblQueueLocation
             // 
             this.lblQueueLocation.AutoSize = true;
-            this.lblQueueLocation.Location = new System.Drawing.Point(205, 383);
+            this.lblQueueLocation.Location = new System.Drawing.Point(170, 295);
             this.lblQueueLocation.Name = "lblQueueLocation";
             this.lblQueueLocation.Size = new System.Drawing.Size(0, 12);
             this.lblQueueLocation.TabIndex = 25;
             // 
             // btnSkip
             // 
-            this.btnSkip.Location = new System.Drawing.Point(415, 154);
+            this.btnSkip.Location = new System.Drawing.Point(452, 165);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 23);
-            this.btnSkip.TabIndex = 26;
+            this.btnSkip.TabIndex = 2;
             this.btnSkip.Text = "&Skip";
             this.btnSkip.UseVisualStyleBackColor = true;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
             // btnHangUp
             // 
-            this.btnHangUp.Location = new System.Drawing.Point(415, 196);
+            this.btnHangUp.Location = new System.Drawing.Point(452, 207);
             this.btnHangUp.Name = "btnHangUp";
             this.btnHangUp.Size = new System.Drawing.Size(75, 23);
-            this.btnHangUp.TabIndex = 27;
+            this.btnHangUp.TabIndex = 3;
             this.btnHangUp.Text = "&Hang Up";
             this.btnHangUp.UseVisualStyleBackColor = true;
             this.btnHangUp.Click += new System.EventHandler(this.btnHangUp_Click);
@@ -314,20 +316,20 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(514, 415);
+            this.btnClose.Location = new System.Drawing.Point(506, 424);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 28;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnConsultation
             // 
-            this.btnConsultation.Location = new System.Drawing.Point(384, 247);
+            this.btnConsultation.Location = new System.Drawing.Point(421, 258);
             this.btnConsultation.Name = "btnConsultation";
             this.btnConsultation.Size = new System.Drawing.Size(150, 23);
-            this.btnConsultation.TabIndex = 29;
+            this.btnConsultation.TabIndex = 4;
             this.btnConsultation.Text = "&Make consultation";
             this.btnConsultation.UseVisualStyleBackColor = true;
             this.btnConsultation.Click += new System.EventHandler(this.btnConsultation_Click);
@@ -335,19 +337,49 @@
             // lblHint
             // 
             this.lblHint.AutoSize = true;
-            this.lblHint.Location = new System.Drawing.Point(83, 74);
+            this.lblHint.Font = new System.Drawing.Font("宋体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblHint.Location = new System.Drawing.Point(52, 222);
             this.lblHint.Name = "lblHint";
-            this.lblHint.Size = new System.Drawing.Size(0, 12);
+            this.lblHint.Size = new System.Drawing.Size(239, 15);
             this.lblHint.TabIndex = 30;
+            this.lblHint.Text = "No meeting information found!";
             // 
             // lblCboDescription
             // 
             this.lblCboDescription.AutoSize = true;
-            this.lblCboDescription.Location = new System.Drawing.Point(136, 55);
+            this.lblCboDescription.Location = new System.Drawing.Point(128, 55);
             this.lblCboDescription.Name = "lblCboDescription";
             this.lblCboDescription.Size = new System.Drawing.Size(143, 12);
             this.lblCboDescription.TabIndex = 31;
             this.lblCboDescription.Text = "Select with status of :";
+            // 
+            // pnlPatientInfo
+            // 
+            this.pnlPatientInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlPatientInfo.Controls.Add(this.lblQueueLocation);
+            this.pnlPatientInfo.Controls.Add(this.lblQueueLocationTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblStatusAt);
+            this.pnlPatientInfo.Controls.Add(this.lblCreatedAt);
+            this.pnlPatientInfo.Controls.Add(this.lblStatus);
+            this.pnlPatientInfo.Controls.Add(this.lblStatusAtTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblCreatedAtTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblStatusTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblIdentityNumber);
+            this.pnlPatientInfo.Controls.Add(this.lblAddress);
+            this.pnlPatientInfo.Controls.Add(this.lblPhone);
+            this.pnlPatientInfo.Controls.Add(this.lblSex);
+            this.pnlPatientInfo.Controls.Add(this.lblName);
+            this.pnlPatientInfo.Controls.Add(this.lblPatientID);
+            this.pnlPatientInfo.Controls.Add(this.lblPatientIdentityNumberTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblPatientAddressTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblPatientPhoneTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblPatientSexTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblPatientNameTitle);
+            this.pnlPatientInfo.Controls.Add(this.lblPatientIDTitle);
+            this.pnlPatientInfo.Location = new System.Drawing.Point(39, 79);
+            this.pnlPatientInfo.Name = "pnlPatientInfo";
+            this.pnlPatientInfo.Size = new System.Drawing.Size(315, 328);
+            this.pnlPatientInfo.TabIndex = 32;
             // 
             // frmMeetingDoctorView
             // 
@@ -355,41 +387,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(636, 485);
+            this.Controls.Add(this.pnlPatientInfo);
             this.Controls.Add(this.lblCboDescription);
             this.Controls.Add(this.lblHint);
             this.Controls.Add(this.btnConsultation);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnHangUp);
             this.Controls.Add(this.btnSkip);
-            this.Controls.Add(this.lblQueueLocation);
-            this.Controls.Add(this.lblQueueLocationTitle);
             this.Controls.Add(this.cboStatus);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
-            this.Controls.Add(this.lblStatusAt);
-            this.Controls.Add(this.lblCreatedAt);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lblStatusAtTitle);
-            this.Controls.Add(this.lblCreatedAtTitle);
-            this.Controls.Add(this.lblStatusTitle);
-            this.Controls.Add(this.lblIdentityNumber);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.lblSex);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.lblPatientID);
-            this.Controls.Add(this.lblPatientIdentityNumberTitle);
-            this.Controls.Add(this.lblPatientAddressTitle);
-            this.Controls.Add(this.lblPatientPhoneTitle);
-            this.Controls.Add(this.lblPatientSexTitle);
-            this.Controls.Add(this.lblPatientNameTitle);
-            this.Controls.Add(this.lblPatientIDTitle);
             this.Controls.Add(this.lblDoctor);
             this.Name = "frmMeetingDoctorView";
-            this.Text = "frmMeetingDoctorView";
+            this.Text = "Meeting Handle";
             this.Load += new System.EventHandler(this.frmMeetingDoctorView_Load);
+            this.pnlPatientInfo.ResumeLayout(false);
+            this.pnlPatientInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,5 +444,6 @@
         private System.Windows.Forms.Button btnConsultation;
         private System.Windows.Forms.Label lblHint;
         private System.Windows.Forms.Label lblCboDescription;
+        private System.Windows.Forms.Panel pnlPatientInfo;
     }
 }
