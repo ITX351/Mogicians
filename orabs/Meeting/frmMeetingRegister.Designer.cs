@@ -70,7 +70,7 @@
             this.btnOK.Location = new System.Drawing.Point(122, 234);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 3;
+            this.btnOK.TabIndex = 4;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -81,7 +81,7 @@
             this.bntCancel.Location = new System.Drawing.Point(273, 234);
             this.bntCancel.Name = "bntCancel";
             this.bntCancel.Size = new System.Drawing.Size(75, 23);
-            this.bntCancel.TabIndex = 4;
+            this.bntCancel.TabIndex = 5;
             this.bntCancel.Text = "&Cancel";
             this.bntCancel.UseVisualStyleBackColor = true;
             this.bntCancel.Click += new System.EventHandler(this.bntCancel_Click);
@@ -93,7 +93,7 @@
             this.cboDepartment.Location = new System.Drawing.Point(236, 76);
             this.cboDepartment.Name = "cboDepartment";
             this.cboDepartment.Size = new System.Drawing.Size(121, 20);
-            this.cboDepartment.TabIndex = 5;
+            this.cboDepartment.TabIndex = 1;
             this.cboDepartment.SelectedIndexChanged += new System.EventHandler(this.cboDepartment_SelectedIndexChanged);
             // 
             // cboGroup
@@ -103,7 +103,7 @@
             this.cboGroup.Location = new System.Drawing.Point(236, 119);
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(121, 20);
-            this.cboGroup.TabIndex = 6;
+            this.cboGroup.TabIndex = 2;
             this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.cboGroup_SelectedIndexChanged);
             // 
             // cboDoctorName
@@ -113,7 +113,7 @@
             this.cboDoctorName.Location = new System.Drawing.Point(236, 169);
             this.cboDoctorName.Name = "cboDoctorName";
             this.cboDoctorName.Size = new System.Drawing.Size(121, 20);
-            this.cboDoctorName.TabIndex = 7;
+            this.cboDoctorName.TabIndex = 3;
             // 
             // frmMeetingRegister
             // 

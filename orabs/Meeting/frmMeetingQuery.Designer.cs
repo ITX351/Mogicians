@@ -48,7 +48,7 @@
             this.bntCancel.Location = new System.Drawing.Point(283, 276);
             this.bntCancel.Name = "bntCancel";
             this.bntCancel.Size = new System.Drawing.Size(75, 23);
-            this.bntCancel.TabIndex = 12;
+            this.bntCancel.TabIndex = 7;
             this.bntCancel.Text = "&Cancel";
             this.bntCancel.UseVisualStyleBackColor = true;
             this.bntCancel.Click += new System.EventHandler(this.bntCancel_Click);
@@ -58,7 +58,7 @@
             this.btnOK.Location = new System.Drawing.Point(119, 276);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 11;
+            this.btnOK.TabIndex = 6;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -113,14 +113,14 @@
             this.txtPatientName.Location = new System.Drawing.Point(241, 44);
             this.txtPatientName.Name = "txtPatientName";
             this.txtPatientName.Size = new System.Drawing.Size(198, 21);
-            this.txtPatientName.TabIndex = 18;
+            this.txtPatientName.TabIndex = 1;
             // 
             // txtDoctorName
             // 
             this.txtDoctorName.Location = new System.Drawing.Point(241, 85);
             this.txtDoctorName.Name = "txtDoctorName";
             this.txtDoctorName.Size = new System.Drawing.Size(198, 21);
-            this.txtDoctorName.TabIndex = 19;
+            this.txtDoctorName.TabIndex = 2;
             // 
             // cboStatus
             // 
@@ -129,21 +129,21 @@
             this.cboStatus.Location = new System.Drawing.Point(241, 123);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(198, 20);
-            this.cboStatus.TabIndex = 22;
+            this.cboStatus.TabIndex = 3;
             // 
             // dtpStatusAt
             // 
             this.dtpStatusAt.Location = new System.Drawing.Point(241, 161);
             this.dtpStatusAt.Name = "dtpStatusAt";
             this.dtpStatusAt.Size = new System.Drawing.Size(200, 21);
-            this.dtpStatusAt.TabIndex = 23;       
+            this.dtpStatusAt.TabIndex = 4;
             // 
             // dtpCreatedAt
             // 
             this.dtpCreatedAt.Location = new System.Drawing.Point(241, 207);
             this.dtpCreatedAt.Name = "dtpCreatedAt";
             this.dtpCreatedAt.Size = new System.Drawing.Size(200, 21);
-            this.dtpCreatedAt.TabIndex = 24;
+            this.dtpCreatedAt.TabIndex = 5;
             // 
             // frmMeetingQuery
             // 

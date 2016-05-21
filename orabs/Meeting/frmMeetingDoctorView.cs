@@ -27,42 +27,13 @@ namespace orabs.Meeting
             dtStatus.Columns.Add("StatusName", System.Type.GetType("System.String"));
             dtStatus.Columns.Add("StatusChar", System.Type.GetType("System.String"));
 
-            DataRow dr;
-
-            dr = dtStatus.NewRow();
-            dr["StatusName"] = "Created";
-            dr["StatusChar"] = "C";
-            dtStatus.Rows.Add(dr);
-
-            dr = dtStatus.NewRow();
-            dr["StatusName"] = "Waiting";
-            dr["StatusChar"] = "W";
-            dtStatus.Rows.Add(dr);
-
-            dr = dtStatus.NewRow();
-            dr["StatusName"] = "Hang Up";
-            dr["StatusChar"] = "H";
-            dtStatus.Rows.Add(dr);
-
-            dr = dtStatus.NewRow();
-            dr["StatusName"] = "Waiting & Hang Up";
-            dr["StatusChar"] = "W,H";
-            dtStatus.Rows.Add(dr);
-
-            dr = dtStatus.NewRow();
-            dr["StatusName"] = "Finished";
-            dr["StatusChar"] = "F";
-            dtStatus.Rows.Add(dr);
-
-            dr = dtStatus.NewRow();
-            dr["StatusName"] = "Skipped";
-            dr["StatusChar"] = "S";
-            dtStatus.Rows.Add(dr);
-
-            dr = dtStatus.NewRow();
-            dr["StatusName"] = "All";
-            dr["StatusChar"] = "C,W,H,F,S";
-            dtStatus.Rows.Add(dr);
+            dtStatus.Rows.Add("Created", "C");
+            dtStatus.Rows.Add("Waiting", "W");
+            dtStatus.Rows.Add("Hang Up", "H");
+            dtStatus.Rows.Add("Waiting & Hang Up", "W,H");
+            dtStatus.Rows.Add("Finished", "F");
+            dtStatus.Rows.Add("Skipped", "S");
+            dtStatus.Rows.Add("All", "C,W,H,F,S");
 
             cboStatus.DataSource = dtStatus;
             cboStatus.DisplayMember = "StatusName";
@@ -232,6 +203,17 @@ namespace orabs.Meeting
         {
             if (comboBox_load_over)
                 doQuery();
+        }
+
+        private void btnConsultation_Click(object sender, EventArgs e)
+        {
+            frmMeetingDiagnose frmMeetingDiagnoseEntity = new frmMeetingDiagnose();
+            frmMeetingDiagnoseEntity.ShowDialog();
+            if (frmMeetingDiagnoseEntity.DialogResult == DialogResult.OK)
+            {
+                showInformation();
+            }
+
         }
     }
 }

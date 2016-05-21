@@ -90,7 +90,7 @@
             this.cboGroup.Location = new System.Drawing.Point(140, 71);
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(121, 20);
-            this.cboGroup.TabIndex = 5;
+            this.cboGroup.TabIndex = 2;
             // 
             // cboDepartment
             // 
@@ -99,14 +99,14 @@
             this.cboDepartment.Location = new System.Drawing.Point(140, 116);
             this.cboDepartment.Name = "cboDepartment";
             this.cboDepartment.Size = new System.Drawing.Size(121, 20);
-            this.cboDepartment.TabIndex = 6;
+            this.cboDepartment.TabIndex = 3;
             // 
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(140, 162);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(121, 21);
-            this.txtDescription.TabIndex = 7;
+            this.txtDescription.TabIndex = 4;
             // 
             // btnOK
             // 
@@ -114,7 +114,7 @@
             this.btnOK.Location = new System.Drawing.Point(169, 230);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(66, 29);
-            this.btnOK.TabIndex = 8;
+            this.btnOK.TabIndex = 5;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -125,7 +125,7 @@
             this.btnCancel.Location = new System.Drawing.Point(265, 230);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(78, 29);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

@@ -92,16 +92,8 @@ namespace orabs
                    //System.Sbyte : signed byte -128 ~ 127, 
                    //corresponding to tinyint in MySQL, to which bool and Boolean will be converted 
             dtSex.Columns.Add("SexStr", System.Type.GetType("System.String"));
-
-            DataRow dr0 = dtSex.NewRow();
-            dr0["SexCode"] = 0;
-            dr0["SexStr"] = "Male";
-            dtSex.Rows.Add(dr0);        // 0 - Male
-
-            DataRow dr1 = dtSex.NewRow();
-            dr1["SexCode"] = 1;
-            dr1["SexStr"] = "Female";   // 1 - Female
-            dtSex.Rows.Add(dr1);
+            dtSex.Rows.Add(0, "Male");      
+            dtSex.Rows.Add(1, "Female");
             return dtSex;
         }
     }

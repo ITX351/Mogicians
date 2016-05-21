@@ -59,12 +59,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnConsultation = new System.Windows.Forms.Button();
             this.lblHint = new System.Windows.Forms.Label();
+            this.lblCboDescription = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDoctor
             // 
             this.lblDoctor.AutoSize = true;
-            this.lblDoctor.Location = new System.Drawing.Point(53, 31);
+            this.lblDoctor.Location = new System.Drawing.Point(64, 30);
             this.lblDoctor.Name = "lblDoctor";
             this.lblDoctor.Size = new System.Drawing.Size(53, 12);
             this.lblDoctor.TabIndex = 0;
@@ -82,7 +83,7 @@
             // lblPatientNameTitle
             // 
             this.lblPatientNameTitle.AutoSize = true;
-            this.lblPatientNameTitle.Location = new System.Drawing.Point(60, 134);
+            this.lblPatientNameTitle.Location = new System.Drawing.Point(59, 136);
             this.lblPatientNameTitle.Name = "lblPatientNameTitle";
             this.lblPatientNameTitle.Size = new System.Drawing.Size(41, 12);
             this.lblPatientNameTitle.TabIndex = 2;
@@ -109,7 +110,7 @@
             // lblPatientAddressTitle
             // 
             this.lblPatientAddressTitle.AutoSize = true;
-            this.lblPatientAddressTitle.Location = new System.Drawing.Point(64, 232);
+            this.lblPatientAddressTitle.Location = new System.Drawing.Point(62, 226);
             this.lblPatientAddressTitle.Name = "lblPatientAddressTitle";
             this.lblPatientAddressTitle.Size = new System.Drawing.Size(59, 12);
             this.lblPatientAddressTitle.TabIndex = 5;
@@ -184,7 +185,7 @@
             // lblCreatedAtTitle
             // 
             this.lblCreatedAtTitle.AutoSize = true;
-            this.lblCreatedAtTitle.Location = new System.Drawing.Point(62, 325);
+            this.lblCreatedAtTitle.Location = new System.Drawing.Point(62, 328);
             this.lblCreatedAtTitle.Name = "lblCreatedAtTitle";
             this.lblCreatedAtTitle.Size = new System.Drawing.Size(113, 12);
             this.lblCreatedAtTitle.TabIndex = 14;
@@ -193,7 +194,7 @@
             // lblStatusAtTitle
             // 
             this.lblStatusAtTitle.AutoSize = true;
-            this.lblStatusAtTitle.Location = new System.Drawing.Point(61, 358);
+            this.lblStatusAtTitle.Location = new System.Drawing.Point(64, 358);
             this.lblStatusAtTitle.Name = "lblStatusAtTitle";
             this.lblStatusAtTitle.Size = new System.Drawing.Size(125, 12);
             this.lblStatusAtTitle.TabIndex = 15;
@@ -267,7 +268,7 @@
             // 
             this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(336, 52);
+            this.cboStatus.Location = new System.Drawing.Point(335, 52);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(102, 20);
             this.cboStatus.TabIndex = 23;
@@ -276,7 +277,7 @@
             // lblQueueLocationTitle
             // 
             this.lblQueueLocationTitle.AutoSize = true;
-            this.lblQueueLocationTitle.Location = new System.Drawing.Point(59, 391);
+            this.lblQueueLocationTitle.Location = new System.Drawing.Point(64, 395);
             this.lblQueueLocationTitle.Name = "lblQueueLocationTitle";
             this.lblQueueLocationTitle.Size = new System.Drawing.Size(101, 12);
             this.lblQueueLocationTitle.TabIndex = 24;
@@ -329,6 +330,7 @@
             this.btnConsultation.TabIndex = 29;
             this.btnConsultation.Text = "&Make consultation";
             this.btnConsultation.UseVisualStyleBackColor = true;
+            this.btnConsultation.Click += new System.EventHandler(this.btnConsultation_Click);
             // 
             // lblHint
             // 
@@ -338,12 +340,22 @@
             this.lblHint.Size = new System.Drawing.Size(0, 12);
             this.lblHint.TabIndex = 30;
             // 
+            // lblCboDescription
+            // 
+            this.lblCboDescription.AutoSize = true;
+            this.lblCboDescription.Location = new System.Drawing.Point(136, 55);
+            this.lblCboDescription.Name = "lblCboDescription";
+            this.lblCboDescription.Size = new System.Drawing.Size(143, 12);
+            this.lblCboDescription.TabIndex = 31;
+            this.lblCboDescription.Text = "Select with status of :";
+            // 
             // frmMeetingDoctorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(636, 485);
+            this.Controls.Add(this.lblCboDescription);
             this.Controls.Add(this.lblHint);
             this.Controls.Add(this.btnConsultation);
             this.Controls.Add(this.btnClose);
@@ -416,5 +428,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnConsultation;
         private System.Windows.Forms.Label lblHint;
+        private System.Windows.Forms.Label lblCboDescription;
     }
 }

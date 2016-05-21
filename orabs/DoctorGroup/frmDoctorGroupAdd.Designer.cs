@@ -59,21 +59,21 @@
             this.txtGroupName.Location = new System.Drawing.Point(115, 29);
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(100, 21);
-            this.txtGroupName.TabIndex = 2;
+            this.txtGroupName.TabIndex = 1;
             // 
             // txtCharge
             // 
             this.txtCharge.Location = new System.Drawing.Point(115, 69);
             this.txtCharge.Name = "txtCharge";
             this.txtCharge.Size = new System.Drawing.Size(100, 21);
-            this.txtCharge.TabIndex = 3;
+            this.txtCharge.TabIndex = 2;
             // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(96, 131);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 4;
+            this.btnOK.TabIndex = 3;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -84,7 +84,7 @@
             this.btnCancel.Location = new System.Drawing.Point(207, 131);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
