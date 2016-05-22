@@ -140,6 +140,7 @@
             this.btnControlPurchaseItem.TabIndex = 8;
             this.btnControlPurchaseItem.Text = "&Add Items";
             this.btnControlPurchaseItem.UseVisualStyleBackColor = true;
+            this.btnControlPurchaseItem.Click += new System.EventHandler(this.btnControlPurchaseItem_Click);
             // 
             // frmMeetingDiagnose
             // 

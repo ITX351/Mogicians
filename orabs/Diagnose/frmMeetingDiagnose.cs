@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using orabs.Diagnose;
 using MySql.Data.MySqlClient;
 
 namespace orabs.Meeting
@@ -56,6 +57,12 @@ namespace orabs.Meeting
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnControlPurchaseItem_Click(object sender, EventArgs e)
+        {
+            frmMeetingDiagnoseItems frmMeetingDiagnoseItemsEntity = new frmMeetingDiagnoseItems();
+            frmMeetingDiagnoseItemsEntity.ShowDialog();
         }
     }
 }

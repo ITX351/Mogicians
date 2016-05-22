@@ -92,9 +92,17 @@ namespace orabs
                    //System.Sbyte : signed byte -128 ~ 127, 
                    //corresponding to tinyint in MySQL, to which bool and Boolean will be converted 
             dtSex.Columns.Add("SexStr", System.Type.GetType("System.String"));
-            dtSex.Rows.Add(0, "Male");      
+            dtSex.Rows.Add(0, "Male");
             dtSex.Rows.Add(1, "Female");
             return dtSex;
+        }
+        
+        public static DataTable getEmptyListTable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ShowText", System.Type.GetType("System.String"));
+            dt.Columns.Add("Value", System.Type.GetType("System.Int32"));
+            return dt;
         }
     }
 }

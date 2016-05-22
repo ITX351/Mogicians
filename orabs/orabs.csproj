@@ -65,6 +65,12 @@
     <Compile Include="Department\frmDepartmentUpdate.Designer.cs">
       <DependentUpon>frmDepartmentUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Diagnose\frmMeetingDiagnoseItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diagnose\frmMeetingDiagnoseItems.Designer.cs">
+      <DependentUpon>frmMeetingDiagnoseItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\frmDoctorAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Department\frmDepartmentUpdate.resx">
       <DependentUpon>frmDepartmentUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagnose\frmMeetingDiagnoseItems.resx">
+      <DependentUpon>frmMeetingDiagnoseItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorAdd.resx">
       <DependentUpon>frmDoctorAdd.cs</DependentUpon>
