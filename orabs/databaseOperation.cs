@@ -7,7 +7,7 @@ namespace orabs
 {
     class DatabaseOperation
     {
-        private static MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
+        public static MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
         private static MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
         private static DataTable dataTable;
         private static MySqlCommand mySqlCommand;
@@ -53,11 +53,13 @@ namespace orabs
             }
         }
 
-        public static int ExecuteSQLQuery(string queryString)
+        public static int ExecuteSQLQuery(string queryString, MySqlTransaction transaction = null)
         {
             try
             {
                 mySqlCommand = new MySqlCommand(queryString, mySqlConnection);
+                if (transaction != null)
+                    mySqlCommand.Transaction = transaction;
                 int ret = mySqlCommand.ExecuteNonQuery();
                 return ret;
             }

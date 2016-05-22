@@ -126,10 +126,10 @@
     <Compile Include="Meeting\frmMeetingControl.Designer.cs">
       <DependentUpon>frmMeetingControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Meeting\frmMeetingDiagnose.cs">
+    <Compile Include="Diagnose\frmMeetingDiagnose.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Meeting\frmMeetingDiagnose.Designer.cs">
+    <Compile Include="Diagnose\frmMeetingDiagnose.Designer.cs">
       <DependentUpon>frmMeetingDiagnose.cs</DependentUpon>
     </Compile>
     <Compile Include="Meeting\frmMeetingDoctorView.cs">
@@ -221,7 +221,7 @@
     <EmbeddedResource Include="Meeting\frmMeetingControl.resx">
       <DependentUpon>frmMeetingControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Meeting\frmMeetingDiagnose.resx">
+    <EmbeddedResource Include="Diagnose\frmMeetingDiagnose.resx">
       <DependentUpon>frmMeetingDiagnose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Meeting\frmMeetingDoctorView.resx">
@@ -270,9 +270,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Diagnose\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

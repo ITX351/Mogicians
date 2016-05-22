@@ -216,13 +216,12 @@ namespace orabs.Meeting
 
         private void btnConsultation_Click(object sender, EventArgs e)
         {
-            frmMeetingDiagnose frmMeetingDiagnoseEntity = new frmMeetingDiagnose();
+            frmMeetingDiagnose frmMeetingDiagnoseEntity = new frmMeetingDiagnose((int)MeetingPatientTable.Rows[now]["Meeting_ID"]);
             frmMeetingDiagnoseEntity.ShowDialog();
             if (frmMeetingDiagnoseEntity.DialogResult == DialogResult.OK)
             {
-                showInformation();
+                doQuery();
             }
-
         }
     }
 }

@@ -31,14 +31,14 @@
             this.lblSymptom = new System.Windows.Forms.Label();
             this.lblConclusion = new System.Windows.Forms.Label();
             this.lblHandle = new System.Windows.Forms.Label();
+            this.lblNameTitle = new System.Windows.Forms.Label();
+            this.txtSymptom = new System.Windows.Forms.TextBox();
+            this.txtConclusion = new System.Windows.Forms.TextBox();
+            this.txtHandle = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblNameTxt = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAddPurchaseItem = new System.Windows.Forms.Button();
+            this.btnControlPurchaseItem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSymptom
@@ -68,48 +68,48 @@
             this.lblHandle.TabIndex = 2;
             this.lblHandle.Text = "Handle";
             // 
+            // lblNameTitle
+            // 
+            this.lblNameTitle.AutoSize = true;
+            this.lblNameTitle.Location = new System.Drawing.Point(32, 32);
+            this.lblNameTitle.Name = "lblNameTitle";
+            this.lblNameTitle.Size = new System.Drawing.Size(29, 12);
+            this.lblNameTitle.TabIndex = 3;
+            this.lblNameTitle.Text = "Name";
+            // 
+            // txtSymptom
+            // 
+            this.txtSymptom.Location = new System.Drawing.Point(241, 32);
+            this.txtSymptom.Multiline = true;
+            this.txtSymptom.Name = "txtSymptom";
+            this.txtSymptom.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtSymptom.Size = new System.Drawing.Size(200, 40);
+            this.txtSymptom.TabIndex = 1;
+            // 
+            // txtConclusion
+            // 
+            this.txtConclusion.Location = new System.Drawing.Point(241, 92);
+            this.txtConclusion.Multiline = true;
+            this.txtConclusion.Name = "txtConclusion";
+            this.txtConclusion.Size = new System.Drawing.Size(200, 39);
+            this.txtConclusion.TabIndex = 2;
+            // 
+            // txtHandle
+            // 
+            this.txtHandle.Location = new System.Drawing.Point(241, 157);
+            this.txtHandle.Multiline = true;
+            this.txtHandle.Name = "txtHandle";
+            this.txtHandle.Size = new System.Drawing.Size(200, 39);
+            this.txtHandle.TabIndex = 3;
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(32, 32);
+            this.lblName.Location = new System.Drawing.Point(38, 77);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(29, 12);
-            this.lblName.TabIndex = 3;
-            this.lblName.Text = "Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(241, 32);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox1.Size = new System.Drawing.Size(200, 40);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(241, 92);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 39);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(241, 157);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 39);
-            this.textBox3.TabIndex = 3;
-            // 
-            // lblNameTxt
-            // 
-            this.lblNameTxt.AutoSize = true;
-            this.lblNameTxt.Location = new System.Drawing.Point(38, 77);
-            this.lblNameTxt.Name = "lblNameTxt";
-            this.lblNameTxt.Size = new System.Drawing.Size(23, 12);
-            this.lblNameTxt.TabIndex = 7;
-            this.lblNameTxt.Text = "---";
+            this.lblName.Size = new System.Drawing.Size(23, 12);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "---";
             // 
             // btnOK
             // 
@@ -119,6 +119,7 @@
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -129,15 +130,16 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAddPurchaseItem
+            // btnControlPurchaseItem
             // 
-            this.btnAddPurchaseItem.Location = new System.Drawing.Point(212, 232);
-            this.btnAddPurchaseItem.Name = "btnAddPurchaseItem";
-            this.btnAddPurchaseItem.Size = new System.Drawing.Size(137, 35);
-            this.btnAddPurchaseItem.TabIndex = 8;
-            this.btnAddPurchaseItem.Text = "&Add Items";
-            this.btnAddPurchaseItem.UseVisualStyleBackColor = true;
+            this.btnControlPurchaseItem.Location = new System.Drawing.Point(212, 232);
+            this.btnControlPurchaseItem.Name = "btnControlPurchaseItem";
+            this.btnControlPurchaseItem.Size = new System.Drawing.Size(137, 35);
+            this.btnControlPurchaseItem.TabIndex = 8;
+            this.btnControlPurchaseItem.Text = "&Add Items";
+            this.btnControlPurchaseItem.UseVisualStyleBackColor = true;
             // 
             // frmMeetingDiagnose
             // 
@@ -146,14 +148,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(534, 365);
-            this.Controls.Add(this.btnAddPurchaseItem);
+            this.Controls.Add(this.btnControlPurchaseItem);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.lblNameTxt);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtHandle);
+            this.Controls.Add(this.txtConclusion);
+            this.Controls.Add(this.txtSymptom);
+            this.Controls.Add(this.lblNameTitle);
             this.Controls.Add(this.lblHandle);
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.lblSymptom);
@@ -170,13 +172,13 @@
         private System.Windows.Forms.Label lblSymptom;
         private System.Windows.Forms.Label lblConclusion;
         private System.Windows.Forms.Label lblHandle;
+        private System.Windows.Forms.Label lblNameTitle;
+        private System.Windows.Forms.TextBox txtSymptom;
+        private System.Windows.Forms.TextBox txtConclusion;
+        private System.Windows.Forms.TextBox txtHandle;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label lblNameTxt;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAddPurchaseItem;
+        private System.Windows.Forms.Button btnControlPurchaseItem;
     }
 }
