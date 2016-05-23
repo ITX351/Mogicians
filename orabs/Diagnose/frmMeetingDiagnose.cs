@@ -14,15 +14,32 @@ namespace orabs.Meeting
 {
     public partial class frmMeetingDiagnose : Form
     {
-        int Meeting_ID;
+        private int Meeting_ID;
+        private DataTable chosenItems;
+        private double TotalPrice;
+
+        private string defaultBtnControlPurchaseItemText;
+
         public frmMeetingDiagnose(int Meeting_ID)
         {
             InitializeComponent();
             this.Meeting_ID = Meeting_ID;
+
+            chosenItems = null;
+            TotalPrice = .0;
+        }
+
+        private void UpdateTotalPrice()
+        {
+            btnControlPurchaseItem.Text = defaultBtnControlPurchaseItemText;
+            if (TotalPrice > 0)
+                btnControlPurchaseItem.Text += "($" + TotalPrice.ToString("F2") + ")"; // keep two decimals
         }
 
         private void frmMeetingDiagnose_Load(object sender, EventArgs e)
         {
+            defaultBtnControlPurchaseItemText = btnControlPurchaseItem.Text;
+
             string queryStr = "select Patient.Name from Meeting join Patient on Meeting.Patient_ID = Patient.Patient_ID" +
                 " where Meeting.Meeting_ID = " + Meeting_ID.ToString();
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
@@ -61,8 +78,15 @@ namespace orabs.Meeting
 
         private void btnControlPurchaseItem_Click(object sender, EventArgs e)
         {
-            frmMeetingDiagnoseItems frmMeetingDiagnoseItemsEntity = new frmMeetingDiagnoseItems();
+            frmMeetingDiagnoseItems frmMeetingDiagnoseItemsEntity = new frmMeetingDiagnoseItems(chosenItems);
             frmMeetingDiagnoseItemsEntity.ShowDialog();
+
+            if (frmMeetingDiagnoseItemsEntity.DialogResult == DialogResult.OK)
+            {
+                this.chosenItems = frmMeetingDiagnoseItemsEntity.resultTable;
+                this.TotalPrice = frmMeetingDiagnoseItemsEntity.TotalPrice;
+                UpdateTotalPrice();
+            }
         }
     }
 }
