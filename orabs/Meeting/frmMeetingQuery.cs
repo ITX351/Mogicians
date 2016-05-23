@@ -7,6 +7,7 @@ namespace orabs.Meeting
     public partial class frmMeetingQuery : Form
     {
         private DataTable dataTable;
+        private string dateForSkipStr;
 
         public frmMeetingQuery()
         {
@@ -23,13 +24,21 @@ namespace orabs.Meeting
             dataTable.Rows.Add("F", "Finished");
             dataTable.Rows.Add("H", "HangUp");
             dataTable.Rows.Add("W", "Waiting");
+            dataTable.Rows.Add("L", "Not specified");
 
             cboStatus.DataSource = dataTable;
             cboStatus.ValueMember = "statusCode";
             cboStatus.DisplayMember = "statusStr";
 
-            dtpCreatedAt.Value = new DateTime(2000, 1, 1, 1, 0, 0);
-            dtpStatusAt.Value = new DateTime(2000, 1, 1, 1, 0, 0);
+            dtpStatusAt.Format = DateTimePickerFormat.Custom;
+            dtpStatusAt.CustomFormat = "yyyy/MM/dd";
+            dtpStatusAt.Checked = false;
+
+            dtpCreatedAt.Format = DateTimePickerFormat.Custom;
+            dtpCreatedAt.CustomFormat = "yyyy/MM/dd";
+            dtpCreatedAt.Checked = false;
+
+            dateForSkipStr = "2000-01-01";
         }
 
         public string PatientName
@@ -56,19 +65,25 @@ namespace orabs.Meeting
             }
         }
 
-        public DateTime StatusAt
+        public string StatusAtDateStr
         {
             get
             {
-                return dtpStatusAt.Value;
+                if (dtpStatusAt.Checked)
+                    return dtpStatusAt.Value.ToString("yyyy-MM-dd");
+                else
+                    return dateForSkipStr;
             }
         }
 
-        public DateTime CreatedAt
+        public string CreatedAtDateStr
         {
             get
             {
-                return dtpCreatedAt.Value;
+                if (dtpCreatedAt.Checked)
+                    return dtpCreatedAt.Value.ToString("yyyy-MM-dd");
+                else
+                    return dateForSkipStr;
             }
         }
 
@@ -82,5 +97,6 @@ namespace orabs.Meeting
         {
             this.Close();
         }
+
     }
 }

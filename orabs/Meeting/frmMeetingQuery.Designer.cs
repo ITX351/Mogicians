@@ -133,15 +133,21 @@
             // 
             // dtpStatusAt
             // 
+            this.dtpStatusAt.Checked = false;
             this.dtpStatusAt.Location = new System.Drawing.Point(241, 161);
             this.dtpStatusAt.Name = "dtpStatusAt";
+            this.dtpStatusAt.ShowCheckBox = true;
+            this.dtpStatusAt.ShowUpDown = true;
             this.dtpStatusAt.Size = new System.Drawing.Size(200, 21);
             this.dtpStatusAt.TabIndex = 4;
             // 
             // dtpCreatedAt
             // 
+            this.dtpCreatedAt.Checked = false;
             this.dtpCreatedAt.Location = new System.Drawing.Point(241, 207);
             this.dtpCreatedAt.Name = "dtpCreatedAt";
+            this.dtpCreatedAt.ShowCheckBox = true;
+            this.dtpCreatedAt.ShowUpDown = true;
             this.dtpCreatedAt.Size = new System.Drawing.Size(200, 21);
             this.dtpCreatedAt.TabIndex = 5;
             // 
