@@ -134,11 +134,11 @@
             // 
             // btnControlPurchaseItem
             // 
-            this.btnControlPurchaseItem.Location = new System.Drawing.Point(212, 232);
+            this.btnControlPurchaseItem.Location = new System.Drawing.Point(191, 232);
             this.btnControlPurchaseItem.Name = "btnControlPurchaseItem";
-            this.btnControlPurchaseItem.Size = new System.Drawing.Size(137, 35);
+            this.btnControlPurchaseItem.Size = new System.Drawing.Size(164, 35);
             this.btnControlPurchaseItem.TabIndex = 8;
-            this.btnControlPurchaseItem.Text = "&Add Items";
+            this.btnControlPurchaseItem.Text = "Control &Items";
             this.btnControlPurchaseItem.UseVisualStyleBackColor = true;
             this.btnControlPurchaseItem.Click += new System.EventHandler(this.btnControlPurchaseItem_Click);
             // 

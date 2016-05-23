@@ -40,6 +40,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReduce = new System.Windows.Forms.Button();
+            this.lblTotalPriceText = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNamePrefix
@@ -114,6 +116,7 @@
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // lstChosenItems
             // 
@@ -121,35 +124,55 @@
             this.lstChosenItems.ItemHeight = 12;
             this.lstChosenItems.Location = new System.Drawing.Point(303, 89);
             this.lstChosenItems.Name = "lstChosenItems";
-            this.lstChosenItems.Size = new System.Drawing.Size(155, 184);
+            this.lstChosenItems.Size = new System.Drawing.Size(187, 184);
             this.lstChosenItems.TabIndex = 6;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(464, 165);
+            this.btnClear.Location = new System.Drawing.Point(496, 165);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(63, 32);
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "&Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(464, 127);
+            this.btnDelete.Location = new System.Drawing.Point(496, 127);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(63, 32);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReduce
             // 
-            this.btnReduce.Location = new System.Drawing.Point(464, 89);
+            this.btnReduce.Location = new System.Drawing.Point(496, 89);
             this.btnReduce.Name = "btnReduce";
             this.btnReduce.Size = new System.Drawing.Size(63, 32);
             this.btnReduce.TabIndex = 9;
             this.btnReduce.Text = "&Reduce";
             this.btnReduce.UseVisualStyleBackColor = true;
+            this.btnReduce.Click += new System.EventHandler(this.btnReduce_Click);
+            // 
+            // lblTotalPriceText
+            // 
+            this.lblTotalPriceText.AutoSize = true;
+            this.lblTotalPriceText.Location = new System.Drawing.Point(301, 276);
+            this.lblTotalPriceText.Name = "lblTotalPriceText";
+            this.lblTotalPriceText.Size = new System.Drawing.Size(83, 12);
+            this.lblTotalPriceText.TabIndex = 10;
+            this.lblTotalPriceText.Text = "Total Price: ";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(390, 276);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(0, 12);
+            this.lblTotalPrice.TabIndex = 11;
             // 
             // frmMeetingDiagnoseItems
             // 
@@ -158,6 +181,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(673, 386);
+            this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.lblTotalPriceText);
             this.Controls.Add(this.btnReduce);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
@@ -192,5 +217,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnReduce;
+        private System.Windows.Forms.Label lblTotalPriceText;
+        private System.Windows.Forms.Label lblTotalPrice;
     }
 }
