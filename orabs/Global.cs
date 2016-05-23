@@ -19,9 +19,7 @@ namespace orabs
         public static int userId = -1;
         public static int patientId = -1;
         public static int doctorId = -1;
-        public static Identity authority = Identity.Patient; // 0 for patient, 1 for doctor, 2 for admin
-
-        public static DataTable dtSex = new DataTable();
+        public static Identity authority = Identity.Patient;
 
         public static string AppendPercent(string str)
         {
@@ -85,7 +83,7 @@ namespace orabs
             return testRegax(pstr, @"^(\d+)$");
         }
 
-        public static DataTable initDataTableSex()
+        public static DataTable GetSexDataTable()
         {
             DataTable dtSex = new DataTable();
             dtSex.Columns.Add("SexCode",System.Type.GetType("System.SByte"));   

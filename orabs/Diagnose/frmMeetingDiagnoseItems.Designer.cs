@@ -132,6 +132,7 @@
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "&Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -141,6 +142,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReduce
             // 
@@ -150,6 +152,7 @@
             this.btnReduce.TabIndex = 9;
             this.btnReduce.Text = "&Reduce";
             this.btnReduce.UseVisualStyleBackColor = true;
+            this.btnReduce.Click += new System.EventHandler(this.btnReduce_Click);
             // 
             // frmMeetingDiagnoseItems
             // 

@@ -156,11 +156,11 @@
     <Compile Include="Meeting\frmMeetingRegister.Designer.cs">
       <DependentUpon>frmMeetingRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="Patient\frmPatientAdd.cs">
+    <Compile Include="Patient\frmPatientInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Patient\frmPatientAdd.Designer.cs">
-      <DependentUpon>frmPatientAdd.cs</DependentUpon>
+    <Compile Include="Patient\frmPatientInfo.Designer.cs">
+      <DependentUpon>frmPatientInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Patient\frmPatientControl.cs">
       <SubType>Form</SubType>
@@ -242,8 +242,8 @@
     <EmbeddedResource Include="Meeting\frmMeetingRegister.resx">
       <DependentUpon>frmMeetingRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Patient\frmPatientAdd.resx">
-      <DependentUpon>frmPatientAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Patient\frmPatientInfo.resx">
+      <DependentUpon>frmPatientInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\frmPatientControl.resx">
       <DependentUpon>frmPatientControl.cs</DependentUpon>

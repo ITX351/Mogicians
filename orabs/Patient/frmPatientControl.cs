@@ -62,11 +62,11 @@ namespace orabs.Patient
         {
             if (Global.authority != Global.Identity.Admin)
             {
-                MessageBox.Show("Patient or Doctor has no authority to complement patient information");
+                MessageBox.Show("Only admin can add patients by this method");
                 return;
             }
 
-            frmPatientAdd frmPatientAddEntity = new frmPatientAdd();
+            frmPatientInfo frmPatientAddEntity = new frmPatientInfo();
             frmPatientAddEntity.ShowDialog();
             if (frmPatientAddEntity.DialogResult == DialogResult.OK)
             {
@@ -92,10 +92,6 @@ namespace orabs.Patient
             }
         }
 
-        private void dgvPatient_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // Todo: Sex:male/female is showed by checkbox now, maybe need to change to string
-        }
 
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -104,8 +100,7 @@ namespace orabs.Patient
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //Todo: check patient can only modify his info
-            if (Global.authority != Global.Identity.Doctor) // not doctor   
+            if (Global.authority == Global.Identity.Admin) // not doctor   
             {
                 frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(getPatientID());
                 frmPatientUpdateEntity.ShowDialog();

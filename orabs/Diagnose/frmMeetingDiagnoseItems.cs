@@ -72,5 +72,20 @@ namespace orabs.Diagnose
                 (int)dr["PurchaseItem_ID"], int.Parse(txtNumber.Text));
             txtNumber.Text = "1";
         }
+
+        private void btnReduce_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

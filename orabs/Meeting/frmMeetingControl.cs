@@ -8,8 +8,6 @@ namespace orabs.Meeting
     {
         private DataTable dataTable;
 
-        private int patient_ID;
-        private int doctor_ID;
         private string patientName;
         private string doctorName;
         private string status;
