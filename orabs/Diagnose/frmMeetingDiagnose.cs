@@ -49,6 +49,7 @@ namespace orabs.Meeting
                     Meeting_ID.ToString() + ", '" + txtSymptom.Text + "', '" + txtConclusion.Text + "', '" +
                     txtHandle.Text + "', " + TotalPrice.ToString() + ", 0)";
                 DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+
                 exeStr = "update Meeting set Status = 'F', StatusAt = '"+
                     Global.FormatDateTime(DateTime.Now) + "' where Meeting_ID = " + Meeting_ID.ToString();
                 DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
