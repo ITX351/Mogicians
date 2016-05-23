@@ -164,7 +164,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "frmPatientUpdate";
             this.Text = "Patient Update";
-            this.Load += new System.EventHandler(this.frnPatientUpdate_Load);
+            this.Load += new System.EventHandler(this.frmPatientUpdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

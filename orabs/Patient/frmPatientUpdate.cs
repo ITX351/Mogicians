@@ -12,39 +12,70 @@ namespace orabs.Patient
 {
     public partial class frmPatientUpdate : Form
     {
-        private int Patient_ID;
+        private int patientIdToOperate;
 
-        public frmPatientUpdate(int Patient_ID)
+        public frmPatientUpdate(int patientIdToOperate)
         {
             InitializeComponent();
-            this.Patient_ID = Patient_ID;
+            this.patientIdToOperate = patientIdToOperate;
         }
 
-        private void frnPatientUpdate_Load(object sender, EventArgs e)
+        private void frmPatientUpdate_Load(object sender, EventArgs e)
         {
-            DataRow dr = DatabaseOperation.GetDataRowByID("Patient", Patient_ID);
-
-            txtName.Text = (string)dr["Name"];
-            txtPhone.Text = (string)dr["Phone"];
-            txtAddress.Text = (string)dr["Address"];
-            txtIdentityNumber.Text = (string)dr["Identity_Number"];
-            cboSex.DataSource = Global.dtSex;
+            cboSex.DataSource = Global.GetSexDataTable();
             cboSex.ValueMember = "SexCode";
             cboSex.DisplayMember = "SexStr";
-            if (false == (bool)dr["Sex"])
-                cboSex.SelectedValue = 0;
+
+            if (patientIdToOperate != -1)
+            {
+                DataRow dr = DatabaseOperation.GetDataRowByID("Patient", patientIdToOperate);
+                txtName.Text = (string)dr["Name"];
+                txtPhone.Text = (string)dr["Phone"];
+                txtAddress.Text = (string)dr["Address"];
+                txtIdentityNumber.Text = (string)dr["Identity_Number"];
+                if (false == (bool)dr["Sex"])
+                    cboSex.SelectedValue = 0;
+                else
+                    cboSex.SelectedValue = 1;
+            }
             else
-                cboSex.SelectedValue = 1;
+            {
+                cboSex.SelectedValue = 0;
+            }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+      private void btnOK_Click(object sender, EventArgs e)
         {
-            string exeStr = "update Patient set Name = '" + txtName.Text +
-                "', Sex = " + cboSex.SelectedValue +
-                ", Phone = '" + txtPhone.Text +
-                "', Address = '" + txtAddress.Text +
-                "', Identity_Number = '" + txtIdentityNumber.Text +
-                "' where Patient_ID = " + Patient_ID.ToString();
+            if (txtName.Text.Length == 0 || txtIdentityNumber.Text.Length == 0)
+            {
+                MessageBox.Show("Patient Name and Identity Number cannot be empty.");
+                return;
+            }
+
+            if (!Global.testRegax(txtPhone.Text, @"^([0-9\-+]*)$"))
+            {
+                MessageBox.Show("Phone Number can only contain digit, plus sign and dash.");
+                txtPhone.Focus();
+                return;
+            }
+
+            string exeStr;
+            if (Global.authority == Global.Identity.Patient && patientIdToOperate == -1)
+            {
+                exeStr = "insert into Patient(Name, Sex, Phone, Address, Identity_Number) values('" +
+                    txtName.Text + "', '" + cboSex.SelectedValue + "', '" +
+                    txtPhone.Text + "', '" + txtAddress.Text + "', '" +
+                    txtIdentityNumber.Text + "')";
+            }
+            else
+            {
+                exeStr = "update Patient set Name = '" + txtName.Text +
+                    "', Sex = " + cboSex.SelectedValue +
+                    ", Phone = '" + txtPhone.Text +
+                    "', Address = '" + txtAddress.Text +
+                    "', Identity_Number = '" + txtIdentityNumber.Text +
+                    "' where Patient_ID = " + patientIdToOperate;
+            }    
 
             int result = DatabaseOperation.ExecuteSQLQuery(exeStr);
             if (result > 0)
@@ -55,7 +86,7 @@ namespace orabs.Patient
             }
             else
             {
-                MessageBox.Show("Error occurred while updating.");
+                MessageBox.Show("Error occurred while complementing patient information.");
             }
            
         }

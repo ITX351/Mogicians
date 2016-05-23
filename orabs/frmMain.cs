@@ -94,5 +94,11 @@ namespace orabs
             frmMeetingDoctorView frmMeetingDoctorViewEntity = new frmMeetingDoctorView();
             frmMeetingDoctorViewEntity.Show();
         }
+
+        private void personalInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPatientInfo frmPateintInfoEntity = new frmPatientInfo();
+            frmPateintInfoEntity.Show();
+        }
     }
 }

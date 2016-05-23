@@ -161,7 +161,7 @@
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.lblSymptom);
             this.Name = "frmMeetingDiagnose";
-            this.Text = "frmMeetingDiagnose";
+            this.Text = "Meeting Diagnose";
             this.Load += new System.EventHandler(this.frmMeetingDiagnose_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

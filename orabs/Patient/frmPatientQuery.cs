@@ -19,7 +19,7 @@ namespace orabs.Patient
 
         private void frmPatientQuery_Load(object sender, EventArgs e)
         {
-            DataTable dataTable = Global.initDataTableSex();
+            DataTable dataTable = Global.GetSexDataTable();
             DataRow dr = dataTable.NewRow();
             dr["SexCode"] = -1;
             dr["SexStr"] = "Not required";
