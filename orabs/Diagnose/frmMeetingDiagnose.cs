@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MySql.Data.MySqlClient;
 using orabs.Diagnose;
-using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace orabs.Meeting
 {
@@ -98,6 +92,7 @@ namespace orabs.Meeting
             catch (Exception exception)
             {
                 MessageBox.Show("Some error has occurred during transaction.\n" + exception.ToString());
+                transaction.Rollback();
                 return;
             }
 

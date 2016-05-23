@@ -1,9 +1,7 @@
 ﻿using orabs.Department;
 using orabs.DoctorGroup;
-using orabs.Doctor;
-using orabs.Patient;
 using orabs.Meeting;
-
+using orabs.Patient;
 using System;
 using System.Windows.Forms;
 
