@@ -39,7 +39,7 @@ namespace orabs
 
         public static string FormatDateTime(DateTime dateTime)
         {
-            return String.Format("yyyy-MM-dd hh:mm:ss", dateTime);
+            return dateTime.ToString("yyyy-MM-dd hh:mm:ss");
         }
         public static void setComboBoxByTableName(string TableName, ComboBox comboBox, bool hasNull)
         {

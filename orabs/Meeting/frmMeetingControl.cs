@@ -13,9 +13,9 @@ namespace orabs.Meeting
         private string status;
 
         //MySQL displays and retrieves values in 'YYYY-MM-DD HH:MM:SS'
-        private string statusAtStr;          
-        private string createdAtStr;
-        private const string dateTimeForSkipStr = "2000-01-01 01:00:00";
+        private string statusAtDateStr;          
+        private string createdAtDateStr;
+        private const string dateForSkipStr = "2000-01-01";
 
         public frmMeetingControl()
         {
@@ -29,7 +29,7 @@ namespace orabs.Meeting
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            doQuery("", "", "C", dateTimeForSkipStr, dateTimeForSkipStr);
+            doQuery("", "", "L", dateForSkipStr, dateForSkipStr);
         }
 
         private void btnQuery_Click(object sender, EventArgs e)
@@ -39,8 +39,8 @@ namespace orabs.Meeting
             if (frmMeetingQueryEntity.DialogResult == DialogResult.OK)
             {
                 doQuery(frmMeetingQueryEntity.DoctorName, frmMeetingQueryEntity.PatientName,
-                    frmMeetingQueryEntity.Status, Global.FormatDateTime(frmMeetingQueryEntity.StatusAt), 
-                    Global.FormatDateTime(frmMeetingQueryEntity.CreatedAt));
+                    frmMeetingQueryEntity.Status, frmMeetingQueryEntity.StatusAtDateStr, 
+                    frmMeetingQueryEntity.CreatedAtDateStr);
             }
         }
 
@@ -50,8 +50,8 @@ namespace orabs.Meeting
             this.doctorName = doctorName;
             this.patientName = patientName;
             this.status = status;
-            this.statusAtStr = statusAtStr;
-            this.createdAtStr = createdAtStr;
+            this.statusAtDateStr = statusAtStr;
+            this.createdAtDateStr = createdAtStr;
             showQuery();
         }
 
@@ -65,11 +65,11 @@ namespace orabs.Meeting
                 " join Patient on Patient.Patient_ID = Meeting.Patient_ID " +
                 " where (Doctor.Name like '" + Global.AppendPercent(doctorName) + "') " +
                 " and (Patient.Name like '" + Global.AppendPercent(patientName) + "') " +
-                " and (Meeting.Status = '" + status + "' or '" + status + "' = 'C' )" +
-                " and (Meeting.StatusAt = '" + statusAtStr + "' or '" +
-                        statusAtStr + "' = '" + dateTimeForSkipStr + "' ) " +
-                " and (Meeting.CreatedAt = '" + createdAtStr + "' or '" +
-                        createdAtStr + "' = '" + dateTimeForSkipStr + "' ) ";
+                " and (Meeting.Status = '" + status + "' or '" + status + "' = 'L' )" +
+                " and (Date(Meeting.StatusAt) = '" + statusAtDateStr + "' or '" +
+                        statusAtDateStr + "' = '" + dateForSkipStr + "' ) " +
+                " and (Date(Meeting.CreatedAt) = '" + createdAtDateStr + "' or '" +
+                        createdAtDateStr + "' = '" + dateForSkipStr + "' ) ";
 
             dataTable = DatabaseOperation.GetDataTableByQuery(exeStr);
             dgvMeeting.DataSource = dataTable;

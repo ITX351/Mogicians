@@ -26,7 +26,7 @@ namespace orabs.Meeting
         {
             string exeStr = "insert into Meeting(Patient_ID, Doctor_ID, Status, StatusAt, CreatedAt) Values( " +
                 Global.patientId.ToString() + " , " + cboDoctorName.SelectedValue.ToString() + " , " +
-                " C , " + DateTime.Now.ToString() + " , " + DateTime.Now.ToString() + " )";
+                " 'C' , '" + Global.FormatDateTime(DateTime.Now) + "' , '" + Global.FormatDateTime(DateTime.Now) + "')";
             int success = DatabaseOperation.ExecuteSQLQuery(exeStr);
             if (success > 0)
             {
