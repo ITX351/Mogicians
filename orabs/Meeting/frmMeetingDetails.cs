@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using orabs.Diagnose;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -57,6 +58,16 @@ namespace orabs.Meeting
 
             if (lblStatus.Text != "Registration unpaid")
                 lnkPayForRegistration.Visible = false;
+
+            if (lblStatus.Text == "Waiting")
+            {
+                queryStr = "select count(*) from Meeting where status = 'W' and" + 
+                    " CreatedAt < (select CreatedAt from Meeting where Meeting_ID = " + Meeting_ID.ToString() + ")";
+                DataRow dr = DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0];
+                lblQueueRank.Text = (int.Parse(dr[0].ToString()) + 1).ToString();
+            }
+            else
+                lblQueueRank.Text = "--";
 
             queryStr = "select PaymentList_ID, isRegistration, Totalprice, Paid" +
                 " from PaymentList where Meeting_ID = " + Meeting_ID.ToString();
@@ -139,6 +150,12 @@ namespace orabs.Meeting
 
             MessageBox.Show("Payment succeeded.");
             Load_Meeting_Information();
+        }
+
+        private void btnViewItems_Click(object sender, EventArgs e)
+        {
+            frmMeetingDiagnoseItemsView frmMeetingDiagnoseItemsViewEntity = new frmMeetingDiagnoseItemsView(bill_PaymentList_ID);
+            frmMeetingDiagnoseItemsViewEntity.ShowDialog();
         }
     }
 }

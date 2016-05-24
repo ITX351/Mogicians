@@ -71,6 +71,12 @@
     <Compile Include="Diagnose\frmMeetingDiagnoseItems.Designer.cs">
       <DependentUpon>frmMeetingDiagnoseItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Diagnose\frmMeetingDiagnoseItemsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diagnose\frmMeetingDiagnoseItemsView.Designer.cs">
+      <DependentUpon>frmMeetingDiagnoseItemsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\frmDoctorAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Diagnose\frmMeetingDiagnoseItems.resx">
       <DependentUpon>frmMeetingDiagnoseItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagnose\frmMeetingDiagnoseItemsView.resx">
+      <DependentUpon>frmMeetingDiagnoseItemsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorAdd.resx">
       <DependentUpon>frmDoctorAdd.cs</DependentUpon>

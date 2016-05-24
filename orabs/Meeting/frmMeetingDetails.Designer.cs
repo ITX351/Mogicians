@@ -59,6 +59,8 @@
             this.lnkPayForRegistration = new System.Windows.Forms.LinkLabel();
             this.lblRegistrationPriceTitle = new System.Windows.Forms.Label();
             this.lblRegistrationPrice = new System.Windows.Forms.Label();
+            this.lblQueueRankTitle = new System.Windows.Forms.Label();
+            this.lblQueueRank = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnClose
@@ -304,11 +306,12 @@
             this.btnViewItems.TabIndex = 15;
             this.btnViewItems.Text = "&View";
             this.btnViewItems.UseVisualStyleBackColor = true;
+            this.btnViewItems.Click += new System.EventHandler(this.btnViewItems_Click);
             // 
             // lnkPayForRegistration
             // 
             this.lnkPayForRegistration.AutoSize = true;
-            this.lnkPayForRegistration.Location = new System.Drawing.Point(30, 343);
+            this.lnkPayForRegistration.Location = new System.Drawing.Point(30, 369);
             this.lnkPayForRegistration.Name = "lnkPayForRegistration";
             this.lnkPayForRegistration.Size = new System.Drawing.Size(125, 12);
             this.lnkPayForRegistration.TabIndex = 16;
@@ -333,12 +336,29 @@
             this.lblRegistrationPrice.Size = new System.Drawing.Size(0, 12);
             this.lblRegistrationPrice.TabIndex = 9;
             // 
+            // lblQueueRankTitle
+            // 
+            this.lblQueueRankTitle.AutoSize = true;
+            this.lblQueueRankTitle.Location = new System.Drawing.Point(30, 337);
+            this.lblQueueRankTitle.Name = "lblQueueRankTitle";
+            this.lblQueueRankTitle.Size = new System.Drawing.Size(71, 12);
+            this.lblQueueRankTitle.TabIndex = 8;
+            this.lblQueueRankTitle.Text = "Queue rank:";
+            // 
+            // lblQueueRank
+            // 
+            this.lblQueueRank.AutoSize = true;
+            this.lblQueueRank.Location = new System.Drawing.Point(134, 337);
+            this.lblQueueRank.Name = "lblQueueRank";
+            this.lblQueueRank.Size = new System.Drawing.Size(0, 12);
+            this.lblQueueRank.TabIndex = 9;
+            // 
             // frmMeetingDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(650, 384);
+            this.ClientSize = new System.Drawing.Size(650, 414);
             this.Controls.Add(this.lnkPayForRegistration);
             this.Controls.Add(this.btnViewItems);
             this.Controls.Add(this.lnkPay);
@@ -348,6 +368,7 @@
             this.Controls.Add(this.lblConclusionTitle);
             this.Controls.Add(this.lblSymptomTitle);
             this.Controls.Add(this.lblRegistrationPrice);
+            this.Controls.Add(this.lblQueueRank);
             this.Controls.Add(this.lblCreatedAt);
             this.Controls.Add(this.lblStatusAt);
             this.Controls.Add(this.lblStatus);
@@ -360,6 +381,7 @@
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.lblSymptom);
             this.Controls.Add(this.lblMeetingID);
+            this.Controls.Add(this.lblQueueRankTitle);
             this.Controls.Add(this.lblRegistrationPriceTitle);
             this.Controls.Add(this.lblCreatedAtTitle);
             this.Controls.Add(this.lblStatusAtTitle);
@@ -411,5 +433,7 @@
         private System.Windows.Forms.LinkLabel lnkPayForRegistration;
         private System.Windows.Forms.Label lblRegistrationPriceTitle;
         private System.Windows.Forms.Label lblRegistrationPrice;
+        private System.Windows.Forms.Label lblQueueRankTitle;
+        private System.Windows.Forms.Label lblQueueRank;
     }
 }
