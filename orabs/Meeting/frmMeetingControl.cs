@@ -68,9 +68,17 @@ namespace orabs.Meeting
                         statusAtDateStr + "' = '" + dateForSkipStr + "' ) " +
                 " and (Date(CreatedAt) = '" + createdAtDateStr + "' or '" +
                         createdAtDateStr + "' = '" + dateForSkipStr + "' ) ";
+            if (Global.authority == Global.Identity.Patient)
+                exeStr += " and Patient.Patient_ID = " + Global.patientId.ToString();
+            exeStr += " order by CreatedAt desc";
 
             dataTable = DatabaseOperation.GetDataTableByQuery(exeStr);
             dgvMeeting.DataSource = dataTable;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
