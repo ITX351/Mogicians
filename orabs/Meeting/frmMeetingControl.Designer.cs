@@ -45,12 +45,12 @@
             this.dgvMeeting.Name = "dgvMeeting";
             this.dgvMeeting.ReadOnly = true;
             this.dgvMeeting.RowTemplate.Height = 23;
-            this.dgvMeeting.Size = new System.Drawing.Size(618, 202);
+            this.dgvMeeting.Size = new System.Drawing.Size(830, 202);
             this.dgvMeeting.TabIndex = 0;
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(171, 303);
+            this.btnShowAll.Location = new System.Drawing.Point(216, 303);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(111, 40);
             this.btnShowAll.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(361, 303);
+            this.btnQuery.Location = new System.Drawing.Point(498, 303);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(105, 40);
             this.btnQuery.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 409);
+            this.ClientSize = new System.Drawing.Size(854, 402);
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.dgvMeeting);

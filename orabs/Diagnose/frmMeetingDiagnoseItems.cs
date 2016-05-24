@@ -58,7 +58,7 @@ namespace orabs.Diagnose
             {
                 DataRow dr = items.Rows[i];
                 string name = (string)dr["Name"];
-                if (name.StartsWith(txtNamePrefix.Text))
+                if (name.ToLower().StartsWith(txtNamePrefix.Text.ToLower()))
                     showItems.Rows.Add(name + ", $" + dr["Price"].ToString(), i);
             }
         }

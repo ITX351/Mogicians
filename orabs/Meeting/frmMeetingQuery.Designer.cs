@@ -45,7 +45,7 @@
             // bntCancel
             // 
             this.bntCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bntCancel.Location = new System.Drawing.Point(283, 276);
+            this.bntCancel.Location = new System.Drawing.Point(286, 295);
             this.bntCancel.Name = "bntCancel";
             this.bntCancel.Size = new System.Drawing.Size(75, 23);
             this.bntCancel.TabIndex = 7;
@@ -55,7 +55,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(119, 276);
+            this.btnOK.Location = new System.Drawing.Point(129, 295);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 6;
@@ -102,7 +102,7 @@
             // lblCreatedAt
             // 
             this.lblCreatedAt.AutoSize = true;
-            this.lblCreatedAt.Location = new System.Drawing.Point(67, 216);
+            this.lblCreatedAt.Location = new System.Drawing.Point(67, 213);
             this.lblCreatedAt.Name = "lblCreatedAt";
             this.lblCreatedAt.Size = new System.Drawing.Size(65, 12);
             this.lblCreatedAt.TabIndex = 17;
@@ -153,9 +153,11 @@
             // 
             // frmMeetingQuery
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 355);
+            this.CancelButton = this.bntCancel;
+            this.ClientSize = new System.Drawing.Size(492, 367);
             this.Controls.Add(this.dtpCreatedAt);
             this.Controls.Add(this.dtpStatusAt);
             this.Controls.Add(this.cboStatus);
