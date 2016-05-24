@@ -113,5 +113,10 @@ namespace orabs
                 }
             }
         }
+
+        private void dgvDoctor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnUpdate_Click(sender, e);
+        }
     }
 }

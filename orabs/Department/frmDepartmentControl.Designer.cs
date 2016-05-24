@@ -49,7 +49,6 @@
             this.dgvDepartment.RowTemplate.Height = 23;
             this.dgvDepartment.Size = new System.Drawing.Size(402, 269);
             this.dgvDepartment.TabIndex = 0;
-            this.dgvDepartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentClick);
             this.dgvDepartment.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentDoubleClick);
             // 
             // btnAdd

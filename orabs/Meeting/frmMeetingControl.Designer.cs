@@ -50,6 +50,7 @@
             this.dgvMeeting.RowTemplate.Height = 23;
             this.dgvMeeting.Size = new System.Drawing.Size(830, 202);
             this.dgvMeeting.TabIndex = 0;
+            this.dgvMeeting.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMeeting_CellContentDoubleClick);
             // 
             // btnShowAll
             // 
@@ -89,6 +90,7 @@
             this.btnDetail.TabIndex = 4;
             this.btnDetail.Text = "&Detail";
             this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnClose
             // 
