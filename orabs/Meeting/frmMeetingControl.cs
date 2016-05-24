@@ -59,8 +59,8 @@ namespace orabs.Meeting
         {
             //status not required -> pass in "C"
             string exeStr = "select Meeting.Meeting_ID, Patient.Name as PatientName, " +
-                " Doctor.Name as DoctorName, Meeting.Status, Meeting.StatusAt, Meeting.CreatedAt " +
-                " from Meeting " +
+                " Doctor.Name as DoctorName, statusToString(Meeting.Status) as Status," + 
+                " Meeting.StatusAt as `Status At`, Meeting.CreatedAt as `Created At` from Meeting " +
                 " join Doctor on Doctor.Doctor_ID = Meeting.Doctor_ID " +
                 " join Patient on Patient.Patient_ID = Meeting.Patient_ID " +
                 " where (Doctor.Name like '" + Global.AppendPercent(doctorName) + "') " +
@@ -70,9 +70,17 @@ namespace orabs.Meeting
                         statusAtDateStr + "' = '" + dateForSkipStr + "' ) " +
                 " and (Date(Meeting.CreatedAt) = '" + createdAtDateStr + "' or '" +
                         createdAtDateStr + "' = '" + dateForSkipStr + "' ) ";
+            if (Global.authority == Global.Identity.Patient)
+                exeStr += " and Patient.Patient_ID = " + Global.patientId.ToString();
+            exeStr += " order by Meeting.CreatedAt desc";
 
             dataTable = DatabaseOperation.GetDataTableByQuery(exeStr);
             dgvMeeting.DataSource = dataTable;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

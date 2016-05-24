@@ -18,7 +18,7 @@ namespace orabs.Patient
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(Global.userId);
+            frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(Global.patientId);
             frmPatientUpdateEntity.Show();
             if (frmPatientUpdateEntity.DialogResult == DialogResult.OK)
             {

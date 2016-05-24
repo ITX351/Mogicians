@@ -43,8 +43,11 @@ namespace orabs.Diagnose
                     DataRow dr1 = items.Rows[i];
                     foreach (DataRow dr2 in givenSituation.Rows)
                         if ((int)dr1["PurchaseItem_ID"] == (int)dr2["PurchaseItem_ID"])
+                        {
                             chosenItems.Rows.Add((string)dr1["Name"] + ", " + dr2["Number"].ToString(),
                                 i, (int)dr2["Number"]);
+                            break;
+                        }
                 }
 
             txtNamePrefix_TextChanged(sender, e);
@@ -58,7 +61,7 @@ namespace orabs.Diagnose
             {
                 DataRow dr = items.Rows[i];
                 string name = (string)dr["Name"];
-                if (name.StartsWith(txtNamePrefix.Text))
+                if (name.ToLower().StartsWith(txtNamePrefix.Text.ToLower()))
                     showItems.Rows.Add(name + ", $" + dr["Price"].ToString(), i);
             }
         }
