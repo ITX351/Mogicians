@@ -48,7 +48,7 @@
             this.dgvMeeting.Name = "dgvMeeting";
             this.dgvMeeting.ReadOnly = true;
             this.dgvMeeting.RowTemplate.Height = 23;
-            this.dgvMeeting.Size = new System.Drawing.Size(618, 202);
+            this.dgvMeeting.Size = new System.Drawing.Size(830, 202);
             this.dgvMeeting.TabIndex = 0;
             this.dgvMeeting.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMeeting_CellContentDoubleClick);
             // 
@@ -65,6 +65,7 @@
             // btnQuery
             // 
             this.btnQuery.Location = new System.Drawing.Point(88, 239);
+
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(70, 40);
             this.btnQuery.TabIndex = 2;
@@ -105,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 305);
+            this.ClientSize = new System.Drawing.Size(854, 402);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.btnCancel);

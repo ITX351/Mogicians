@@ -180,7 +180,8 @@ namespace orabs.Meeting
                 return;
 
             int Meeting_ID = (int)MeetingPatientTable.Rows[now]["Meeting_ID"];
-            string exeStr = "update Meeting set Status = '" + status + "' where Meeting_ID = " + Meeting_ID.ToString();
+            string exeStr = "update Meeting set Status = '" + status +
+                "' where Meeting_ID = " + Meeting_ID.ToString();
             int ret = DatabaseOperation.ExecuteSQLQuery(exeStr);
 
             if (ret <= 0)

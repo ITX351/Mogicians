@@ -57,22 +57,20 @@ namespace orabs.Meeting
 
         private void showQuery()
         {
-            //status not required -> pass in "C"
-            string exeStr = "select Meeting.Meeting_ID, Patient.Name as PatientName, " +
-                " Doctor.Name as DoctorName, statusToString(Meeting.Status) as Status," + 
-                " Meeting.StatusAt as `Status At`, Meeting.CreatedAt as `Created At` from Meeting " +
-                " join Doctor on Doctor.Doctor_ID = Meeting.Doctor_ID " +
-                " join Patient on Patient.Patient_ID = Meeting.Patient_ID " +
-                " where (Doctor.Name like '" + Global.AppendPercent(doctorName) + "') " +
-                " and (Patient.Name like '" + Global.AppendPercent(patientName) + "') " +
-                " and (Meeting.Status = '" + status + "' or '" + status + "' = 'L' )" +
-                " and (Date(Meeting.StatusAt) = '" + statusAtDateStr + "' or '" +
+            //status not required -> pass in "L"
+            string exeStr = "select Meeting_ID, PatientName, " +
+                " DoctorName, DepartmentName, DoctorGroupName, Status, StatusAt, CreatedAt " +
+                " from MeetingAll " +
+                " where (DoctorName like '" + Global.AppendPercent(doctorName) + "') " +
+                " and (PatientName like '" + Global.AppendPercent(patientName) + "') " +
+                " and (Status = '" + status + "' or '" + status + "' = 'L' )" +
+                " and (Date(StatusAt) = '" + statusAtDateStr + "' or '" +
                         statusAtDateStr + "' = '" + dateForSkipStr + "' ) " +
-                " and (Date(Meeting.CreatedAt) = '" + createdAtDateStr + "' or '" +
+                " and (Date(CreatedAt) = '" + createdAtDateStr + "' or '" +
                         createdAtDateStr + "' = '" + dateForSkipStr + "' ) ";
             if (Global.authority == Global.Identity.Patient)
                 exeStr += " and Patient.Patient_ID = " + Global.patientId.ToString();
-            exeStr += " order by Meeting.CreatedAt desc";
+            exeStr += " order by CreatedAt desc";
 
             dataTable = DatabaseOperation.GetDataTableByQuery(exeStr);
             dgvMeeting.DataSource = dataTable;
