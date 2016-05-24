@@ -82,5 +82,21 @@ namespace orabs.Meeting
         {
             this.Close();
         }
+
+        private int getMeetingId()
+        {
+            return (int)dataTable.Rows[dgvMeeting.CurrentRow.Index]["Meeting_ID"];
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            frmMeetingDetails frmMeetingDetailsEntity = new frmMeetingDetails(getMeetingId());
+            frmMeetingDetailsEntity.ShowDialog();
+        }
+
+        private void dgvMeeting_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDetail_Click(sender, e);
+        }
     }
 }

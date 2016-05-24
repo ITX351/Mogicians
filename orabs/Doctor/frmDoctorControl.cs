@@ -89,11 +89,6 @@ namespace orabs
             this.Close();
         }
 
-        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmDoctorAdd frmDoctorAddEntity = new frmDoctorAdd();
@@ -121,6 +116,11 @@ namespace orabs
                     MessageBox.Show("Some error has occurred while deleting.");
                 }
             }
+        }
+
+        private void dgvDoctor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnUpdate_Click(sender, e);
         }
     }
 }

@@ -87,11 +87,5 @@ namespace orabs.Department
         {
             btnUpdate_Click(sender, e);
         }
-
-        private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
     }
 }
