@@ -26,14 +26,28 @@ namespace orabs
             {
                 case Global.Identity.Admin:
                     lblIdentity.Text += "Admin";
+                    personalInformationToolStripMenuItem.Visible = false;
+                    meetingRegisterToolStripMenuItem.Visible = false;
+                    meetingHandleToolStripMenuItem.Visible = false;
                     break;
                 case Global.Identity.Doctor:
-                    lblIdentity.Text += "Doctor";                
+                    lblIdentity.Text += "Doctor";
+                    doctorToolStripMenuItem.Visible = false;
+                    patientToolStripMenuItem.Visible = false;
+                    departmentToolStripMenuItem.Visible = false;
+                    meetingRegisterToolStripMenuItem.Visible = false;
+                    meetingControlToolStripMenuItem.Visible = false;
                     break;
                 default:
                     lblIdentity.Text += "Patient";
+                    doctorToolStripMenuItem.Visible = false;
+                    patientControlToolStripMenuItem.Visible = false;
+                    departmentToolStripMenuItem.Visible = false;
+                    meetingControlToolStripMenuItem.Visible = false;
+                    meetingHandleToolStripMenuItem.Visible = false;
                     break;
             }
+            userToolStripMenuItem.Visible = false;
         }
 
         private void doctorControlToolStripMenuItem_Click(object sender, EventArgs e)
