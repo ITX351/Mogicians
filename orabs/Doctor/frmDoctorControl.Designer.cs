@@ -51,8 +51,6 @@
             this.dgvDoctor.RowTemplate.Height = 23;
             this.dgvDoctor.Size = new System.Drawing.Size(719, 355);
             this.dgvDoctor.TabIndex = 0;
-            this.dgvDoctor.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctor_CellContentDoubleClick);
-            this.dgvDoctor.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDoctor_CellMouseDoubleClick);
             // 
             // btnQuery
             // 
