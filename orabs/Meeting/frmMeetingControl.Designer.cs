@@ -44,17 +44,17 @@
             this.dgvMeeting.AllowUserToResizeRows = false;
             this.dgvMeeting.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMeeting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMeeting.Location = new System.Drawing.Point(12, 31);
+            this.dgvMeeting.Location = new System.Drawing.Point(12, 12);
             this.dgvMeeting.Name = "dgvMeeting";
             this.dgvMeeting.ReadOnly = true;
             this.dgvMeeting.RowTemplate.Height = 23;
-            this.dgvMeeting.Size = new System.Drawing.Size(830, 202);
+            this.dgvMeeting.Size = new System.Drawing.Size(830, 332);
             this.dgvMeeting.TabIndex = 0;
             this.dgvMeeting.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMeeting_CellContentDoubleClick);
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(12, 239);
+            this.btnShowAll.Location = new System.Drawing.Point(12, 350);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(70, 40);
             this.btnShowAll.TabIndex = 1;
@@ -64,8 +64,7 @@
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(88, 239);
-
+            this.btnQuery.Location = new System.Drawing.Point(88, 350);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(70, 40);
             this.btnQuery.TabIndex = 2;
@@ -75,7 +74,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(373, 239);
+            this.btnCancel.Location = new System.Drawing.Point(503, 350);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(70, 40);
             this.btnCancel.TabIndex = 3;
@@ -84,7 +83,7 @@
             // 
             // btnDetail
             // 
-            this.btnDetail.Location = new System.Drawing.Point(297, 239);
+            this.btnDetail.Location = new System.Drawing.Point(427, 350);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(70, 40);
             this.btnDetail.TabIndex = 4;
@@ -94,7 +93,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(560, 239);
+            this.btnClose.Location = new System.Drawing.Point(772, 350);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(70, 40);
             this.btnClose.TabIndex = 5;

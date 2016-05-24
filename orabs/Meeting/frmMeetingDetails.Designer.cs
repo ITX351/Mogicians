@@ -57,6 +57,8 @@
             this.lnkPay = new System.Windows.Forms.LinkLabel();
             this.btnViewItems = new System.Windows.Forms.Button();
             this.lnkPayForRegistration = new System.Windows.Forms.LinkLabel();
+            this.lblRegistrationPriceTitle = new System.Windows.Forms.Label();
+            this.lblRegistrationPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnClose
@@ -292,6 +294,7 @@
             this.lnkPay.TabIndex = 14;
             this.lnkPay.TabStop = true;
             this.lnkPay.Text = "Pay";
+            this.lnkPay.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkPay_LinkClicked);
             // 
             // btnViewItems
             // 
@@ -311,6 +314,24 @@
             this.lnkPayForRegistration.TabIndex = 16;
             this.lnkPayForRegistration.TabStop = true;
             this.lnkPayForRegistration.Text = "Pay For Registration";
+            this.lnkPayForRegistration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkPayForRegistration_LinkClicked);
+            // 
+            // lblRegistrationPriceTitle
+            // 
+            this.lblRegistrationPriceTitle.AutoSize = true;
+            this.lblRegistrationPriceTitle.Location = new System.Drawing.Point(30, 304);
+            this.lblRegistrationPriceTitle.Name = "lblRegistrationPriceTitle";
+            this.lblRegistrationPriceTitle.Size = new System.Drawing.Size(119, 12);
+            this.lblRegistrationPriceTitle.TabIndex = 8;
+            this.lblRegistrationPriceTitle.Text = "Registration Price:";
+            // 
+            // lblRegistrationPrice
+            // 
+            this.lblRegistrationPrice.AutoSize = true;
+            this.lblRegistrationPrice.Location = new System.Drawing.Point(155, 304);
+            this.lblRegistrationPrice.Name = "lblRegistrationPrice";
+            this.lblRegistrationPrice.Size = new System.Drawing.Size(0, 12);
+            this.lblRegistrationPrice.TabIndex = 9;
             // 
             // frmMeetingDetails
             // 
@@ -326,6 +347,7 @@
             this.Controls.Add(this.lblHandleTitle);
             this.Controls.Add(this.lblConclusionTitle);
             this.Controls.Add(this.lblSymptomTitle);
+            this.Controls.Add(this.lblRegistrationPrice);
             this.Controls.Add(this.lblCreatedAt);
             this.Controls.Add(this.lblStatusAt);
             this.Controls.Add(this.lblStatus);
@@ -338,6 +360,7 @@
             this.Controls.Add(this.lblConclusion);
             this.Controls.Add(this.lblSymptom);
             this.Controls.Add(this.lblMeetingID);
+            this.Controls.Add(this.lblRegistrationPriceTitle);
             this.Controls.Add(this.lblCreatedAtTitle);
             this.Controls.Add(this.lblStatusAtTitle);
             this.Controls.Add(this.lblStatusTitle);
@@ -386,5 +409,7 @@
         private System.Windows.Forms.LinkLabel lnkPay;
         private System.Windows.Forms.Button btnViewItems;
         private System.Windows.Forms.LinkLabel lnkPayForRegistration;
+        private System.Windows.Forms.Label lblRegistrationPriceTitle;
+        private System.Windows.Forms.Label lblRegistrationPrice;
     }
 }

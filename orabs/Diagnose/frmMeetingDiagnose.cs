@@ -45,9 +45,9 @@ namespace orabs.Meeting
             MySqlTransaction transaction = DatabaseOperation.mySqlConnection.BeginTransaction();
             try
             {
-                string exeStr = "insert into DiagnoseConclusion(Meeting_ID, Symptom, Conclusion, Handle, Cost, Paid) values(" +
+                string exeStr = "insert into DiagnoseConclusion(Meeting_ID, Symptom, Conclusion, Handle) values(" +
                     Meeting_ID.ToString() + ", '" + txtSymptom.Text + "', '" + txtConclusion.Text + "', '" +
-                    txtHandle.Text + "', " + TotalPrice.ToString() + ", 0)";
+                    txtHandle.Text + "')";
                 DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
 
                 exeStr = "update Meeting set Status = 'F' where Meeting_ID = " + Meeting_ID.ToString();
@@ -55,15 +55,15 @@ namespace orabs.Meeting
 
                 if (TotalPrice > 0)
                 {
-                    // Get User_ID and Patient_ID;
-                    string queryStr = "select User_ID, Patient.Patient_ID from Meeting join Patient on Patient.Patient_ID = Meeting.Patient_ID" +
-                        " join User on Patient.Patient_ID = User.Patient_ID where Meeting.Meeting_ID = " + Meeting_ID.ToString();
+                    // Get Patient_ID;
+                    string queryStr = "select Patient.Patient_ID from Meeting join Patient on Patient.Patient_ID = Meeting.Patient_ID" +
+                        " where Meeting.Meeting_ID = " + Meeting_ID.ToString();
                     DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
-                    int User_ID = (int)dt.Rows[0]["User_ID"], Patient_ID = (int)dt.Rows[0]["Patient_ID"];
+                    int Patient_ID = (int)dt.Rows[0]["Patient_ID"];
 
                     // Insert PaymentList
-                    exeStr = "insert into PaymentList(User_ID, Patient_ID, Doctor_ID, Meeting_ID, Totalprice, Paid) values" + 
-                        "(" + User_ID.ToString() + ", " + Patient_ID.ToString() + ", " + Global.doctorId.ToString() + ", " +
+                    exeStr = "insert into PaymentList(Patient_ID, Doctor_ID, Meeting_ID, Totalprice, Paid) values" + 
+                        "(" + Patient_ID.ToString() + ", " + Global.doctorId.ToString() + ", " +
                         Meeting_ID.ToString() + ", " + TotalPrice.ToString() + ", 0)";
                     DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
 

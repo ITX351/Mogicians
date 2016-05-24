@@ -58,9 +58,10 @@ namespace orabs.Meeting
         private void showQuery()
         {
             //status not required -> pass in "L"
-            string exeStr = "select Meeting_ID, PatientName, " +
-                " DoctorName, DepartmentName, DoctorGroupName, Status, StatusAt, CreatedAt " +
-                " from MeetingAll " +
+            string exeStr = "select Meeting_ID, PatientName as `Patient Name`, " +
+                " DoctorName as `Doctor Name`, DepartmentName as `Department Name`," + 
+                " DoctorGroupName as `Group Name`, Status, StatusAt as `Status At`," + 
+                " CreatedAt as `Created At` from MeetingAll " +
                 " where (DoctorName like '" + Global.AppendPercent(doctorName) + "') " +
                 " and (PatientName like '" + Global.AppendPercent(patientName) + "') " +
                 " and (Status = '" + status + "' or '" + status + "' = 'L' )" +
@@ -69,7 +70,7 @@ namespace orabs.Meeting
                 " and (Date(CreatedAt) = '" + createdAtDateStr + "' or '" +
                         createdAtDateStr + "' = '" + dateForSkipStr + "' ) ";
             if (Global.authority == Global.Identity.Patient)
-                exeStr += " and Patient.Patient_ID = " + Global.patientId.ToString();
+                exeStr += " and Patient_ID = " + Global.patientId.ToString();
             exeStr += " order by CreatedAt desc";
 
             dataTable = DatabaseOperation.GetDataTableByQuery(exeStr);
@@ -90,6 +91,7 @@ namespace orabs.Meeting
         {
             frmMeetingDetails frmMeetingDetailsEntity = new frmMeetingDetails(getMeetingId());
             frmMeetingDetailsEntity.ShowDialog();
+            showQuery();
         }
 
         private void dgvMeeting_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
