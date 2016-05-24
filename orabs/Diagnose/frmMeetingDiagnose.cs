@@ -66,11 +66,7 @@ namespace orabs.Meeting
                         "(" + Patient_ID.ToString() + ", " + Global.doctorId.ToString() + ", " +
                         Meeting_ID.ToString() + ", " + TotalPrice.ToString() + ", 0)";
                     DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
-
-                    // Get PaymentList_ID
-                    queryStr = "select PaymentList_ID from PaymentList where Meeting_ID = " + Meeting_ID.ToString();
-                    dt = DatabaseOperation.GetDataTableByQuery(queryStr);
-                    int PaymentList_ID = (int)dt.Rows[0]["PaymentList_ID"];
+                    int PaymentList_ID = DatabaseOperation.GetLastInsertID();
 
                     // Insert PaymentList_PurchaseItem
                     exeStr = "insert into PaymentList_PurchaseItem(PurchaseItem_ID, PaymentList_ID, Number) values";

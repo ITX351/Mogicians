@@ -34,15 +34,10 @@ namespace orabs.Doctor
                    "'" + cboGroup.SelectedValue.ToString() + "'," +
                    "'" + Global.EscapeSingleQuotes(txtDescription.Text) + "')";
                 DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+                int doctor_id = DatabaseOperation.GetLastInsertID();
 
                 string queryStr = "select count(*) from Doctor where Name = '" + Global.EscapeSingleQuotes(txtName.Text) + "'";
                 int count = int.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0][0].ToString());
-
-                queryStr = "select * from Doctor where Name = '" + Global.EscapeSingleQuotes(txtName.Text) +
-                    "' and Department_ID = " +  cboDepartment.SelectedValue.ToString() + 
-                    " and DoctorGroup_ID = " + cboGroup.SelectedValue.ToString();
-
-                int doctor_id = int.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0]["Doctor_ID"].ToString());
 
                 exeStr = " insert into User(Name, Password, Doctor_ID) values(' " +
                     Global.EscapeSingleQuotes(txtName.Text) + "_" + count.ToString() + "','" +

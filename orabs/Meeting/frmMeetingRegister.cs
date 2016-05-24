@@ -34,9 +34,7 @@ namespace orabs.Meeting
                 string exeStr = "insert into Meeting(Patient_ID, Doctor_ID, Status) Values( " +
                     Patient_ID_str + " , " + Doctor_ID_str + " , " + " 'C');";
                 DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
-                
-                exeStr = "SELECT LAST_INSERT_ID();";
-                int Meeting_ID = int.Parse(DatabaseOperation.GetDataTableByQuery(exeStr).Rows[0][0].ToString());
+                int Meeting_ID = DatabaseOperation.GetLastInsertID();
 
                 string queryStr = "select * from DoctorGroup where DoctorGroup_ID = " + cboGroup.SelectedValue.ToString();
                 double totalPrice = double.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0]["Charge"].ToString());

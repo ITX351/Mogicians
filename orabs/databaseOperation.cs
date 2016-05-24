@@ -74,5 +74,11 @@ namespace orabs
             string queryStr = "select * from " + tableName + " where " + tableName + "_ID = " + ID.ToString();
             return GetDataTableByQuery(queryStr).Rows[0];
         }
+
+        public static int GetLastInsertID()
+        {
+            string exeStr = "SELECT LAST_INSERT_ID();";
+            return int.Parse(DatabaseOperation.GetDataTableByQuery(exeStr).Rows[0][0].ToString());
+        }
     }
 }
