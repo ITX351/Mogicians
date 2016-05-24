@@ -12,7 +12,6 @@ namespace orabs
         private string name;
         private int group_ID;
         private int department_ID;
-        private string description;
 
         public frmDoctorControl()
         {
@@ -29,23 +28,20 @@ namespace orabs
             return (int)showTable.Rows[dgvDoctor.CurrentRow.Index]["Doctor_ID"];
         }
 
-        private void doQuery(string name, int group, int department, string description) // change query parameters
+        private void doQuery(string name, int group, int department) // change query parameters
         {
-            this.name = name; this.group_ID = group; this.department_ID = department; this.description = description;
+            this.name = name; this.group_ID = group; this.department_ID = department;
             showQuery();
         }
 
         private void showQuery() // show records fitting parameters
         {
-            string queryStr = "select Doctor.Doctor_ID, Doctor.Name, DoctorGroup.Name as DoctorGroupName," + 
-                " Department.Name as DepartmentName, Doctor.Description from Doctor" + 
-                " join DoctorGroup on Doctor.DoctorGroup_ID = DoctorGroup.DoctorGroup_ID" + 
-                " join Department on Doctor.Department_ID = Department.Department_ID" + 
-                " where Doctor.Name like '" + Global.AppendPercent(name) + "'" +
-                " and (Doctor.DoctorGroup_ID = " + group_ID.ToString() + " or " + group_ID.ToString() + " = -1)" +
-                " and (Doctor.Department_ID = " + department_ID.ToString() + " or " + department_ID.ToString() + " = -1)" +
-                " and Doctor.Description like '" + Global.AppendPercent(description) + "'";
-
+            string queryStr = "select Doctor_ID, DoctorName, DoctorGroupName," +
+                " DepartmentName, Description from DoctorUser" +
+                " where DoctorName like '" + Global.AppendPercent(name) + "'" +
+                " and (DoctorGroup_ID = " + group_ID.ToString() + " or " + group_ID.ToString() + " = -1)" +
+                " and (Department_ID = " + department_ID.ToString() + " or " + department_ID.ToString() + " = -1)";
+                
             showTable = DatabaseOperation.GetDataTableByQuery(queryStr);
             dgvDoctor.DataSource = showTable;
         }
@@ -58,13 +54,13 @@ namespace orabs
             if (frmDoctorQueryEntity.DialogResult == DialogResult.OK)
             {
                 doQuery(frmDoctorQueryEntity.DoctorName, frmDoctorQueryEntity.DoctorGroup_ID, 
-                    frmDoctorQueryEntity.Department_ID, frmDoctorQueryEntity.Description);
+                    frmDoctorQueryEntity.Department_ID);
             }
         }
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            doQuery("", -1, -1, "");
+            doQuery("", -1, -1);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -87,11 +83,6 @@ namespace orabs
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

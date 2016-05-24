@@ -46,11 +46,11 @@ namespace orabs
                 Global.patientId = Global.StringToInt(dataTable.Rows[0]["Patient_ID"]);
 
                 if ((bool)dataTable.Rows[0]["isAdmin"])
-                    Global.authority = Global.Identity.Admin; // admin
+                    Global.authority = Global.Identity.Admin;
                 else if (Global.doctorId != -1)
-                    Global.authority = Global.Identity.Doctor; // doctor
+                    Global.authority = Global.Identity.Doctor; 
                 else
-                    Global.authority = Global.Identity.Patient; // patient
+                    Global.authority = Global.Identity.Patient; 
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

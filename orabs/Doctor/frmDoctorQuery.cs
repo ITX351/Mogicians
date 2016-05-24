@@ -45,14 +45,6 @@ namespace orabs.Doctor
             }
         }
 
-        public string Description
-        {
-            get
-            {
-                return txtDescription.Text;
-            }
-        }
-
         private void frmDoctorQuery_Load(object sender, EventArgs e)
         {
             Global.setComboBoxByTableName("DoctorGroup", cboGroup, true);

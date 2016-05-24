@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -24,20 +25,41 @@ namespace orabs.Meeting
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string exeStr = "insert into Meeting(Patient_ID, Doctor_ID, Status) Values( " +
-                Global.patientId.ToString() + " , " + cboDoctorName.SelectedValue.ToString() + " , " +
-                " 'C')";
-            int success = DatabaseOperation.ExecuteSQLQuery(exeStr);
-            if (success > 0)
+            MySqlTransaction transaction = DatabaseOperation.mySqlConnection.BeginTransaction();
+            try
             {
-                MessageBox.Show("Register successfully.");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                string Patient_ID_str = Global.patientId.ToString();
+                string Doctor_ID_str = cboDoctorName.SelectedValue.ToString();
+
+                string exeStr = "insert into Meeting(Patient_ID, Doctor_ID, Status) Values( " +
+                    Patient_ID_str + " , " + Doctor_ID_str + " , " + " 'C');";
+                DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+                
+                exeStr = "SELECT LAST_INSERT_ID();";
+                int Meeting_ID = int.Parse(DatabaseOperation.GetDataTableByQuery(exeStr).Rows[0][0].ToString());
+
+                string queryStr = "select * from DoctorGroup where DoctorGroup_ID = " + cboGroup.SelectedValue.ToString();
+                double totalPrice = double.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0]["Charge"].ToString());
+
+                exeStr = "insert into PaymentList(isRegistration, Paid, TotalPrice, Meeting_ID, " +
+                    " Doctor_ID, Patient_ID) values(1, 0, " + totalPrice.ToString() +
+                    " , " + Meeting_ID.ToString() +
+                    " , " + Doctor_ID_str +
+                    " , " + Patient_ID_str + ")";
+                DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+
+                transaction.Commit();  
             }
-            else
+            catch(Exception exception)
             {
-                MessageBox.Show("Some error occurred.");
+                MessageBox.Show("Error occurred during meeting registration." + exception.ToString());
+                transaction.Rollback();
+                return;
             }
+   
+            MessageBox.Show("Register successfully.");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void bntCancel_Click(object sender, EventArgs e)

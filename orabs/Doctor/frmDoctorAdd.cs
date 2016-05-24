@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
 
 namespace orabs.Doctor
@@ -23,23 +24,44 @@ namespace orabs.Doctor
                 MessageBox.Show("Doctor Name cannot be empty");
                 return;
             }
-            string exeStr = "insert into Doctor(Name, Department_ID, DoctorGroup_ID, Description) values('" + Global.EscapeSingleQuotes(txtName.Text) + "'," +
-               "'" + cboDepartment.SelectedValue.ToString() + "'," +
-               "'" + cboGroup.SelectedValue.ToString() + "'," +
-               "'" + Global.EscapeSingleQuotes(txtDescription.Text) + "')";
-          
-            int success = DatabaseOperation.ExecuteSQLQuery(exeStr);
-            if (success > 0)
-            {
-                MessageBox.Show("Added succeefully.");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Some error has occured.");
-            }
-        }
 
+            MySqlTransaction transaction = DatabaseOperation.mySqlConnection.BeginTransaction();
+            try
+            {
+                string exeStr = "insert into Doctor(Name, Department_ID, DoctorGroup_ID, Description) values('" 
+                    + Global.EscapeSingleQuotes(txtName.Text) + "'," +
+                   "'" + cboDepartment.SelectedValue.ToString() + "'," +
+                   "'" + cboGroup.SelectedValue.ToString() + "'," +
+                   "'" + Global.EscapeSingleQuotes(txtDescription.Text) + "')";
+                DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+
+                string queryStr = "select count(*) from Doctor where Name = '" + Global.EscapeSingleQuotes(txtName.Text) + "'";
+                int count = int.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0][0].ToString());
+
+                queryStr = "select * from Doctor where Name = '" + Global.EscapeSingleQuotes(txtName.Text) +
+                    "' and Department_ID = " +  cboDepartment.SelectedValue.ToString() + 
+                    " and DoctorGroup_ID = " + cboGroup.SelectedValue.ToString();
+
+                int doctor_id = int.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0]["Doctor_ID"].ToString());
+
+                exeStr = " insert into User(Name, Password, Doctor_ID) values(' " +
+                    Global.EscapeSingleQuotes(txtName.Text) + "_" + count.ToString() + "','" +
+                    Global.SHA1("123456") + "' , " + doctor_id.ToString() + ")";
+
+                DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+
+                transaction.Commit();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Some error has occurred during adding the doctor.\n" + exception.ToString());
+                transaction.Rollback();
+                return;
+            }
+
+            MessageBox.Show("Added succeefully.");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }
