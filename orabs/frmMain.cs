@@ -43,7 +43,6 @@ namespace orabs
                     doctorToolStripMenuItem.Visible = false;
                     patientControlToolStripMenuItem.Visible = false;
                     departmentToolStripMenuItem.Visible = false;
-                    meetingControlToolStripMenuItem.Visible = false;
                     meetingHandleToolStripMenuItem.Visible = false;
                     break;
             }

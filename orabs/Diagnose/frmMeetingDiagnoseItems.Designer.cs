@@ -70,6 +70,7 @@
             this.lstAllItems.Name = "lstAllItems";
             this.lstAllItems.Size = new System.Drawing.Size(187, 184);
             this.lstAllItems.TabIndex = 2;
+            this.lstAllItems.DoubleClick += new System.EventHandler(this.lstAllItems_DoubleClick);
             // 
             // txtNamePrefix
             // 

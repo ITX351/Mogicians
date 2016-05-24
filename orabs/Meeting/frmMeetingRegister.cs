@@ -19,8 +19,6 @@ namespace orabs.Meeting
             Global.setComboBoxByTableName("DoctorGroup", cboGroup, false);
             Global.setComboBoxByTableName("Department", cboDepartment, false);
             cboDoctorName.DataSource = dataTable;
-            cboDepartment.SelectedIndex = 1;
-            cboGroup.SelectedIndex = 1;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

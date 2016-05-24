@@ -132,5 +132,10 @@ namespace orabs.Diagnose
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void lstAllItems_DoubleClick(object sender, EventArgs e)
+        {
+            btnAdd_Click(sender, e);
+        }
     }
 }
