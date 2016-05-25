@@ -23,10 +23,10 @@ namespace orabs.Patient
             if (patientIdToOperate != -1)
             {
                 DataRow dr = DatabaseOperation.GetDataRowByID("Patient", patientIdToOperate);
-                txtName.Text = (string)dr["Name"];
-                txtPhone.Text = (string)dr["Phone"];
-                txtAddress.Text = (string)dr["Address"];
-                txtIdentityNumber.Text = (string)dr["Identity_Number"];
+                txtName.Text = dr["Name"].ToString();
+                txtPhone.Text = dr["Phone"].ToString();
+                txtAddress.Text = dr["Address"].ToString();
+                txtIdentityNumber.Text = dr["Identity_Number"].ToString();
                 if (false == (bool)dr["Sex"])
                     cboSex.SelectedValue = 0;
                 else

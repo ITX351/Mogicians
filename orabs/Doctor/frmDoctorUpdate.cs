@@ -45,10 +45,10 @@ namespace orabs.Doctor
             Global.setComboBoxByTableName("Department", cboDepartment, false);
 
             DataRow dr = DatabaseOperation.GetDataRowByID("Doctor", Doctor_ID);
-            txtName.Text = (string)dr["Name"];
+            txtName.Text = dr["Name"].ToString();
             cboDepartment.SelectedValue = (int)dr["Department_ID"];
             cboGroup.SelectedValue = (int)dr["DoctorGroup_ID"];
-            txtDescription.Text = (string)dr["Description"];
+            txtDescription.Text = dr["Description"].ToString();
         }
     }
 }

@@ -118,9 +118,11 @@
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);

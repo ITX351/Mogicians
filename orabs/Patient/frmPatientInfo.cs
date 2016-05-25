@@ -41,11 +41,11 @@ namespace orabs.Patient
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
             DataRow dr = dt.Rows[0];
 
-            lblNameTxt.Text = (string)dr["Name"];
-            lblPhoneTxt.Text = (string)dr["Phone"];
-            lblSexTxt.Text = (string)dr["Sex"];
-            lblIdentityNumberTxt.Text = (string)dr["Identity_Number"];
-            lblAddressTxt.Text = (string)dr["address"];
+            lblNameTxt.Text = dr["Name"].ToString();
+            lblPhoneTxt.Text = dr["Phone"].ToString();
+            lblSexTxt.Text = dr["Sex"].ToString();
+            lblIdentityNumberTxt.Text = dr["Identity_Number"].ToString();
+            lblAddressTxt.Text = dr["address"].ToString();
         }
     }
 }
