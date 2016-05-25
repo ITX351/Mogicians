@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -24,7 +25,9 @@ namespace orabs.Meeting
 
         private void frmMeetingControl_Load(object sender, EventArgs e)
         {
-            btnShowAll_Click(sender, e);          
+            btnShowAll_Click(sender, e);
+            if (Global.authority == Global.Identity.Patient)
+                btnQuery.Visible = false;
         }
 
         private void btnShowAll_Click(object sender, EventArgs e)
@@ -97,6 +100,32 @@ namespace orabs.Meeting
         private void dgvMeeting_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDetail_Click(sender, e);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirm cancel this meeting registration?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MySqlTransaction transaction = DatabaseOperation.mySqlConnection.BeginTransaction();
+                try
+                {                
+                    string exeStr = "delete from PaymentList where Meeting_ID = " + getMeetingId().ToString();
+                    DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+
+                    exeStr = "delete from Meeting where Meeting_ID = " + getMeetingId().ToString();
+                    DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+
+                    transaction.Commit();
+                    MessageBox.Show("Deleted successfully");
+                    btnShowAll_Click(sender, e);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Error occurred while deleting " + exception.ToString());
+                    transaction.Rollback();
+                    return;
+                }           
+            }
         }
     }
 }

@@ -45,10 +45,10 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("宋体", 9F);
             this.lblName.Location = new System.Drawing.Point(96, 53);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(39, 15);
+            this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 

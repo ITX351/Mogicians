@@ -80,11 +80,6 @@ namespace orabs
 
         private void meetingRegisterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.patientId == -1)
-            {
-                MessageBox.Show("Only patients can register meetings.");
-                return;
-            }
             frmMeetingRegister frmMeetingRegisterEntity = new frmMeetingRegister();
             frmMeetingRegisterEntity.Show();
         }
@@ -97,11 +92,6 @@ namespace orabs
 
         private void meetingHandleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!(Global.authority == Global.Identity.Doctor))
-            {
-                MessageBox.Show("You have no permission to handle meetings ");
-                return;
-            }
             frmMeetingDoctorView frmMeetingDoctorViewEntity = new frmMeetingDoctorView();
             frmMeetingDoctorViewEntity.Show();
         }
@@ -110,6 +100,11 @@ namespace orabs
         {
             frmPatientInfo frmPateintInfoEntity = new frmPatientInfo();
             frmPateintInfoEntity.Show();
+        }
+
+        private void menuStripMain_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

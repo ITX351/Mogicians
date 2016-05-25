@@ -82,7 +82,6 @@
             this.lblDescription.Size = new System.Drawing.Size(77, 12);
             this.lblDescription.TabIndex = 4;
             this.lblDescription.Text = "Description:";
-            this.lblDescription.Click += new System.EventHandler(this.lblDescription_Click);
             // 
             // cboGroup
             // 

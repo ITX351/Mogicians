@@ -52,21 +52,6 @@ namespace orabs.Patient
             btnShowAll_Click(sender, e);
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (Global.authority != Global.Identity.Admin)
-            {
-                MessageBox.Show("Only admin can add patients by this method");
-                return;
-            }
-
-            frmPatientInfo frmPatientAddEntity = new frmPatientInfo();
-            frmPatientAddEntity.ShowDialog();
-            if (frmPatientAddEntity.DialogResult == DialogResult.OK)
-            {
-                btnShowAll_Click(sender, e);
-            }
-        }
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
@@ -86,38 +71,19 @@ namespace orabs.Patient
             }
         }
 
-
-        private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (Global.authority == Global.Identity.Admin) // not doctor   
-            {
-                frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(getPatientID());
-                frmPatientUpdateEntity.ShowDialog();
+            frmPatientUpdate frmPatientUpdateEntity = new frmPatientUpdate(getPatientID());
+            frmPatientUpdateEntity.ShowDialog();
 
-                if (frmPatientUpdateEntity.DialogResult == DialogResult.OK)
-                {
-                    btnShowAll_Click(sender, e);
-                }
-            }
-            else
+            if (frmPatientUpdateEntity.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show("You have no permission to do this");
-                return;
+                btnShowAll_Click(sender, e);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (Global.authority != Global.Identity.Admin)
-            {
-                MessageBox.Show("You have no permission to do this");
-                return;
-            }
             if (MessageBox.Show("Confirm delete ?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int patient_id = getPatientID();

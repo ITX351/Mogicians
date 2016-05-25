@@ -61,20 +61,6 @@ namespace orabs.Meeting
 
             if (MeetingPatientTable.Rows.Count == 0)
             {
-                //lblHint.Text = "No meeting information found!";
-                //lblPatientID.Text = "";
-                //lblName.Text = "";
-                //lblSex.Text = "";
-                //lblPhone.Text = "";
-                //lblAddress.Text = "";
-                //lblIdentityNumber.Text = "";
-                //lblStatus.Text = "";
-                //lblCreatedAt.Text = "";
-                //lblStatusAt.Text = "";
-                //lblQueueLocation.Text = "0 / 0";
-                //btnFirst.Enabled = btnPrev.Enabled = btnNext.Enabled = btnLast.Enabled =
-                //    btnSkip.Enabled = btnHangUp.Enabled = btnConsultation.Enabled = false;
-                //return;
                 pnlPatientInfo.Visible = false;
                 lblHint.Visible = true;    
                 btnFirst.Enabled = btnPrev.Enabled = btnNext.Enabled = btnLast.Enabled =
@@ -93,7 +79,6 @@ namespace orabs.Meeting
         private void showInformation()
         {
             DataRow dr = MeetingPatientTable.Rows[now];
-            //lblHint.Text = "";
             lblPatientID.Text = dr["Patient_ID"].ToString();
             lblName.Text = dr["Name"].ToString();
             lblSex.Text = dr["Sex"].ToString();

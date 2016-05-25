@@ -50,10 +50,5 @@ namespace orabs.Doctor
             cboGroup.SelectedValue = (int)dr["DoctorGroup_ID"];
             txtDescription.Text = (string)dr["Description"];
         }
-
-        private void lblDescription_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

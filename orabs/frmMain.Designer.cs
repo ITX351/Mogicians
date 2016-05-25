@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lblUserName = new System.Windows.Forms.Label();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +74,7 @@
             this.menuStripMain.Size = new System.Drawing.Size(746, 24);
             this.menuStripMain.TabIndex = 1;
             this.menuStripMain.Text = "menuStripMain";
+            this.menuStripMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripMain_ItemClicked);
             // 
             // mainMenuToolStripMenuItem
             // 
@@ -208,6 +210,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(746, 506);
             this.Controls.Add(this.lblIdentity);
             this.Controls.Add(this.lblUserName);
