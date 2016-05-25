@@ -43,19 +43,19 @@
             this.dgvDoctorGroup.AllowUserToResizeRows = false;
             this.dgvDoctorGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDoctorGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDoctorGroup.Location = new System.Drawing.Point(39, 38);
+            this.dgvDoctorGroup.Location = new System.Drawing.Point(12, 12);
             this.dgvDoctorGroup.Name = "dgvDoctorGroup";
             this.dgvDoctorGroup.ReadOnly = true;
             this.dgvDoctorGroup.RowTemplate.Height = 23;
-            this.dgvDoctorGroup.Size = new System.Drawing.Size(519, 410);
+            this.dgvDoctorGroup.Size = new System.Drawing.Size(320, 344);
             this.dgvDoctorGroup.TabIndex = 0;
             this.dgvDoctorGroup.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctorGroup_CellContentDoubleClick);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(621, 58);
+            this.btnAdd.Location = new System.Drawing.Point(338, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(79, 43);
+            this.btnAdd.Size = new System.Drawing.Size(79, 39);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -63,9 +63,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(621, 139);
+            this.btnUpdate.Location = new System.Drawing.Point(338, 59);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(79, 38);
+            this.btnUpdate.Size = new System.Drawing.Size(79, 39);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -73,9 +73,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(621, 212);
+            this.btnDelete.Location = new System.Drawing.Point(338, 106);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(79, 38);
+            this.btnDelete.Size = new System.Drawing.Size(79, 39);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(704, 431);
+            this.btnClose.Location = new System.Drawing.Point(340, 317);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(77, 39);
             this.btnClose.TabIndex = 4;
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(789, 475);
+            this.ClientSize = new System.Drawing.Size(430, 365);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
