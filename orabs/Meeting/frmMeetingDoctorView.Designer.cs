@@ -77,7 +77,7 @@
             // lblPatientIDTitle
             // 
             this.lblPatientIDTitle.AutoSize = true;
-            this.lblPatientIDTitle.Location = new System.Drawing.Point(24, 29);
+            this.lblPatientIDTitle.Location = new System.Drawing.Point(23, 29);
             this.lblPatientIDTitle.Name = "lblPatientIDTitle";
             this.lblPatientIDTitle.Size = new System.Drawing.Size(71, 12);
             this.lblPatientIDTitle.TabIndex = 1;
@@ -86,7 +86,7 @@
             // lblPatientNameTitle
             // 
             this.lblPatientNameTitle.AutoSize = true;
-            this.lblPatientNameTitle.Location = new System.Drawing.Point(24, 59);
+            this.lblPatientNameTitle.Location = new System.Drawing.Point(23, 59);
             this.lblPatientNameTitle.Name = "lblPatientNameTitle";
             this.lblPatientNameTitle.Size = new System.Drawing.Size(41, 12);
             this.lblPatientNameTitle.TabIndex = 2;
@@ -104,7 +104,7 @@
             // lblPatientPhoneTitle
             // 
             this.lblPatientPhoneTitle.AutoSize = true;
-            this.lblPatientPhoneTitle.Location = new System.Drawing.Point(24, 113);
+            this.lblPatientPhoneTitle.Location = new System.Drawing.Point(23, 113);
             this.lblPatientPhoneTitle.Name = "lblPatientPhoneTitle";
             this.lblPatientPhoneTitle.Size = new System.Drawing.Size(47, 12);
             this.lblPatientPhoneTitle.TabIndex = 4;
@@ -122,7 +122,7 @@
             // lblPatientIdentityNumberTitle
             // 
             this.lblPatientIdentityNumberTitle.AutoSize = true;
-            this.lblPatientIdentityNumberTitle.Location = new System.Drawing.Point(21, 169);
+            this.lblPatientIdentityNumberTitle.Location = new System.Drawing.Point(23, 169);
             this.lblPatientIdentityNumberTitle.Name = "lblPatientIdentityNumberTitle";
             this.lblPatientIdentityNumberTitle.Size = new System.Drawing.Size(107, 12);
             this.lblPatientIdentityNumberTitle.TabIndex = 6;
@@ -179,7 +179,7 @@
             // lblStatusTitle
             // 
             this.lblStatusTitle.AutoSize = true;
-            this.lblStatusTitle.Location = new System.Drawing.Point(24, 208);
+            this.lblStatusTitle.Location = new System.Drawing.Point(23, 208);
             this.lblStatusTitle.Name = "lblStatusTitle";
             this.lblStatusTitle.Size = new System.Drawing.Size(53, 12);
             this.lblStatusTitle.TabIndex = 13;
@@ -188,7 +188,7 @@
             // lblCreatedAtTitle
             // 
             this.lblCreatedAtTitle.AutoSize = true;
-            this.lblCreatedAtTitle.Location = new System.Drawing.Point(24, 236);
+            this.lblCreatedAtTitle.Location = new System.Drawing.Point(23, 236);
             this.lblCreatedAtTitle.Name = "lblCreatedAtTitle";
             this.lblCreatedAtTitle.Size = new System.Drawing.Size(113, 12);
             this.lblCreatedAtTitle.TabIndex = 14;
