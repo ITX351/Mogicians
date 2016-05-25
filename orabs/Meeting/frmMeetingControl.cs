@@ -127,5 +127,10 @@ namespace orabs.Meeting
                 }           
             }
         }
+
+        private void dgvMeeting_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

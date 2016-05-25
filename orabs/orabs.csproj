@@ -132,6 +132,24 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Item\frmItemAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\frmItemAdd.Designer.cs">
+      <DependentUpon>frmItemAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\frmItemControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\frmItemControl.Designer.cs">
+      <DependentUpon>frmItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\frmItemUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\frmItemUpdate.Designer.cs">
+      <DependentUpon>frmItemUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Meeting\frmMeetingControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +218,12 @@
     <Compile Include="User\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\frmResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmResetPassword.Designer.cs">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Department\frmDepartmentAdd.resx">
       <DependentUpon>frmDepartmentAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +266,15 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Item\frmItemAdd.resx">
+      <DependentUpon>frmItemAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\frmItemControl.resx">
+      <DependentUpon>frmItemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\frmItemUpdate.resx">
+      <DependentUpon>frmItemUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Meeting\frmMeetingControl.resx">
       <DependentUpon>frmMeetingControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +316,9 @@
     </Compile>
     <EmbeddedResource Include="User\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\frmResetPassword.resx">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,7 +1,9 @@
 ﻿using orabs.Department;
 using orabs.DoctorGroup;
+using orabs.Item;
 using orabs.Meeting;
 using orabs.Patient;
+using orabs.User;
 using System;
 using System.Windows.Forms;
 
@@ -46,7 +48,7 @@ namespace orabs
                     meetingHandleToolStripMenuItem.Visible = false;
                     break;
             }
-            userToolStripMenuItem.Visible = false;
+
         }
 
         private void doctorControlToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,9 +104,18 @@ namespace orabs
             frmPateintInfoEntity.Show();
         }
 
-        private void menuStripMain_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
+
+        private void itemControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmItemControl frmItemControlEntity = new frmItemControl();
+            frmItemControlEntity.Show();
+        }
+
+        private void userControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmResetPassword frmResetPasswordEntity = new frmResetPassword();
+            frmResetPasswordEntity.Show();
         }
     }
 }

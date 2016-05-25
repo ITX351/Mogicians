@@ -72,5 +72,10 @@ namespace orabs
             frmRegister frmRegisterEntity = new frmRegister();
             frmRegisterEntity.ShowDialog();
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
