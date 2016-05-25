@@ -194,14 +194,25 @@ namespace orabs.Meeting
                 doQuery();
         }
 
+        private int GetMeeting_ID()
+        {
+            return (int)MeetingPatientTable.Rows[now]["Meeting_ID"];
+        }
+
         private void btnConsultation_Click(object sender, EventArgs e)
         {
-            frmMeetingDiagnose frmMeetingDiagnoseEntity = new frmMeetingDiagnose((int)MeetingPatientTable.Rows[now]["Meeting_ID"]);
+            frmMeetingDiagnose frmMeetingDiagnoseEntity = new frmMeetingDiagnose(GetMeeting_ID());
             frmMeetingDiagnoseEntity.ShowDialog();
             if (frmMeetingDiagnoseEntity.DialogResult == DialogResult.OK)
             {
                 doQuery();
             }
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            frmMeetingDetails frmMeetingDetailsEntity = new frmMeetingDetails(GetMeeting_ID());
+            frmMeetingDetailsEntity.ShowDialog();
         }
     }
 }

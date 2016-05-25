@@ -36,38 +36,40 @@
             this.cboDepartment = new System.Windows.Forms.ComboBox();
             this.cboGroup = new System.Windows.Forms.ComboBox();
             this.cboDoctorName = new System.Windows.Forms.ComboBox();
+            this.lblWaitingTitle = new System.Windows.Forms.Label();
+            this.lblWaiting = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDepartment
             // 
             this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Location = new System.Drawing.Point(120, 79);
+            this.lblDepartment.Location = new System.Drawing.Point(118, 76);
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(71, 12);
+            this.lblDepartment.Size = new System.Drawing.Size(83, 12);
             this.lblDepartment.TabIndex = 0;
-            this.lblDepartment.Text = "Departement";
+            this.lblDepartment.Text = "Departement: ";
             // 
             // lblDoctorGroup
             // 
             this.lblDoctorGroup.AutoSize = true;
-            this.lblDoctorGroup.Location = new System.Drawing.Point(120, 127);
+            this.lblDoctorGroup.Location = new System.Drawing.Point(118, 121);
             this.lblDoctorGroup.Name = "lblDoctorGroup";
-            this.lblDoctorGroup.Size = new System.Drawing.Size(77, 12);
+            this.lblDoctorGroup.Size = new System.Drawing.Size(89, 12);
             this.lblDoctorGroup.TabIndex = 1;
-            this.lblDoctorGroup.Text = "Doctor Group";
+            this.lblDoctorGroup.Text = "Doctor Group: ";
             // 
             // lblDoctorName
             // 
             this.lblDoctorName.AutoSize = true;
-            this.lblDoctorName.Location = new System.Drawing.Point(120, 177);
+            this.lblDoctorName.Location = new System.Drawing.Point(118, 166);
             this.lblDoctorName.Name = "lblDoctorName";
-            this.lblDoctorName.Size = new System.Drawing.Size(71, 12);
+            this.lblDoctorName.Size = new System.Drawing.Size(83, 12);
             this.lblDoctorName.TabIndex = 2;
-            this.lblDoctorName.Text = "Doctor Name";
+            this.lblDoctorName.Text = "Doctor Name: ";
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(122, 234);
+            this.btnOK.Location = new System.Drawing.Point(122, 251);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 4;
@@ -78,7 +80,7 @@
             // bntCancel
             // 
             this.bntCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bntCancel.Location = new System.Drawing.Point(273, 234);
+            this.bntCancel.Location = new System.Drawing.Point(273, 251);
             this.bntCancel.Name = "bntCancel";
             this.bntCancel.Size = new System.Drawing.Size(75, 23);
             this.bntCancel.TabIndex = 5;
@@ -90,7 +92,7 @@
             // 
             this.cboDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDepartment.FormattingEnabled = true;
-            this.cboDepartment.Location = new System.Drawing.Point(236, 76);
+            this.cboDepartment.Location = new System.Drawing.Point(236, 73);
             this.cboDepartment.Name = "cboDepartment";
             this.cboDepartment.Size = new System.Drawing.Size(121, 20);
             this.cboDepartment.TabIndex = 1;
@@ -100,7 +102,7 @@
             // 
             this.cboGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGroup.FormattingEnabled = true;
-            this.cboGroup.Location = new System.Drawing.Point(236, 119);
+            this.cboGroup.Location = new System.Drawing.Point(236, 118);
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(121, 20);
             this.cboGroup.TabIndex = 2;
@@ -110,10 +112,29 @@
             // 
             this.cboDoctorName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDoctorName.FormattingEnabled = true;
-            this.cboDoctorName.Location = new System.Drawing.Point(236, 169);
+            this.cboDoctorName.Location = new System.Drawing.Point(236, 163);
             this.cboDoctorName.Name = "cboDoctorName";
             this.cboDoctorName.Size = new System.Drawing.Size(121, 20);
             this.cboDoctorName.TabIndex = 3;
+            this.cboDoctorName.SelectedIndexChanged += new System.EventHandler(this.cboDoctorName_SelectedIndexChanged);
+            // 
+            // lblWaitingTitle
+            // 
+            this.lblWaitingTitle.AutoSize = true;
+            this.lblWaitingTitle.Location = new System.Drawing.Point(118, 211);
+            this.lblWaitingTitle.Name = "lblWaitingTitle";
+            this.lblWaitingTitle.Size = new System.Drawing.Size(113, 12);
+            this.lblWaitingTitle.TabIndex = 6;
+            this.lblWaitingTitle.Text = "Waiting patients: ";
+            // 
+            // lblWaiting
+            // 
+            this.lblWaiting.AutoSize = true;
+            this.lblWaiting.Location = new System.Drawing.Point(234, 211);
+            this.lblWaiting.Name = "lblWaiting";
+            this.lblWaiting.Size = new System.Drawing.Size(17, 12);
+            this.lblWaiting.TabIndex = 7;
+            this.lblWaiting.Text = "--";
             // 
             // frmMeetingRegister
             // 
@@ -122,6 +143,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bntCancel;
             this.ClientSize = new System.Drawing.Size(479, 355);
+            this.Controls.Add(this.lblWaiting);
+            this.Controls.Add(this.lblWaitingTitle);
             this.Controls.Add(this.cboDoctorName);
             this.Controls.Add(this.cboGroup);
             this.Controls.Add(this.cboDepartment);
@@ -148,6 +171,8 @@
         private System.Windows.Forms.ComboBox cboDepartment;
         private System.Windows.Forms.ComboBox cboGroup;
         private System.Windows.Forms.ComboBox cboDoctorName;
+        private System.Windows.Forms.Label lblWaitingTitle;
+        private System.Windows.Forms.Label lblWaiting;
 
     }
 }

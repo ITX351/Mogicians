@@ -82,7 +82,6 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(170, 21);
             this.txtUserName.TabIndex = 0;
-            this.txtUserName.Text = "root";
             // 
             // txtPassword
             // 
@@ -91,7 +90,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(170, 21);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "sa";
             // 
             // btnRegister
             // 

@@ -61,6 +61,7 @@
             this.lblHint = new System.Windows.Forms.Label();
             this.lblCboDescription = new System.Windows.Forms.Label();
             this.pnlPatientInfo = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.pnlPatientInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -295,9 +296,9 @@
             // 
             // btnSkip
             // 
-            this.btnSkip.Location = new System.Drawing.Point(452, 165);
+            this.btnSkip.Location = new System.Drawing.Point(386, 135);
             this.btnSkip.Name = "btnSkip";
-            this.btnSkip.Size = new System.Drawing.Size(75, 23);
+            this.btnSkip.Size = new System.Drawing.Size(88, 23);
             this.btnSkip.TabIndex = 2;
             this.btnSkip.Text = "&Skip";
             this.btnSkip.UseVisualStyleBackColor = true;
@@ -305,9 +306,9 @@
             // 
             // btnHangUp
             // 
-            this.btnHangUp.Location = new System.Drawing.Point(452, 207);
+            this.btnHangUp.Location = new System.Drawing.Point(386, 187);
             this.btnHangUp.Name = "btnHangUp";
-            this.btnHangUp.Size = new System.Drawing.Size(75, 23);
+            this.btnHangUp.Size = new System.Drawing.Size(88, 23);
             this.btnHangUp.TabIndex = 3;
             this.btnHangUp.Text = "&Hang Up";
             this.btnHangUp.UseVisualStyleBackColor = true;
@@ -316,7 +317,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(506, 424);
+            this.btnClose.Location = new System.Drawing.Point(461, 424);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 9;
@@ -326,7 +327,7 @@
             // 
             // btnConsultation
             // 
-            this.btnConsultation.Location = new System.Drawing.Point(421, 258);
+            this.btnConsultation.Location = new System.Drawing.Point(386, 239);
             this.btnConsultation.Name = "btnConsultation";
             this.btnConsultation.Size = new System.Drawing.Size(150, 23);
             this.btnConsultation.TabIndex = 4;
@@ -381,12 +382,23 @@
             this.pnlPatientInfo.Size = new System.Drawing.Size(315, 328);
             this.pnlPatientInfo.TabIndex = 32;
             // 
+            // btnDetail
+            // 
+            this.btnDetail.Location = new System.Drawing.Point(386, 291);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(88, 23);
+            this.btnDetail.TabIndex = 33;
+            this.btnDetail.Text = "&Detail";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
             // frmMeetingDoctorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(636, 485);
+            this.ClientSize = new System.Drawing.Size(584, 485);
+            this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.pnlPatientInfo);
             this.Controls.Add(this.lblCboDescription);
             this.Controls.Add(this.lblHint);
@@ -445,5 +457,6 @@
         private System.Windows.Forms.Label lblHint;
         private System.Windows.Forms.Label lblCboDescription;
         private System.Windows.Forms.Panel pnlPatientInfo;
+        private System.Windows.Forms.Button btnDetail;
     }
 }

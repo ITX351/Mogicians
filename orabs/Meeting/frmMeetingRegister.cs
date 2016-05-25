@@ -76,14 +76,30 @@ namespace orabs.Meeting
                 " and Department.Department_ID = " + ((int)cboDepartment.SelectedValue).ToString();
 
             dataTable = DatabaseOperation.GetDataTableByQuery(exeStr);
-            cboDoctorName.DataSource = dataTable;
             cboDoctorName.DisplayMember = "DoctorName";
             cboDoctorName.ValueMember = "Doctor_ID";
+            cboDoctorName.DataSource = dataTable;
         }
 
         private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboDepartment_SelectedIndexChanged(sender, e);
+        }
+
+        private void cboDoctorName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboDoctorName.SelectedValue != null)
+            {
+                int Doctor_ID = int.Parse(cboDoctorName.SelectedValue.ToString());
+                string queryStr = "select count(*) as `count` from Meeting where Status = 'W' and " +
+                    " Doctor_ID = " + Doctor_ID.ToString();
+                DataRow dr = DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0];
+                lblWaiting.Text = dr[0].ToString();
+            }
+            else
+            {
+                lblWaiting.Text = "--";
+            }
         }
     }
 }
