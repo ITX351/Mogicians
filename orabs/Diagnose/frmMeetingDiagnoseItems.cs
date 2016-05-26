@@ -68,7 +68,7 @@ namespace orabs.Diagnose
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!(Global.IsDecimal(txtNumber.Text)))
+            if (!(Global.IsNum(txtNumber.Text)))
             {
                 MessageBox.Show("Number is not valid");
                 txtNumber.Text = "1";

@@ -83,6 +83,11 @@ namespace orabs
 
         private void meetingRegisterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (Global.patientId == -1)
+            {
+                MessageBox.Show("Patient show fill your personal information before registeration.");
+                return;
+            }
             frmMeetingRegister frmMeetingRegisterEntity = new frmMeetingRegister();
             frmMeetingRegisterEntity.Show();
         }

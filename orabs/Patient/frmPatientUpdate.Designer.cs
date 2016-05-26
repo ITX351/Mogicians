@@ -44,10 +44,11 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(235, 282);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 23;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -57,7 +58,7 @@
             this.btnOK.Location = new System.Drawing.Point(116, 282);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 22;
+            this.btnOK.TabIndex = 6;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -69,35 +70,35 @@
             this.cboSex.Location = new System.Drawing.Point(202, 94);
             this.cboSex.Name = "cboSex";
             this.cboSex.Size = new System.Drawing.Size(121, 20);
-            this.cboSex.TabIndex = 21;
+            this.cboSex.TabIndex = 2;
             // 
             // txtIdentityNumber
             // 
             this.txtIdentityNumber.Location = new System.Drawing.Point(202, 218);
             this.txtIdentityNumber.Name = "txtIdentityNumber";
             this.txtIdentityNumber.Size = new System.Drawing.Size(121, 21);
-            this.txtIdentityNumber.TabIndex = 20;
+            this.txtIdentityNumber.TabIndex = 5;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(202, 173);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(121, 21);
-            this.txtAddress.TabIndex = 19;
+            this.txtAddress.TabIndex = 4;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(202, 133);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(121, 21);
-            this.txtPhone.TabIndex = 18;
+            this.txtPhone.TabIndex = 3;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(202, 49);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 21);
-            this.txtName.TabIndex = 17;
+            this.txtName.TabIndex = 1;
             // 
             // lblIdentityNumber
             // 
@@ -147,8 +148,10 @@
             // 
             // frmPatientUpdate
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(417, 365);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);

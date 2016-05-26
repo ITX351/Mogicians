@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -56,10 +57,28 @@ namespace orabs.Patient
             string exeStr;
             if (Global.authority == Global.Identity.Patient && patientIdToOperate == -1)
             {
-                exeStr = "insert into Patient(Name, Sex, Phone, Address, Identity_Number) values('" +
-                    txtName.Text + "', '" + cboSex.SelectedValue + "', '" +
-                    txtPhone.Text + "', '" + txtAddress.Text + "', '" +
-                    txtIdentityNumber.Text + "')";
+                MySqlTransaction transaction = DatabaseOperation.mySqlConnection.BeginTransaction();
+                try
+                {
+                    exeStr = "insert into Patient(Name, Sex, Phone, Address, Identity_Number) values('" +
+                        txtName.Text + "', '" + cboSex.SelectedValue + "', '" +
+                        txtPhone.Text + "', '" + txtAddress.Text + "', '" +
+                        txtIdentityNumber.Text + "')";
+                    DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+                    int Patient_ID = DatabaseOperation.GetLastInsertID();
+
+                    exeStr = "update User set Patient_ID = " + Patient_ID.ToString() + " where User_ID = " + Global.userId.ToString();
+                    DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
+
+                    transaction.Commit();
+                    Global.patientId = Patient_ID;
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Some error has occurred.." + exception.ToString());
+                    transaction.Rollback();
+                    return;
+                }
             }
             else
             {
@@ -69,26 +88,22 @@ namespace orabs.Patient
                     "', Address = '" + txtAddress.Text +
                     "', Identity_Number = '" + txtIdentityNumber.Text +
                     "' where Patient_ID = " + patientIdToOperate;
-            }    
+                int result = DatabaseOperation.ExecuteSQLQuery(exeStr);
+                if (result <= 0)
+                {
+                    MessageBox.Show("Error occurred while complementing patient information.");
+                    return;
+                }
+            }
 
-            int result = DatabaseOperation.ExecuteSQLQuery(exeStr);
-            if (result > 0)
-            {
-                MessageBox.Show("Updated successfully.");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error occurred while complementing patient information.");
-            }
-           
+            MessageBox.Show("Updated successfully.");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }
