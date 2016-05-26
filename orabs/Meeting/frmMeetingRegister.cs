@@ -7,7 +7,7 @@ namespace orabs.Meeting
 {
     public partial class frmMeetingRegister : Form
     {
-        private DataTable dataTable;
+        private DataTable dataTable, DoctorGroupTable;
 
         public frmMeetingRegister()
         {
@@ -16,9 +16,17 @@ namespace orabs.Meeting
 
         private void frmMeetingRegister_Load(object sender, EventArgs e)
         {
-            Global.setComboBoxByTableName("DoctorGroup", cboGroup, false);
+            DoctorGroupTable = Global.setComboBoxByTableName("DoctorGroup", cboGroup, false, "Charge");
+            cboGroup.DataSource = DoctorGroupTable;
+
             Global.setComboBoxByTableName("Department", cboDepartment, false);
             cboDoctorName.DataSource = dataTable;
+        }
+
+        private double GetPrice()
+        {
+            DataRow dr = DoctorGroupTable.Rows[cboGroup.SelectedIndex];
+            return double.Parse(dr["Charge"].ToString());
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -41,8 +49,7 @@ namespace orabs.Meeting
                 DatabaseOperation.ExecuteSQLQuery(exeStr, transaction);
                 int Meeting_ID = DatabaseOperation.GetLastInsertID();
 
-                string queryStr = "select * from DoctorGroup where DoctorGroup_ID = " + cboGroup.SelectedValue.ToString();
-                double totalPrice = double.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0]["Charge"].ToString());
+                double totalPrice = GetPrice(); ;
 
                 exeStr = "insert into PaymentList(isRegistration, Paid, TotalPrice, Meeting_ID, " +
                     " Doctor_ID, Patient_ID) values(1, 0, " + totalPrice.ToString() +
@@ -91,6 +98,7 @@ namespace orabs.Meeting
         private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboDepartment_SelectedIndexChanged(sender, e);
+            lblPrice.Text = "$" + GetPrice().ToString();
         }
 
         private void cboDoctorName_SelectedIndexChanged(object sender, EventArgs e)

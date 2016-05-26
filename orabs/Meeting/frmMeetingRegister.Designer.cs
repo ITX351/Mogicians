@@ -38,6 +38,7 @@
             this.cboDoctorName = new System.Windows.Forms.ComboBox();
             this.lblWaitingTitle = new System.Windows.Forms.Label();
             this.lblWaiting = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDepartment
@@ -136,6 +137,14 @@
             this.lblWaiting.TabIndex = 7;
             this.lblWaiting.Text = "--";
             // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(363, 121);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(0, 12);
+            this.lblPrice.TabIndex = 8;
+            // 
             // frmMeetingRegister
             // 
             this.AcceptButton = this.btnOK;
@@ -143,6 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bntCancel;
             this.ClientSize = new System.Drawing.Size(479, 355);
+            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblWaiting);
             this.Controls.Add(this.lblWaitingTitle);
             this.Controls.Add(this.cboDoctorName);
@@ -173,6 +183,7 @@
         private System.Windows.Forms.ComboBox cboDoctorName;
         private System.Windows.Forms.Label lblWaitingTitle;
         private System.Windows.Forms.Label lblWaiting;
+        private System.Windows.Forms.Label lblPrice;
 
     }
 }

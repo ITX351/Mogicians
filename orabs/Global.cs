@@ -42,9 +42,12 @@ namespace orabs
             return dateTime.ToString("yyyy-MM-dd hh:mm:ss");
         }
 
-        public static void setComboBoxByTableName(string TableName, ComboBox comboBox, bool hasNull)
+        public static DataTable setComboBoxByTableName(string TableName, ComboBox comboBox, bool hasNull, string AdditionColumns = "")
         {
-            string queryStr = "select " + TableName + "_ID, Name from " + TableName;
+            string queryStr = "select " + TableName + "_ID, Name";
+            if (AdditionColumns != "")
+                queryStr += ", " + AdditionColumns;
+            queryStr += " from " + TableName;
             DataTable dt = DatabaseOperation.GetDataTableByQuery(queryStr);
 
             if (hasNull)
@@ -57,12 +60,14 @@ namespace orabs
 
             comboBox.DisplayMember = "Name";
             comboBox.ValueMember = TableName + "_ID";
-            comboBox.DataSource = dt;
+            if (AdditionColumns == "")
+                comboBox.DataSource = dt;
 
             if (hasNull)
             {
                 comboBox.SelectedValue = -1;
             }
+            return dt;
         }
 
         public static string SHA1(string text)
