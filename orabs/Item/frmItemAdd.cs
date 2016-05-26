@@ -37,15 +37,17 @@ namespace orabs.Item
                 return;
             }
 
-
-            if (!Global.testRegax(txtItemPrice.Text, @"^[0-9]{1,}[.]{0,1}[0-9]*$"))
+            if (!Global.IsDecimal(txtItemPrice.Text))
             {
                 MessageBox.Show("Item Price not valid.");
                 return;
             }
 
-            string exeStr = "insert into PurchaseItem(Name,Description,Price) values('" + Global.EscapeSingleQuotes(txtItemName.Text) + 
-               "' , '" +  txtItemDescription.Text + "', "  + txtItemPrice.Text  +")";
+            string exeStr = "insert into PurchaseItem(Name,Description,Price) values('" +
+                           Global.EscapeSingleQuotes(txtItemName.Text) + 
+               "' , '" +  Global.EscapeSingleQuotes(txtItemDescription.Text) +
+               "', "  + txtItemPrice.Text  +")";
+
             if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
             {
                 MessageBox.Show("Item Add successfully.");

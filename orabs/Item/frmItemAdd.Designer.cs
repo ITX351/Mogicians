@@ -124,7 +124,7 @@
             this.Controls.Add(this.lblItemDescription);
             this.Controls.Add(this.lblItemName);
             this.Name = "frmItemAdd";
-            this.Text = "frmItemAdd";
+            this.Text = "Item Add";
             this.Load += new System.EventHandler(this.frmItemAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

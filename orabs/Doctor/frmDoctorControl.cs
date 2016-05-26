@@ -101,6 +101,26 @@ namespace orabs
             {
                 int doctor_id = getDoctorID();
 
+                string queryStr = "select count(*) from Meeting where Doctor_ID = " + doctor_id.ToString();
+                int remainMeeting = int.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0][0].ToString());
+                
+                if (remainMeeting > 0)
+                {
+                    MessageBox.Show(remainMeeting.ToString() +
+                        "remaining meeting(s) belong to this Department. The delete operation has been interrupted.");
+                    return;
+                }
+
+                queryStr = "select count(*) from PaymentList where Doctor_ID = " + doctor_id.ToString();
+                int remainPaymentList = int.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0][0].ToString());
+                
+                if (remainPaymentList > 0)
+                {
+                    MessageBox.Show(remainPaymentList.ToString() +
+                        "remaining payment list(s) belong to this Department. The delete operation has been interrupted.");
+                    return;
+                }
+
                 string exeStr = "delete from Doctor where Doctor_ID = " + doctor_id.ToString();
                 if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
                 {

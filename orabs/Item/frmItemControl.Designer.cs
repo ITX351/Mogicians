@@ -87,7 +87,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvItem);
             this.Name = "frmItemControl";
-            this.Text = "ItemContorl";
+            this.Text = "Item Control";
             this.Load += new System.EventHandler(this.frmItemControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.ResumeLayout(false);

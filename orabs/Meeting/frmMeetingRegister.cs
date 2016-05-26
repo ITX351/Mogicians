@@ -23,6 +23,13 @@ namespace orabs.Meeting
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (cboGroup.SelectedValue == null || cboDepartment.SelectedValue == null ||
+                     cboDoctorName.SelectedValue == null)
+            {
+                MessageBox.Show("Selection not valid");
+                return;
+            }
+
             MySqlTransaction transaction = DatabaseOperation.mySqlConnection.BeginTransaction();
             try
             {

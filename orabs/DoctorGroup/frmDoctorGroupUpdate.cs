@@ -29,11 +29,17 @@ namespace orabs.DoctorGroup
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (txtGroupName.Text.Length == 0 || txtCharge.Text.Length == 0)
+            if (txtGroupName.Text.Length == 0)
             {
-                MessageBox.Show("Doctor Group Name and Charge can not be empty.");
+                MessageBox.Show("Doctor Group Name can not be empty.");
                 return;
             }
+            if (!(Global.IsDecimal(txtCharge.Text)))
+            {
+                MessageBox.Show("Charge not valid");
+                return;
+            }
+
             string exeStr = "update DoctorGroup set" + 
                 " Name = '" + Global.EscapeSingleQuotes(txtGroupName.Text) + "'," + 
                 " Charge = " + Global.EscapeSingleQuotes(txtCharge.Text) + 

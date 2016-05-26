@@ -121,7 +121,7 @@
             // lblWaitingTitle
             // 
             this.lblWaitingTitle.AutoSize = true;
-            this.lblWaitingTitle.Location = new System.Drawing.Point(118, 211);
+            this.lblWaitingTitle.Location = new System.Drawing.Point(120, 216);
             this.lblWaitingTitle.Name = "lblWaitingTitle";
             this.lblWaitingTitle.Size = new System.Drawing.Size(113, 12);
             this.lblWaitingTitle.TabIndex = 6;
@@ -130,7 +130,7 @@
             // lblWaiting
             // 
             this.lblWaiting.AutoSize = true;
-            this.lblWaiting.Location = new System.Drawing.Point(234, 211);
+            this.lblWaiting.Location = new System.Drawing.Point(236, 216);
             this.lblWaiting.Name = "lblWaiting";
             this.lblWaiting.Size = new System.Drawing.Size(17, 12);
             this.lblWaiting.TabIndex = 7;

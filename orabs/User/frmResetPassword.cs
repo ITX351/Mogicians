@@ -38,13 +38,15 @@ namespace orabs.User
                 txtNewPassword.Focus();
                 return;
             }
-            string queryString = "select * from User where" + " User_ID = " + Global.userId.ToString() +
-                 " and Password=" + "'" + Global.SHA1(txtOldPassword.Text) + "'";
+
+            string queryString = "select * from User where User_ID = " + Global.userId.ToString() +
+                 " and Password ='" + Global.SHA1(txtOldPassword.Text) + "'";
             DataTable dataTable = DatabaseOperation.GetDataTableByQuery(queryString);
-            if(dataTable.Rows.Count>0)
+
+            if(dataTable.Rows.Count > 0)
             {
-                string exeStr = "update User set Password = '" + Global.SHA1(txtNewPassword.Text)+ "'" +
-                " where User_ID = " + Global.userId.ToString();
+                string exeStr = "update User set Password = '" + Global.SHA1(txtNewPassword.Text) + 
+                "' where User_ID = " + Global.userId.ToString();
 
                 if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
                 {
@@ -56,10 +58,7 @@ namespace orabs.User
                 {
                     MessageBox.Show("Some error has occurred when updating.");
                 }
-
             }
-      
         }
-
     }
 }

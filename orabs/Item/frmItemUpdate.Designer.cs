@@ -107,7 +107,6 @@
             this.lblItemName.Size = new System.Drawing.Size(35, 12);
             this.lblItemName.TabIndex = 6;
             this.lblItemName.Text = "Name:";
-
             // 
             // frmItemUpdate
             // 
@@ -123,7 +122,7 @@
             this.Controls.Add(this.lblItemDescription);
             this.Controls.Add(this.lblItemName);
             this.Name = "frmItemUpdate";
-            this.Text = "frmItemUpdate";
+            this.Text = "Item Update";
             this.Load += new System.EventHandler(this.frmItemUpdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

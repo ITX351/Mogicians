@@ -40,10 +40,5 @@ namespace orabs.Department
 
         }
 
-        private void lblDepartmentName_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

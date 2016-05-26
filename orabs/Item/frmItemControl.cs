@@ -41,6 +41,16 @@ namespace orabs.Item
             {
                 int Item_ID = getItemID();
 
+                string queryStr = "select count(*) from PaymentList_PurchaseItem where PurchaseItem_ID = " + Item_ID.ToString();
+                int remainNumber = int.Parse(DatabaseOperation.GetDataTableByQuery(queryStr).Rows[0][0].ToString());
+
+                if (remainNumber > 0)
+                {
+                    MessageBox.Show(remainNumber.ToString() +
+                        "remaining payment list(s) having this item. The delete operation has been interrupted.");
+                    return;
+                }
+
                 string exeStr = "delete from PurchaseItem where PurchaseItem_ID = " + Item_ID.ToString();
                 if (DatabaseOperation.ExecuteSQLQuery(exeStr) > 0)
                 {
@@ -72,8 +82,5 @@ namespace orabs.Item
         {
             return (int)showTable.Rows[dgvItem.CurrentRow.Index]["PurchaseItem_ID"];
         }
-
-
-   
     }
 }

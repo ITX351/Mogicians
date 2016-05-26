@@ -39,6 +39,7 @@ namespace orabs
                     departmentToolStripMenuItem.Visible = false;
                     meetingRegisterToolStripMenuItem.Visible = false;
                     meetingControlToolStripMenuItem.Visible = false;
+                    itemToolStripMenuItem.Visible = false;
                     break;
                 default:
                     lblIdentity.Text += "Patient";
@@ -46,9 +47,9 @@ namespace orabs
                     patientControlToolStripMenuItem.Visible = false;
                     departmentToolStripMenuItem.Visible = false;
                     meetingHandleToolStripMenuItem.Visible = false;
+                    itemToolStripMenuItem.Visible = false;
                     break;
             }
-
         }
 
         private void doctorControlToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,8 +104,6 @@ namespace orabs
             frmPatientInfo frmPateintInfoEntity = new frmPatientInfo();
             frmPateintInfoEntity.Show();
         }
-
-
 
         private void itemControlToolStripMenuItem_Click(object sender, EventArgs e)
         {

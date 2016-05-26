@@ -42,7 +42,6 @@
             this.lblDepartmentName.Size = new System.Drawing.Size(101, 12);
             this.lblDepartmentName.TabIndex = 0;
             this.lblDepartmentName.Text = "Department Name:";
-            this.lblDepartmentName.Click += new System.EventHandler(this.lblDepartmentName_Click);
             // 
             // txtDepartmentName
             // 

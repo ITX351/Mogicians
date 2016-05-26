@@ -68,7 +68,12 @@ namespace orabs.Diagnose
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //TODO: NUMBER VALIDITY CHECK
+            if (!(Global.IsDecimal(txtNumber.Text)))
+            {
+                MessageBox.Show("Number is not valid");
+                txtNumber.Text = "1";
+                return;
+            }
             int id = (int)lstAllItems.SelectedValue;
             DataRow dr = items.Rows[id];
             foreach (DataRow dr2 in chosenItems.Rows)

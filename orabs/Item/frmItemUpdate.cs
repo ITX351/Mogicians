@@ -40,7 +40,7 @@ namespace orabs.Item
                 MessageBox.Show("PurchaseItem Name cannot be empty");
                 return;
             }
-            if (!Global.testRegax(txtItemPrice.Text, @"^[0-9]{1,}[.]{0,1}[0-9]*$"))
+            if (!Global.IsDecimal(txtItemPrice.Text))
             {
                 MessageBox.Show("Item Price not valid.");
                 return;

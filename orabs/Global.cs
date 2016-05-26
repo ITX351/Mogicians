@@ -41,6 +41,7 @@ namespace orabs
         {
             return dateTime.ToString("yyyy-MM-dd hh:mm:ss");
         }
+
         public static void setComboBoxByTableName(string TableName, ComboBox comboBox, bool hasNull)
         {
             string queryStr = "select " + TableName + "_ID, Name from " + TableName;
@@ -80,6 +81,11 @@ namespace orabs
         public static bool IsNum(string pstr)
         {
             return testRegax(pstr, @"^(\d+)$");
+        }
+
+        public static bool IsDecimal(string pstr)
+        {
+            return testRegax(pstr, @"^[0-9]{1,}[\.]{0,1}[0-9]*$");
         }
 
         public static DataTable GetSexDataTable()
